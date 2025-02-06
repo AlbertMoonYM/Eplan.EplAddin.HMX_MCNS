@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\",
+  "WorkspaceRootPath": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\origin-repo\\eplan.epladdin.hmx_mcns\\03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.epladdin.hmx_mcns\\03.ui\\forminitialpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:03.ui\\forminitialpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.epladdin.hmx_mcns\\03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\origin-repo\\eplan.epladdin.hmx_mcns\\03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\origin-repo\\eplan.epladdin.hmx_mcns\\01.addin\\addinaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.addin\\addinaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:01.addin\\addinaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\origin-repo\\eplan.epladdin.hmx_mcns\\01.addin\\addinmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.addin\\addinmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:01.addin\\addinmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,29 +26,43 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormConceptSheet.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs",
-              "RelativeDocumentMoniker": "03.UI\\FormConceptSheet.cs",
-              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "03.UI\\FormConceptSheet.cs [\uB514\uC790\uC778]",
+              "DocumentIndex": 0,
+              "Title": "FormInitialPage.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormInitialPage.cs",
+              "RelativeDocumentMoniker": "03.UI\\FormInitialPage.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormInitialPage.cs",
+              "RelativeToolTip": "03.UI\\FormInitialPage.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwDAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T09:06:41.486Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
+              "WhenOpened": "2025-02-06T09:45:43.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormConceptSheet.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs",
+              "RelativeDocumentMoniker": "03.UI\\FormConceptSheet.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs",
+              "RelativeToolTip": "03.UI\\FormConceptSheet.cs",
+              "ViewState": "AgIAAMgJAAAAAAAAAAAgwNYJAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T09:43:46.537Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AddinAction.cs",
-              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinAction.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinAction.cs",
               "RelativeDocumentMoniker": "01.Addin\\AddinAction.cs",
-              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinAction.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinAction.cs",
               "RelativeToolTip": "01.Addin\\AddinAction.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T09:02:32.364Z",
               "EditorCaption": ""
@@ -57,27 +71,13 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "AddinModule.cs",
-              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinModule.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinModule.cs",
               "RelativeDocumentMoniker": "01.Addin\\AddinModule.cs",
-              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinModule.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinModule.cs",
               "RelativeToolTip": "01.Addin\\AddinModule.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T09:02:10.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormConceptSheet.cs",
-              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs",
-              "RelativeDocumentMoniker": "03.UI\\FormConceptSheet.cs",
-              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\origin-repo\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs",
-              "RelativeToolTip": "03.UI\\FormConceptSheet.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAwDAAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T09:02:06.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-03T09:02:10.649Z"
             }
           ]
         }

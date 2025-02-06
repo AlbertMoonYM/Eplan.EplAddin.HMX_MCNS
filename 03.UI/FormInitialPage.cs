@@ -42,8 +42,8 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             CS_PathData.PrjFolderPath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "ProjectSaveFolder")?.Attribute("value")?.Value;
             CS_PathData.BasicTempletFilePath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "BasicTempletFilePath")?.Attribute("value")?.Value;
             CS_PathData.IoListFilePath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "IoListFilePath")?.Attribute("value")?.Value;
-            CS_PathData.MacroFolderPath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "macroFolderPath")?.Attribute("value")?.Value;
-
+            CS_PathData.MacroFolderPath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "MacroFolderPath")?.Attribute("value")?.Value;
+            CS_PathData.MccbFilePath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "MccbFilePath")?.Attribute("value")?.Value;
         }
 
         private void ControlFormFunction()

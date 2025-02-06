@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConceptSheet));
             this.pnlTap = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.picBoxItems = new DevExpress.XtraEditors.PictureEdit();
             this.picBoxLoad = new DevExpress.XtraEditors.PictureEdit();
             this.picBoxSave = new DevExpress.XtraEditors.PictureEdit();
@@ -311,11 +312,13 @@
             this.labelControl47 = new DevExpress.XtraEditors.LabelControl();
             this.cbEleqMccbModel = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel160 = new System.Windows.Forms.Panel();
+            this.transparentPanel3 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.rtbxEleq = new System.Windows.Forms.RichTextBox();
             this.gridEleq = new DevExpress.XtraGrid.GridControl();
             this.gridViewEleq = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageLift = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel4 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpLiftSensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlLiftSensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpLiftDrive = new DevExpress.XtraEditors.GroupControl();
@@ -432,6 +435,7 @@
             this.gridViewLift = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageTrav1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel5 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpTrav1SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlTrav1SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpTrav1Drive = new DevExpress.XtraEditors.GroupControl();
@@ -548,6 +552,7 @@
             this.gridViewTrav1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageTrav2 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel6 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpTrav2SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlTrav2SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpTrav2Drive = new DevExpress.XtraEditors.GroupControl();
@@ -664,6 +669,7 @@
             this.gridViewTrav2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageFork1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel7 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpFork1SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlFork1SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpFork1Drive = new DevExpress.XtraEditors.GroupControl();
@@ -771,6 +777,7 @@
             this.gridViewFork1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageFork2 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel8 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpFork2SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlFork2SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpFork2Drive = new DevExpress.XtraEditors.GroupControl();
@@ -878,6 +885,7 @@
             this.gridViewFork2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageCarr = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel9 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpCarrSensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlCarrSensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpCarrSensor = new DevExpress.XtraEditors.GroupControl();
@@ -919,6 +927,8 @@
             this.panel235 = new System.Windows.Forms.Panel();
             this.picBoxProjectGenerate = new System.Windows.Forms.PictureBox();
             this.label126 = new System.Windows.Forms.Label();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTap)).BeginInit();
             this.pnlTap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxItems.Properties)).BeginInit();
@@ -1878,10 +1888,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPDFexport)).BeginInit();
             this.panel235.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProjectGenerate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTap
             // 
+            this.pnlTap.Controls.Add(this.simpleButton1);
             this.pnlTap.Controls.Add(this.picBoxItems);
             this.pnlTap.Controls.Add(this.picBoxLoad);
             this.pnlTap.Controls.Add(this.picBoxSave);
@@ -1896,6 +1909,17 @@
             this.pnlTap.Name = "pnlTap";
             this.pnlTap.Size = new System.Drawing.Size(946, 60);
             this.pnlTap.TabIndex = 30;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.simpleButton1.Location = new System.Drawing.Point(652, 21);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 69;
+            this.simpleButton1.Text = "test";
             // 
             // picBoxItems
             // 
@@ -5412,12 +5436,20 @@
             // panel160
             // 
             this.panel160.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel160.Controls.Add(this.transparentPanel3);
             this.panel160.Controls.Add(this.rtbxEleq);
             this.panel160.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel160.Location = new System.Drawing.Point(0, 0);
             this.panel160.Name = "panel160";
             this.panel160.Size = new System.Drawing.Size(567, 75);
             this.panel160.TabIndex = 6;
+            // 
+            // transparentPanel3
+            // 
+            this.transparentPanel3.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel3.Name = "transparentPanel3";
+            this.transparentPanel3.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel3.TabIndex = 62;
             // 
             // rtbxEleq
             // 
@@ -5463,6 +5495,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.transparentPanel4);
             this.splitContainer2.Panel1.Controls.Add(this.grpLiftSensorList);
             this.splitContainer2.Panel1.Controls.Add(this.grpLiftDrive);
             this.splitContainer2.Panel1.Controls.Add(this.grpLiftSensor);
@@ -5476,6 +5509,13 @@
             this.splitContainer2.Size = new System.Drawing.Size(869, 766);
             this.splitContainer2.SplitterDistance = 565;
             this.splitContainer2.TabIndex = 64;
+            // 
+            // transparentPanel4
+            // 
+            this.transparentPanel4.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel4.Name = "transparentPanel4";
+            this.transparentPanel4.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel4.TabIndex = 63;
             // 
             // grpLiftSensorList
             // 
@@ -6893,6 +6933,7 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.transparentPanel5);
             this.splitContainer3.Panel1.Controls.Add(this.grpTrav1SensorList);
             this.splitContainer3.Panel1.Controls.Add(this.grpTrav1Drive);
             this.splitContainer3.Panel1.Controls.Add(this.grpTrav1Sensor);
@@ -6906,6 +6947,13 @@
             this.splitContainer3.Size = new System.Drawing.Size(869, 766);
             this.splitContainer3.SplitterDistance = 565;
             this.splitContainer3.TabIndex = 65;
+            // 
+            // transparentPanel5
+            // 
+            this.transparentPanel5.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel5.Name = "transparentPanel5";
+            this.transparentPanel5.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel5.TabIndex = 63;
             // 
             // grpTrav1SensorList
             // 
@@ -8323,6 +8371,7 @@
             // 
             // splitContainer5.Panel1
             // 
+            this.splitContainer5.Panel1.Controls.Add(this.transparentPanel6);
             this.splitContainer5.Panel1.Controls.Add(this.grpTrav2SensorList);
             this.splitContainer5.Panel1.Controls.Add(this.grpTrav2Drive);
             this.splitContainer5.Panel1.Controls.Add(this.grpTrav2Sensor);
@@ -8336,6 +8385,13 @@
             this.splitContainer5.Size = new System.Drawing.Size(869, 766);
             this.splitContainer5.SplitterDistance = 565;
             this.splitContainer5.TabIndex = 66;
+            // 
+            // transparentPanel6
+            // 
+            this.transparentPanel6.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel6.Name = "transparentPanel6";
+            this.transparentPanel6.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel6.TabIndex = 63;
             // 
             // grpTrav2SensorList
             // 
@@ -9753,6 +9809,7 @@
             // 
             // splitContainer4.Panel1
             // 
+            this.splitContainer4.Panel1.Controls.Add(this.transparentPanel7);
             this.splitContainer4.Panel1.Controls.Add(this.grpFork1SensorList);
             this.splitContainer4.Panel1.Controls.Add(this.grpFork1Drive);
             this.splitContainer4.Panel1.Controls.Add(this.grpFork1Sensor);
@@ -9766,6 +9823,13 @@
             this.splitContainer4.Size = new System.Drawing.Size(869, 766);
             this.splitContainer4.SplitterDistance = 564;
             this.splitContainer4.TabIndex = 66;
+            // 
+            // transparentPanel7
+            // 
+            this.transparentPanel7.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel7.Name = "transparentPanel7";
+            this.transparentPanel7.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel7.TabIndex = 63;
             // 
             // grpFork1SensorList
             // 
@@ -11066,6 +11130,7 @@
             // 
             // splitContainer6.Panel1
             // 
+            this.splitContainer6.Panel1.Controls.Add(this.transparentPanel8);
             this.splitContainer6.Panel1.Controls.Add(this.grpFork2SensorList);
             this.splitContainer6.Panel1.Controls.Add(this.grpFork2Drive);
             this.splitContainer6.Panel1.Controls.Add(this.grpFork2Sensor);
@@ -11079,6 +11144,13 @@
             this.splitContainer6.Size = new System.Drawing.Size(869, 766);
             this.splitContainer6.SplitterDistance = 565;
             this.splitContainer6.TabIndex = 66;
+            // 
+            // transparentPanel8
+            // 
+            this.transparentPanel8.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel8.Name = "transparentPanel8";
+            this.transparentPanel8.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel8.TabIndex = 63;
             // 
             // grpFork2SensorList
             // 
@@ -12379,6 +12451,7 @@
             // 
             // splitContainer7.Panel1
             // 
+            this.splitContainer7.Panel1.Controls.Add(this.transparentPanel9);
             this.splitContainer7.Panel1.Controls.Add(this.grpCarrSensorList);
             this.splitContainer7.Panel1.Controls.Add(this.grpCarrSensor);
             this.splitContainer7.Panel1.Controls.Add(this.rtbxCarr);
@@ -12389,6 +12462,13 @@
             this.splitContainer7.Size = new System.Drawing.Size(869, 766);
             this.splitContainer7.SplitterDistance = 565;
             this.splitContainer7.TabIndex = 66;
+            // 
+            // transparentPanel9
+            // 
+            this.transparentPanel9.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel9.Name = "transparentPanel9";
+            this.transparentPanel9.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel9.TabIndex = 63;
             // 
             // grpCarrSensorList
             // 
@@ -12735,6 +12815,7 @@
             // 
             // xtraTabPageOP
             // 
+            this.xtraTabPageOP.Controls.Add(this.gridControl2);
             this.xtraTabPageOP.Controls.Add(this.labelControl208);
             this.xtraTabPageOP.ImageOptions.ImageIndex = 1;
             this.xtraTabPageOP.Name = "xtraTabPageOP";
@@ -12849,6 +12930,22 @@
             this.label126.TabIndex = 59;
             this.label126.Text = "프로젝트 생성";
             this.label126.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(869, 766);
+            this.gridControl2.TabIndex = 10;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
             // 
             // FormConceptSheet
             // 
@@ -13827,6 +13924,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPDFexport)).EndInit();
             this.panel235.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProjectGenerate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -14721,5 +14820,15 @@
         private DevExpress.XtraEditors.PanelControl panelControl75;
         private DevExpress.XtraEditors.LabelControl labelControl168;
         private DevExpress.XtraEditors.ComboBoxEdit cbTrav2LimitSwitch;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private TransparentPanel transparentPanel3;
+        private TransparentPanel transparentPanel4;
+        private TransparentPanel transparentPanel5;
+        private TransparentPanel transparentPanel6;
+        private TransparentPanel transparentPanel7;
+        private TransparentPanel transparentPanel8;
+        private TransparentPanel transparentPanel9;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }

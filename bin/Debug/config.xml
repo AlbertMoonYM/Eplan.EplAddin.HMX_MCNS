@@ -4,6 +4,7 @@
     <add key="ProjectSaveFolder" value="C:\Users\kr70009769\Desktop\MCNS\test" />
     <add key="BasicTempletFilePath" value="C:\Users\kr70009769\Desktop\MCNS\03. 기본프로젝트\HMX_BasicProject_R0.zw9" />
     <add key="IoListFilePath" value="C:\Users\kr70009769\Desktop\MCNS\SRM IO_TEMPLET.xlsx" />
-    <add key="macroFolderPath" value="C:\Users\kr70009769\Desktop\MCNS\02. 매크로파일" />
+    <add key="MacroFolderPath" value="C:\Users\kr70009769\Desktop\MCNS\02. 매크로파일" />
+    <add key="MccbFilePath" value="C:\Users\kr70009769\Desktop\MCNS\SRM 차단기 선정.xlsx" />
   </AppSettings>
 </configuration>
