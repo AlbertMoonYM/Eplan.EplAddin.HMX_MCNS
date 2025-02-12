@@ -758,6 +758,9 @@
             this.xrTableCell373 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell374 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrtCarr1000 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrtEleq520 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrtEleq530 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -2977,7 +2980,10 @@
             this.xrtEleq500,
             this.xrTableCell113,
             this.xrtEleq510,
-            this.xrTableCell115});
+            this.xrTableCell115,
+            this.xrtEleq520,
+            this.xrTableCell33,
+            this.xrtEleq530});
             this.xrTableRow12.Name = "xrTableRow12";
             this.xrTableRow12.Weight = 1D;
             // 
@@ -3067,7 +3073,7 @@
             // 
             // xrTableCell115
             // 
-            this.xrTableCell115.BackColor = System.Drawing.Color.Empty;
+            this.xrTableCell115.BackColor = System.Drawing.Color.LightGray;
             this.xrTableCell115.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -3078,8 +3084,9 @@
             this.xrTableCell115.StylePriority.UseBackColor = false;
             this.xrTableCell115.StylePriority.UseBorders = false;
             this.xrTableCell115.StylePriority.UseFont = false;
+            this.xrTableCell115.Text = "MCCB사양";
             this.xrTableCell115.TextFitMode = DevExpress.XtraReports.UI.TextFitMode.ShrinkOnly;
-            this.xrTableCell115.Weight = 4.7868581556368692D;
+            this.xrTableCell115.Weight = 1.1967145389092173D;
             // 
             // xrTableRow13
             // 
@@ -12253,6 +12260,51 @@
             this.xrtCarr1000.TextFitMode = DevExpress.XtraReports.UI.TextFitMode.ShrinkOnly;
             this.xrtCarr1000.Weight = 8.7759068494781847D;
             // 
+            // xrTableCell33
+            // 
+            this.xrTableCell33.BackColor = System.Drawing.Color.LightGray;
+            this.xrTableCell33.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrTableCell33.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
+            this.xrTableCell33.Multiline = true;
+            this.xrTableCell33.Name = "xrTableCell33";
+            this.xrTableCell33.StylePriority.UseBackColor = false;
+            this.xrTableCell33.StylePriority.UseBorders = false;
+            this.xrTableCell33.StylePriority.UseFont = false;
+            this.xrTableCell33.Text = "Power Cable(SQ)";
+            this.xrTableCell33.Weight = 1.1967145389092173D;
+            // 
+            // xrtEleq520
+            // 
+            this.xrtEleq520.BackColor = System.Drawing.Color.Empty;
+            this.xrtEleq520.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrtEleq520.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
+            this.xrtEleq520.Multiline = true;
+            this.xrtEleq520.Name = "xrtEleq520";
+            this.xrtEleq520.StylePriority.UseBackColor = false;
+            this.xrtEleq520.StylePriority.UseBorders = false;
+            this.xrtEleq520.StylePriority.UseFont = false;
+            this.xrtEleq520.Text = "xrtEleq520";
+            this.xrtEleq520.Weight = 1.1967145389092173D;
+            // 
+            // xrtEleq530
+            // 
+            this.xrtEleq530.BackColor = System.Drawing.Color.Empty;
+            this.xrtEleq530.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrtEleq530.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
+            this.xrtEleq530.Multiline = true;
+            this.xrtEleq530.Name = "xrtEleq530";
+            this.xrtEleq530.StylePriority.UseBackColor = false;
+            this.xrtEleq530.StylePriority.UseBorders = false;
+            this.xrtEleq530.StylePriority.UseFont = false;
+            this.xrtEleq530.Text = "xrtEleq530";
+            this.xrtEleq530.Weight = 1.1967145389092173D;
+            // 
             // XtraReport1
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -13022,5 +13074,8 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell403;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell404;
         private DevExpress.XtraReports.UI.XRTableCell xrt2Fork1000;
+        private DevExpress.XtraReports.UI.XRTableCell xrtEleq520;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell33;
+        private DevExpress.XtraReports.UI.XRTableCell xrtEleq530;
     }
 }

@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>2639_Public.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML, Version=0.104.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -166,10 +176,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Systemu.dll</HintPath>
     </Reference>
-    <Reference Include="Eplan.MCNS.Lib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Eplan.MCNS.Lib\bin\Debug\Eplan.MCNS.Lib.dll</HintPath>
-    </Reference>
     <Reference Include="EPPlus, Version=7.5.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.7.5.2\lib\net462\EPPlus.dll</HintPath>
     </Reference>
@@ -182,8 +188,9 @@
     <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
       <HintPath>packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
     </Reference>
-    <Reference Include="McnsSchemGenEngine">
-      <HintPath>C:\Users\kr70009769\Desktop\MCNS\04. APIENGINE\2412171237_plc페이지뒤카운터번호 구현\McnsSchemGenEngine.dll</HintPath>
+    <Reference Include="McnsSchemGenEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MCNS\04. APIENGINE\2502171412_냉동_케이지 현재까지 시나리오다 적용다\Debug\McnsSchemGenEngine.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
@@ -285,7 +292,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="2639_Public.snk" />
+    <None Include="2754_Public.snk" />
+    <None Include="2980_Public.snk" />
     <None Include="app.config" />
+    <None Include="EplanKorea.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -357,6 +368,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eplan.MCNS.Lib\Eplan.MCNS.Lib.csproj">
+      <Project>{2f96f828-e7a2-4466-b483-e4cd384f6fe0}</Project>
+      <Name>Eplan.MCNS.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

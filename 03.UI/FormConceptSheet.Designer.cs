@@ -253,6 +253,12 @@
             this.cbEleqSensorType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.grpEleqPower = new DevExpress.XtraEditors.GroupControl();
             this.panelControl74 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl48 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl64 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqPowerCable = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqMccbSpec = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl77 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl66 = new DevExpress.XtraEditors.LabelControl();
             this.cbEleqSafetyQuantity = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -279,12 +285,12 @@
             this.panelControl66 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl57 = new DevExpress.XtraEditors.LabelControl();
             this.cbEleqFanQuantity = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl67 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl58 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqMccbSpec = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl68 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqPowerCable = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbEleqMainPowerCable = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl67 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl58 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqMainMccbSpec = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl59 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl60 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl51 = new DevExpress.XtraEditors.LabelControl();
@@ -917,6 +923,8 @@
             this.xtraTabPageMCAG = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl206 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageOP = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl208 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageLargeGenerating = new DevExpress.XtraTab.XtraTabPage();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
@@ -927,8 +935,6 @@
             this.panel235 = new System.Windows.Forms.Panel();
             this.picBoxProjectGenerate = new System.Windows.Forms.PictureBox();
             this.label126 = new System.Windows.Forms.Label();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTap)).BeginInit();
             this.pnlTap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxItems.Properties)).BeginInit();
@@ -1144,6 +1150,12 @@
             this.grpEleqPower.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl74)).BeginInit();
             this.panelControl74.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl48)).BeginInit();
+            this.panelControl48.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl77)).BeginInit();
             this.panelControl77.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqSafetyQuantity.Properties)).BeginInit();
@@ -1172,12 +1184,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl66)).BeginInit();
             this.panelControl66.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqFanQuantity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).BeginInit();
-            this.panelControl67.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl68)).BeginInit();
             this.panelControl68.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainPowerCable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).BeginInit();
+            this.panelControl67.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainMccbSpec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl59)).BeginInit();
             this.panelControl59.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl60)).BeginInit();
@@ -1882,14 +1894,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCarr)).BeginInit();
             this.xtraTabPageMCAG.SuspendLayout();
             this.xtraTabPageOP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPageLargeGenerating.SuspendLayout();
             this.panel164.SuspendLayout();
             this.panel199.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPDFexport)).BeginInit();
             this.panel235.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProjectGenerate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTap
@@ -4707,6 +4719,8 @@
             // panelControl74
             // 
             this.panelControl74.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl74.Controls.Add(this.panelControl48);
+            this.panelControl74.Controls.Add(this.panelControl1);
             this.panelControl74.Controls.Add(this.panelControl77);
             this.panelControl74.Controls.Add(this.panelControl78);
             this.panelControl74.Dock = System.Windows.Forms.DockStyle.Top;
@@ -4714,6 +4728,80 @@
             this.panelControl74.Name = "panelControl74";
             this.panelControl74.Size = new System.Drawing.Size(563, 46);
             this.panelControl74.TabIndex = 71;
+            // 
+            // panelControl48
+            // 
+            this.panelControl48.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl48.Controls.Add(this.labelControl64);
+            this.panelControl48.Controls.Add(this.cbEleqPowerCable);
+            this.panelControl48.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl48.Location = new System.Drawing.Point(390, 0);
+            this.panelControl48.Name = "panelControl48";
+            this.panelControl48.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl48.Size = new System.Drawing.Size(130, 46);
+            this.panelControl48.TabIndex = 69;
+            // 
+            // labelControl64
+            // 
+            this.labelControl64.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl64.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl64.Appearance.Options.UseFont = true;
+            this.labelControl64.Appearance.Options.UseForeColor = true;
+            this.labelControl64.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl64.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl64.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl64.Location = new System.Drawing.Point(7, 2);
+            this.labelControl64.Name = "labelControl64";
+            this.labelControl64.Size = new System.Drawing.Size(116, 18);
+            this.labelControl64.TabIndex = 63;
+            this.labelControl64.Text = "Power Cable(SQ)";
+            // 
+            // cbEleqPowerCable
+            // 
+            this.cbEleqPowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqPowerCable.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqPowerCable.Name = "cbEleqPowerCable";
+            this.cbEleqPowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqPowerCable.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqPowerCable.TabIndex = 60;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl1.Controls.Add(this.labelControl44);
+            this.panelControl1.Controls.Add(this.cbEleqMccbSpec);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl1.Location = new System.Drawing.Point(260, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl1.Size = new System.Drawing.Size(130, 46);
+            this.panelControl1.TabIndex = 68;
+            // 
+            // labelControl44
+            // 
+            this.labelControl44.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl44.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl44.Appearance.Options.UseFont = true;
+            this.labelControl44.Appearance.Options.UseForeColor = true;
+            this.labelControl44.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl44.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl44.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl44.Location = new System.Drawing.Point(7, 2);
+            this.labelControl44.Name = "labelControl44";
+            this.labelControl44.Size = new System.Drawing.Size(116, 18);
+            this.labelControl44.TabIndex = 63;
+            this.labelControl44.Text = "MCCB 사양";
+            // 
+            // cbEleqMccbSpec
+            // 
+            this.cbEleqMccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqMccbSpec.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqMccbSpec.Name = "cbEleqMccbSpec";
+            this.cbEleqMccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqMccbSpec.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqMccbSpec.TabIndex = 60;
             // 
             // panelControl77
             // 
@@ -4955,8 +5043,8 @@
             this.panelControl64.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl64.Controls.Add(this.panelControl65);
             this.panelControl64.Controls.Add(this.panelControl66);
-            this.panelControl64.Controls.Add(this.panelControl67);
             this.panelControl64.Controls.Add(this.panelControl68);
+            this.panelControl64.Controls.Add(this.panelControl67);
             this.panelControl64.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl64.Location = new System.Drawing.Point(2, 115);
             this.panelControl64.Name = "panelControl64";
@@ -4973,7 +5061,7 @@
             this.panelControl65.Name = "panelControl65";
             this.panelControl65.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl65.Size = new System.Drawing.Size(130, 46);
-            this.panelControl65.TabIndex = 69;
+            this.panelControl65.TabIndex = 73;
             // 
             // labelControl56
             // 
@@ -5010,7 +5098,7 @@
             this.panelControl66.Name = "panelControl66";
             this.panelControl66.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl66.Size = new System.Drawing.Size(130, 46);
-            this.panelControl66.TabIndex = 68;
+            this.panelControl66.TabIndex = 72;
             // 
             // labelControl57
             // 
@@ -5037,54 +5125,17 @@
             this.cbEleqFanQuantity.Size = new System.Drawing.Size(116, 20);
             this.cbEleqFanQuantity.TabIndex = 60;
             // 
-            // panelControl67
-            // 
-            this.panelControl67.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl67.Controls.Add(this.labelControl58);
-            this.panelControl67.Controls.Add(this.cbEleqMccbSpec);
-            this.panelControl67.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl67.Location = new System.Drawing.Point(130, 0);
-            this.panelControl67.Name = "panelControl67";
-            this.panelControl67.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl67.Size = new System.Drawing.Size(130, 46);
-            this.panelControl67.TabIndex = 67;
-            // 
-            // labelControl58
-            // 
-            this.labelControl58.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl58.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl58.Appearance.Options.UseFont = true;
-            this.labelControl58.Appearance.Options.UseForeColor = true;
-            this.labelControl58.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl58.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl58.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl58.Location = new System.Drawing.Point(7, 2);
-            this.labelControl58.Name = "labelControl58";
-            this.labelControl58.Size = new System.Drawing.Size(116, 18);
-            this.labelControl58.TabIndex = 63;
-            this.labelControl58.Text = "MCCB 사양";
-            // 
-            // cbEleqMccbSpec
-            // 
-            this.cbEleqMccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqMccbSpec.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqMccbSpec.Name = "cbEleqMccbSpec";
-            this.cbEleqMccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqMccbSpec.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqMccbSpec.TabIndex = 60;
-            // 
             // panelControl68
             // 
             this.panelControl68.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl68.Controls.Add(this.labelControl59);
-            this.panelControl68.Controls.Add(this.cbEleqPowerCable);
+            this.panelControl68.Controls.Add(this.cbEleqMainPowerCable);
             this.panelControl68.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl68.Location = new System.Drawing.Point(0, 0);
+            this.panelControl68.Location = new System.Drawing.Point(130, 0);
             this.panelControl68.Name = "panelControl68";
             this.panelControl68.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl68.Size = new System.Drawing.Size(130, 46);
-            this.panelControl68.TabIndex = 66;
+            this.panelControl68.TabIndex = 71;
             // 
             // labelControl59
             // 
@@ -5099,17 +5150,54 @@
             this.labelControl59.Name = "labelControl59";
             this.labelControl59.Size = new System.Drawing.Size(116, 18);
             this.labelControl59.TabIndex = 63;
-            this.labelControl59.Text = "Power Cable(SQ)";
+            this.labelControl59.Text = "메인 케이블(SQ)";
             // 
-            // cbEleqPowerCable
+            // cbEleqMainPowerCable
             // 
-            this.cbEleqPowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqPowerCable.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqPowerCable.Name = "cbEleqPowerCable";
-            this.cbEleqPowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbEleqMainPowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqMainPowerCable.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqMainPowerCable.Name = "cbEleqMainPowerCable";
+            this.cbEleqMainPowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqPowerCable.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqPowerCable.TabIndex = 60;
+            this.cbEleqMainPowerCable.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqMainPowerCable.TabIndex = 60;
+            // 
+            // panelControl67
+            // 
+            this.panelControl67.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl67.Controls.Add(this.labelControl58);
+            this.panelControl67.Controls.Add(this.cbEleqMainMccbSpec);
+            this.panelControl67.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl67.Location = new System.Drawing.Point(0, 0);
+            this.panelControl67.Name = "panelControl67";
+            this.panelControl67.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl67.Size = new System.Drawing.Size(130, 46);
+            this.panelControl67.TabIndex = 70;
+            // 
+            // labelControl58
+            // 
+            this.labelControl58.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl58.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl58.Appearance.Options.UseFont = true;
+            this.labelControl58.Appearance.Options.UseForeColor = true;
+            this.labelControl58.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl58.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl58.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl58.Location = new System.Drawing.Point(7, 2);
+            this.labelControl58.Name = "labelControl58";
+            this.labelControl58.Size = new System.Drawing.Size(116, 18);
+            this.labelControl58.TabIndex = 63;
+            this.labelControl58.Text = "메인 차단기 사양";
+            // 
+            // cbEleqMainMccbSpec
+            // 
+            this.cbEleqMainMccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqMainMccbSpec.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqMainMccbSpec.Name = "cbEleqMainMccbSpec";
+            this.cbEleqMainMccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqMainMccbSpec.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqMainMccbSpec.TabIndex = 60;
             // 
             // panelControl59
             // 
@@ -5186,7 +5274,7 @@
             this.labelControl52.Name = "labelControl52";
             this.labelControl52.Size = new System.Drawing.Size(116, 18);
             this.labelControl52.TabIndex = 63;
-            this.labelControl52.Text = "Brake Resistor(Kw)";
+            this.labelControl52.Text = "Brake Resistor(kW)";
             // 
             // cbEleqBrakeResistorKw
             // 
@@ -5260,7 +5348,7 @@
             this.labelControl54.Name = "labelControl54";
             this.labelControl54.Size = new System.Drawing.Size(116, 18);
             this.labelControl54.TabIndex = 63;
-            this.labelControl54.Text = "파워 용량(Kw)";
+            this.labelControl54.Text = "파워 용량(kW)";
             // 
             // cbEleqPowerKw
             // 
@@ -5310,7 +5398,7 @@
             this.labelControl50.Name = "labelControl50";
             this.labelControl50.Size = new System.Drawing.Size(116, 18);
             this.labelControl50.TabIndex = 63;
-            this.labelControl50.Text = "HUB";
+            this.labelControl50.Text = "HUB 제조사";
             // 
             // cbEleqHubModel
             // 
@@ -5347,7 +5435,7 @@
             this.labelControl49.Name = "labelControl49";
             this.labelControl49.Size = new System.Drawing.Size(116, 18);
             this.labelControl49.TabIndex = 63;
-            this.labelControl49.Text = "케이블";
+            this.labelControl49.Text = "케이블 제조사";
             // 
             // cbEleqCableModel
             // 
@@ -5384,7 +5472,7 @@
             this.labelControl48.Name = "labelControl48";
             this.labelControl48.Size = new System.Drawing.Size(116, 18);
             this.labelControl48.TabIndex = 63;
-            this.labelControl48.Text = "SMPS";
+            this.labelControl48.Text = "SMPS 제조사";
             // 
             // cbEleqSmpsModel
             // 
@@ -5421,7 +5509,7 @@
             this.labelControl47.Name = "labelControl47";
             this.labelControl47.Size = new System.Drawing.Size(116, 18);
             this.labelControl47.TabIndex = 63;
-            this.labelControl47.Text = "차단기";
+            this.labelControl47.Text = "차단기 제조사";
             // 
             // cbEleqMccbModel
             // 
@@ -6803,7 +6891,7 @@
             this.labelControl79.Name = "labelControl79";
             this.labelControl79.Size = new System.Drawing.Size(116, 18);
             this.labelControl79.TabIndex = 63;
-            this.labelControl79.Text = "Brake Resistor(Kw)";
+            this.labelControl79.Text = "Brake Resistor(kW)";
             // 
             // cbLiftBrakeResistorKw
             // 
@@ -6877,7 +6965,7 @@
             this.labelControl81.Name = "labelControl81";
             this.labelControl81.Size = new System.Drawing.Size(116, 18);
             this.labelControl81.TabIndex = 63;
-            this.labelControl81.Text = "인버터 용량(Kw)";
+            this.labelControl81.Text = "인버터 용량(kW)";
             // 
             // cbLiftInverterKw
             // 
@@ -8241,7 +8329,7 @@
             this.labelControl108.Name = "labelControl108";
             this.labelControl108.Size = new System.Drawing.Size(116, 18);
             this.labelControl108.TabIndex = 63;
-            this.labelControl108.Text = "Brake Resistor(Kw)";
+            this.labelControl108.Text = "Brake Resistor(kW)";
             // 
             // cbTrav1BrakeResistorKw
             // 
@@ -8315,7 +8403,7 @@
             this.labelControl110.Name = "labelControl110";
             this.labelControl110.Size = new System.Drawing.Size(116, 18);
             this.labelControl110.TabIndex = 63;
-            this.labelControl110.Text = "인버터 용량(Kw)";
+            this.labelControl110.Text = "인버터 용량(kW)";
             // 
             // cbTrav1InverterKw
             // 
@@ -9679,7 +9767,7 @@
             this.labelControl159.Name = "labelControl159";
             this.labelControl159.Size = new System.Drawing.Size(116, 18);
             this.labelControl159.TabIndex = 63;
-            this.labelControl159.Text = "Brake Resistor(Kw)";
+            this.labelControl159.Text = "Brake Resistor(kW)";
             // 
             // cbTrav2BrakeResistorKw
             // 
@@ -9753,7 +9841,7 @@
             this.labelControl161.Name = "labelControl161";
             this.labelControl161.Size = new System.Drawing.Size(116, 18);
             this.labelControl161.TabIndex = 63;
-            this.labelControl161.Text = "인버터 용량(Kw)";
+            this.labelControl161.Text = "인버터 용량(kW)";
             // 
             // cbTrav2InverterKw
             // 
@@ -11000,7 +11088,7 @@
             this.labelControl133.Name = "labelControl133";
             this.labelControl133.Size = new System.Drawing.Size(116, 18);
             this.labelControl133.TabIndex = 63;
-            this.labelControl133.Text = "Brake Resistor(Kw)";
+            this.labelControl133.Text = "Brake Resistor(kW)";
             // 
             // cbFork1BrakeResistorKw
             // 
@@ -11074,7 +11162,7 @@
             this.labelControl135.Name = "labelControl135";
             this.labelControl135.Size = new System.Drawing.Size(116, 18);
             this.labelControl135.TabIndex = 63;
-            this.labelControl135.Text = "인버터 용량(Kw)";
+            this.labelControl135.Text = "인버터 용량(kW)";
             // 
             // cbFork1InverterKw
             // 
@@ -12321,7 +12409,7 @@
             this.labelControl184.Name = "labelControl184";
             this.labelControl184.Size = new System.Drawing.Size(116, 18);
             this.labelControl184.TabIndex = 63;
-            this.labelControl184.Text = "Brake Resistor(Kw)";
+            this.labelControl184.Text = "Brake Resistor(kW)";
             // 
             // cbFork2BrakeResistorKw
             // 
@@ -12395,7 +12483,7 @@
             this.labelControl186.Name = "labelControl186";
             this.labelControl186.Size = new System.Drawing.Size(116, 18);
             this.labelControl186.TabIndex = 63;
-            this.labelControl186.Text = "인버터 용량(Kw)";
+            this.labelControl186.Text = "인버터 용량(kW)";
             // 
             // cbFork2InverterKw
             // 
@@ -12822,6 +12910,22 @@
             this.xtraTabPageOP.Size = new System.Drawing.Size(869, 766);
             this.xtraTabPageOP.Text = "OP";
             // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(869, 766);
+            this.gridControl2.TabIndex = 10;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
+            // 
             // labelControl208
             // 
             this.labelControl208.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Bold);
@@ -12930,22 +13034,6 @@
             this.label126.TabIndex = 59;
             this.label126.Text = "프로젝트 생성";
             this.label126.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(869, 766);
-            this.gridControl2.TabIndex = 10;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
             // 
             // FormConceptSheet
             // 
@@ -13178,6 +13266,12 @@
             this.grpEleqPower.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl74)).EndInit();
             this.panelControl74.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl48)).EndInit();
+            this.panelControl48.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl77)).EndInit();
             this.panelControl77.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqSafetyQuantity.Properties)).EndInit();
@@ -13206,12 +13300,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl66)).EndInit();
             this.panelControl66.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqFanQuantity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).EndInit();
-            this.panelControl67.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl68)).EndInit();
             this.panelControl68.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainPowerCable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).EndInit();
+            this.panelControl67.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainMccbSpec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl59)).EndInit();
             this.panelControl59.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl60)).EndInit();
@@ -13918,14 +14012,14 @@
             this.xtraTabPageMCAG.PerformLayout();
             this.xtraTabPageOP.ResumeLayout(false);
             this.xtraTabPageOP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPageLargeGenerating.ResumeLayout(false);
             this.panel164.ResumeLayout(false);
             this.panel199.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxPDFexport)).EndInit();
             this.panel235.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProjectGenerate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -14183,18 +14277,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl63;
         private DevExpress.XtraEditors.ComboBoxEdit cbEleqPanel;
         private DevExpress.XtraEditors.PanelControl panelControl64;
-        private DevExpress.XtraEditors.PanelControl panelControl65;
-        private DevExpress.XtraEditors.LabelControl labelControl56;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqTerminal;
-        private DevExpress.XtraEditors.PanelControl panelControl66;
-        private DevExpress.XtraEditors.LabelControl labelControl57;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqFanQuantity;
-        private DevExpress.XtraEditors.PanelControl panelControl67;
-        private DevExpress.XtraEditors.LabelControl labelControl58;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMccbSpec;
-        private DevExpress.XtraEditors.PanelControl panelControl68;
-        private DevExpress.XtraEditors.LabelControl labelControl59;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerCable;
         private DevExpress.XtraEditors.PanelControl panelControl59;
         private DevExpress.XtraEditors.PanelControl panelControl60;
         private DevExpress.XtraEditors.LabelControl labelControl51;
@@ -14830,5 +14912,23 @@
         private TransparentPanel transparentPanel9;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.PanelControl panelControl48;
+        private DevExpress.XtraEditors.LabelControl labelControl64;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerCable;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl44;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMccbSpec;
+        private DevExpress.XtraEditors.PanelControl panelControl65;
+        private DevExpress.XtraEditors.LabelControl labelControl56;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqTerminal;
+        private DevExpress.XtraEditors.PanelControl panelControl66;
+        private DevExpress.XtraEditors.LabelControl labelControl57;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqFanQuantity;
+        private DevExpress.XtraEditors.PanelControl panelControl68;
+        private DevExpress.XtraEditors.LabelControl labelControl59;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMainPowerCable;
+        private DevExpress.XtraEditors.PanelControl panelControl67;
+        private DevExpress.XtraEditors.LabelControl labelControl58;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMainMccbSpec;
     }
 }

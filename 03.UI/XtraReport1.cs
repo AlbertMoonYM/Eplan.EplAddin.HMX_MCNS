@@ -67,7 +67,7 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                 xrtEleq200, xrtEleq210, xrtEleq220, xrtEleq230,
                 xrtEleq300, xrtEleq310, xrtEleq320, xrtEleq330,
                 xrtEleq400,xrtEleq410,xrtEleq420,xrtEleq430,
-                xrtEleq500,xrtEleq510,
+                xrtEleq500,xrtEleq510,xrtEleq520,xrtEleq530,
                 xrtEleq600, xrtEleq610, xrtEleq620, xrtEleq630,xrtEleq640
             };
             XRTableCell[] liftCells = new XRTableCell[]

@@ -33,6 +33,14 @@
             this.picBoxLogo = new DevExpress.XtraEditors.PictureEdit();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.cbMccbFilePath = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnMccbFilePath = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.cbIoExcelFilesPath = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnIoExcelFilesPath = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.cbMacroFolderPath = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btnMacroFolderPath = new DevExpress.XtraEditors.SimpleButton();
@@ -46,20 +54,18 @@
             this.btnGenPrjFolderPath = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnSaveConfig = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.cbIoExcelFilesPath = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btnIoExcelFilesPath = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.cbMccbFilePath = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btnMccbFilePath = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTap)).BeginInit();
             this.pnlTap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMccbFilePath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbIoExcelFilesPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbMacroFolderPath.Properties)).BeginInit();
@@ -69,12 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbGenPrjFolderPath.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbIoExcelFilesPath.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMccbFilePath.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTap
@@ -135,6 +135,98 @@
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(884, 198);
             this.panelControl6.TabIndex = 78;
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl7.Controls.Add(this.cbMccbFilePath);
+            this.panelControl7.Controls.Add(this.btnMccbFilePath);
+            this.panelControl7.Controls.Add(this.labelControl5);
+            this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl7.Location = new System.Drawing.Point(2, 122);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(880, 30);
+            this.panelControl7.TabIndex = 84;
+            // 
+            // cbMccbFilePath
+            // 
+            this.cbMccbFilePath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbMccbFilePath.Location = new System.Drawing.Point(116, 0);
+            this.cbMccbFilePath.Name = "cbMccbFilePath";
+            this.cbMccbFilePath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbMccbFilePath.Size = new System.Drawing.Size(704, 20);
+            this.cbMccbFilePath.TabIndex = 70;
+            // 
+            // btnMccbFilePath
+            // 
+            this.btnMccbFilePath.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnMccbFilePath.Appearance.Options.UseBackColor = true;
+            this.btnMccbFilePath.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMccbFilePath.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMccbFilePath.Location = new System.Drawing.Point(820, 0);
+            this.btnMccbFilePath.Name = "btnMccbFilePath";
+            this.btnMccbFilePath.Size = new System.Drawing.Size(60, 30);
+            this.btnMccbFilePath.TabIndex = 69;
+            this.btnMccbFilePath.Text = "...";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl5.Location = new System.Drawing.Point(0, 0);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(116, 30);
+            this.labelControl5.TabIndex = 35;
+            this.labelControl5.Text = "차단기 리스트 경로";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl2.Controls.Add(this.cbIoExcelFilesPath);
+            this.panelControl2.Controls.Add(this.btnIoExcelFilesPath);
+            this.panelControl2.Controls.Add(this.labelControl3);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(2, 92);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(880, 30);
+            this.panelControl2.TabIndex = 83;
+            // 
+            // cbIoExcelFilesPath
+            // 
+            this.cbIoExcelFilesPath.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbIoExcelFilesPath.Location = new System.Drawing.Point(116, 0);
+            this.cbIoExcelFilesPath.Name = "cbIoExcelFilesPath";
+            this.cbIoExcelFilesPath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbIoExcelFilesPath.Size = new System.Drawing.Size(704, 20);
+            this.cbIoExcelFilesPath.TabIndex = 70;
+            // 
+            // btnIoExcelFilesPath
+            // 
+            this.btnIoExcelFilesPath.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnIoExcelFilesPath.Appearance.Options.UseBackColor = true;
+            this.btnIoExcelFilesPath.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIoExcelFilesPath.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnIoExcelFilesPath.Location = new System.Drawing.Point(820, 0);
+            this.btnIoExcelFilesPath.Name = "btnIoExcelFilesPath";
+            this.btnIoExcelFilesPath.Size = new System.Drawing.Size(60, 30);
+            this.btnIoExcelFilesPath.TabIndex = 69;
+            this.btnIoExcelFilesPath.Text = "...";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl3.Location = new System.Drawing.Point(0, 0);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(116, 30);
+            this.labelControl3.TabIndex = 35;
+            this.labelControl3.Text = "IO 템플릿 경로";
             // 
             // panelControl3
             // 
@@ -287,98 +379,6 @@
             this.btnSaveConfig.TabIndex = 73;
             this.btnSaveConfig.Text = "저장하기";
             // 
-            // panelControl2
-            // 
-            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl2.Controls.Add(this.cbIoExcelFilesPath);
-            this.panelControl2.Controls.Add(this.btnIoExcelFilesPath);
-            this.panelControl2.Controls.Add(this.labelControl3);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 92);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(880, 30);
-            this.panelControl2.TabIndex = 83;
-            // 
-            // cbIoExcelFilesPath
-            // 
-            this.cbIoExcelFilesPath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbIoExcelFilesPath.Location = new System.Drawing.Point(116, 0);
-            this.cbIoExcelFilesPath.Name = "cbIoExcelFilesPath";
-            this.cbIoExcelFilesPath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbIoExcelFilesPath.Size = new System.Drawing.Size(704, 20);
-            this.cbIoExcelFilesPath.TabIndex = 70;
-            // 
-            // btnIoExcelFilesPath
-            // 
-            this.btnIoExcelFilesPath.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnIoExcelFilesPath.Appearance.Options.UseBackColor = true;
-            this.btnIoExcelFilesPath.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIoExcelFilesPath.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnIoExcelFilesPath.Location = new System.Drawing.Point(820, 0);
-            this.btnIoExcelFilesPath.Name = "btnIoExcelFilesPath";
-            this.btnIoExcelFilesPath.Size = new System.Drawing.Size(60, 30);
-            this.btnIoExcelFilesPath.TabIndex = 69;
-            this.btnIoExcelFilesPath.Text = "...";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelControl3.Location = new System.Drawing.Point(0, 0);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(116, 30);
-            this.labelControl3.TabIndex = 35;
-            this.labelControl3.Text = "IO 템플릿 경로";
-            // 
-            // panelControl7
-            // 
-            this.panelControl7.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl7.Controls.Add(this.cbMccbFilePath);
-            this.panelControl7.Controls.Add(this.btnMccbFilePath);
-            this.panelControl7.Controls.Add(this.labelControl5);
-            this.panelControl7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl7.Location = new System.Drawing.Point(2, 122);
-            this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(880, 30);
-            this.panelControl7.TabIndex = 84;
-            // 
-            // cbMccbFilePath
-            // 
-            this.cbMccbFilePath.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbMccbFilePath.Location = new System.Drawing.Point(116, 0);
-            this.cbMccbFilePath.Name = "cbMccbFilePath";
-            this.cbMccbFilePath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbMccbFilePath.Size = new System.Drawing.Size(704, 20);
-            this.cbMccbFilePath.TabIndex = 70;
-            // 
-            // btnMccbFilePath
-            // 
-            this.btnMccbFilePath.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnMccbFilePath.Appearance.Options.UseBackColor = true;
-            this.btnMccbFilePath.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMccbFilePath.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMccbFilePath.Location = new System.Drawing.Point(820, 0);
-            this.btnMccbFilePath.Name = "btnMccbFilePath";
-            this.btnMccbFilePath.Size = new System.Drawing.Size(60, 30);
-            this.btnMccbFilePath.TabIndex = 69;
-            this.btnMccbFilePath.Text = "...";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelControl5.Location = new System.Drawing.Point(0, 0);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(116, 30);
-            this.labelControl5.TabIndex = 35;
-            this.labelControl5.Text = "차단기 리스트 경로";
-            // 
             // FormConfigPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -399,6 +399,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbMccbFilePath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbIoExcelFilesPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbMacroFolderPath.Properties)).EndInit();
@@ -408,12 +414,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbGenPrjFolderPath.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbIoExcelFilesPath.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbMccbFilePath.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
