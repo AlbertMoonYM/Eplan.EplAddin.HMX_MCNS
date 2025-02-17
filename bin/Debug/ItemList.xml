@@ -55,25 +55,25 @@
   <listMSPinputVolt>
     <item>
       <No>1</No>
-      <String>380V</String>
+      <String>380</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>2</No>
-      <String>220V</String>
+      <String>220</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>3</No>
-      <String>440V</String>
+      <String>440</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>4</No>
-      <String>480V</String>
+      <String>480</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -281,13 +281,13 @@
   <listEleqUsingVoltage>
     <item>
       <No>1</No>
-      <String>220V</String>
+      <String>220</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>2</No>
-      <String>120V</String>
+      <String>120</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -341,7 +341,13 @@
     </item>
     <item>
       <No>2</No>
-      <String>POWERGRID</String>
+      <String>LABB</String>
+      <Description1></Description1>
+      <Description2></Description2>
+    </item>
+    <item>
+      <No>3</No>
+      <String>KYUNGSHIN</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>

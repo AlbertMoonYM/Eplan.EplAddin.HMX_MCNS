@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConceptSheet));
             this.pnlTap = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.picBoxItems = new DevExpress.XtraEditors.PictureEdit();
             this.picBoxLoad = new DevExpress.XtraEditors.PictureEdit();
             this.picBoxSave = new DevExpress.XtraEditors.PictureEdit();
@@ -175,7 +174,6 @@
             this.cbMODname = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
-            this.transparentPanel1 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.cbMODfullName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -935,6 +933,7 @@
             this.panel235 = new System.Windows.Forms.Panel();
             this.picBoxProjectGenerate = new System.Windows.Forms.PictureBox();
             this.label126 = new System.Windows.Forms.Label();
+            this.transparentPanel1 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pnlTap)).BeginInit();
             this.pnlTap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxItems.Properties)).BeginInit();
@@ -1906,7 +1905,6 @@
             // 
             // pnlTap
             // 
-            this.pnlTap.Controls.Add(this.simpleButton1);
             this.pnlTap.Controls.Add(this.picBoxItems);
             this.pnlTap.Controls.Add(this.picBoxLoad);
             this.pnlTap.Controls.Add(this.picBoxSave);
@@ -1921,17 +1919,6 @@
             this.pnlTap.Name = "pnlTap";
             this.pnlTap.Size = new System.Drawing.Size(946, 60);
             this.pnlTap.TabIndex = 30;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.simpleButton1.Location = new System.Drawing.Point(652, 21);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 69;
-            this.simpleButton1.Text = "test";
             // 
             // picBoxItems
             // 
@@ -2700,12 +2687,12 @@
             // 
             // btnOPdefault
             // 
-            this.btnOPdefault.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnOPdefault.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnOPdefault.Appearance.Options.UseBackColor = true;
             this.btnOPdefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOPdefault.Location = new System.Drawing.Point(816, 6);
+            this.btnOPdefault.Location = new System.Drawing.Point(816, 4);
             this.btnOPdefault.Name = "btnOPdefault";
-            this.btnOPdefault.Size = new System.Drawing.Size(75, 23);
+            this.btnOPdefault.Size = new System.Drawing.Size(60, 26);
             this.btnOPdefault.TabIndex = 68;
             this.btnOPdefault.Text = "Default";
             // 
@@ -2952,12 +2939,12 @@
             // 
             // btnMSPdefault
             // 
-            this.btnMSPdefault.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMSPdefault.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnMSPdefault.Appearance.Options.UseBackColor = true;
             this.btnMSPdefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMSPdefault.Location = new System.Drawing.Point(816, 6);
+            this.btnMSPdefault.Location = new System.Drawing.Point(816, 4);
             this.btnMSPdefault.Name = "btnMSPdefault";
-            this.btnMSPdefault.Size = new System.Drawing.Size(75, 23);
+            this.btnMSPdefault.Size = new System.Drawing.Size(60, 26);
             this.btnMSPdefault.TabIndex = 68;
             this.btnMSPdefault.Text = "Default";
             // 
@@ -3392,7 +3379,6 @@
             // 
             // panelControl9
             // 
-            this.panelControl9.Controls.Add(this.labelControl17);
             this.panelControl9.Controls.Add(this.panelControl10);
             this.panelControl9.Controls.Add(this.panelControl15);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3408,7 +3394,8 @@
             this.labelControl17.Appearance.Options.UseTextOptions = true;
             this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl17.Location = new System.Drawing.Point(44, 4);
+            this.labelControl17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl17.Location = new System.Drawing.Point(0, 0);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(70, 26);
             this.labelControl17.TabIndex = 61;
@@ -3758,27 +3745,20 @@
             // 
             this.panelControl15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl15.Controls.Add(this.transparentPanel1);
+            this.panelControl15.Controls.Add(this.labelControl17);
             this.panelControl15.Controls.Add(this.cbMODfullName);
-            this.panelControl15.Location = new System.Drawing.Point(121, 2);
+            this.panelControl15.Location = new System.Drawing.Point(46, 2);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(334, 26);
+            this.panelControl15.Size = new System.Drawing.Size(409, 26);
             this.panelControl15.TabIndex = 60;
-            // 
-            // transparentPanel1
-            // 
-            this.transparentPanel1.Location = new System.Drawing.Point(0, 0);
-            this.transparentPanel1.Name = "transparentPanel1";
-            this.transparentPanel1.Size = new System.Drawing.Size(334, 26);
-            this.transparentPanel1.TabIndex = 61;
             // 
             // cbMODfullName
             // 
-            this.cbMODfullName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbMODfullName.Location = new System.Drawing.Point(0, 0);
+            this.cbMODfullName.Location = new System.Drawing.Point(72, 3);
             this.cbMODfullName.Name = "cbMODfullName";
             this.cbMODfullName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbMODfullName.Size = new System.Drawing.Size(334, 20);
+            this.cbMODfullName.Size = new System.Drawing.Size(337, 20);
             this.cbMODfullName.TabIndex = 60;
             // 
             // panelControl2
@@ -3824,12 +3804,12 @@
             // 
             // btnPrjDateNow
             // 
-            this.btnPrjDateNow.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPrjDateNow.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnPrjDateNow.Appearance.Options.UseBackColor = true;
             this.btnPrjDateNow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrjDateNow.Location = new System.Drawing.Point(321, 2);
+            this.btnPrjDateNow.Location = new System.Drawing.Point(352, 0);
             this.btnPrjDateNow.Name = "btnPrjDateNow";
-            this.btnPrjDateNow.Size = new System.Drawing.Size(60, 23);
+            this.btnPrjDateNow.Size = new System.Drawing.Size(60, 26);
             this.btnPrjDateNow.TabIndex = 6;
             this.btnPrjDateNow.Text = "Now";
             // 
@@ -4208,7 +4188,7 @@
             // 
             // btnPlcDetailSheet
             // 
-            this.btnPlcDetailSheet.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPlcDetailSheet.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnPlcDetailSheet.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
             this.btnPlcDetailSheet.Appearance.Options.UseBackColor = true;
             this.btnPlcDetailSheet.Appearance.Options.UseFont = true;
@@ -4828,7 +4808,7 @@
             this.labelControl66.Name = "labelControl66";
             this.labelControl66.Size = new System.Drawing.Size(116, 18);
             this.labelControl66.TabIndex = 63;
-            this.labelControl66.Text = "SAFETY 수량";
+            this.labelControl66.Text = "EMO 수량";
             // 
             // cbEleqSafetyQuantity
             // 
@@ -13035,6 +13015,13 @@
             this.label126.Text = "프로젝트 생성";
             this.label126.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // transparentPanel1
+            // 
+            this.transparentPanel1.Location = new System.Drawing.Point(-2, 0);
+            this.transparentPanel1.Name = "transparentPanel1";
+            this.transparentPanel1.Size = new System.Drawing.Size(411, 26);
+            this.transparentPanel1.TabIndex = 63;
+            // 
             // FormConceptSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -14642,7 +14629,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCarr;
         private System.Windows.Forms.ImageList imageList1;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
-        private TransparentPanel transparentPanel1;
         private TransparentPanel transparentPanel2;
         private DevExpress.XtraEditors.LabelControl labelControl206;
         private DevExpress.XtraEditors.LabelControl labelControl208;
@@ -14902,7 +14888,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl75;
         private DevExpress.XtraEditors.LabelControl labelControl168;
         private DevExpress.XtraEditors.ComboBoxEdit cbTrav2LimitSwitch;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private TransparentPanel transparentPanel3;
         private TransparentPanel transparentPanel4;
         private TransparentPanel transparentPanel5;
@@ -14930,5 +14915,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl67;
         private DevExpress.XtraEditors.LabelControl labelControl58;
         private DevExpress.XtraEditors.ComboBoxEdit cbEleqMainMccbSpec;
+        private TransparentPanel transparentPanel1;
     }
 }

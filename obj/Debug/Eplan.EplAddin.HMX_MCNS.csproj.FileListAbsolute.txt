@@ -530,3 +530,5 @@ C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCN
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\McnsSchemGenEngine.dll
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\McnsSchemGenEngine.pdb
+C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\Microsoft.WindowsAPICodePack.xml
