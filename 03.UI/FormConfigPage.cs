@@ -39,7 +39,7 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             cs_Button.FileFinder(btnBasicTempletFilePath, cbBasicTempletFilePath, CS_PathData.XmlFolderPath, "zw9 File (*.zw9)|*.zw9|All Files (*.*)|*.*");
             cs_Button.FileFinder(btnIoExcelFilesPath, cbIoExcelFilesPath, CS_PathData.XmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
             cs_Button.FolderFinder(btnMacroFolderPath, cbMacroFolderPath);
-            cs_Button.FileFinder(btnMccbFilePath, cbMccbFilePath, CS_PathData.MccbFilePath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
+            cs_Button.FileFinder(btnMccbFilePath, cbMccbFilePath, CS_PathData.XmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
 
 
         }
@@ -56,7 +56,7 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
 
                 // 검증할 컨트롤 배열
                 Control[] actPath = { cbGenPrjFolderPath, cbMacroFolderPath };
-                Control[] actFile = { cbBasicTempletFilePath, cbIoExcelFilesPath };
+                Control[] actFile = { cbBasicTempletFilePath, cbIoExcelFilesPath, cbMccbFilePath };
 
                 // 경로 검증
                 foreach (ComboBoxEdit cb in actPath)
