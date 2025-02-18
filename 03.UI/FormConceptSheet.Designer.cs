@@ -146,7 +146,6 @@
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.cbMSPinputVolt = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl19 = new DevExpress.XtraEditors.PanelControl();
             this.cbMODoption4 = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -175,6 +174,7 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
             this.transparentPanel1 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.cbMODfullName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -251,7 +251,26 @@
             this.labelControl75 = new DevExpress.XtraEditors.LabelControl();
             this.cbEleqSensorType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.grpEleqPower = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl59 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl60 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl51 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqBrakeResistorOhm = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl61 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl52 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqBrakeResistorKw = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl62 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl53 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqPowerA = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl63 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl54 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqPowerKw = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl74 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl48 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl64 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqPowerCable = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqMccbSpec = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl77 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl66 = new DevExpress.XtraEditors.LabelControl();
             this.cbEleqSafetyQuantity = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -278,25 +297,12 @@
             this.panelControl66 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl57 = new DevExpress.XtraEditors.LabelControl();
             this.cbEleqFanQuantity = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl67 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl58 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqMccbSpec = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl68 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqPowerCable = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl59 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl60 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl51 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqBrakeResistorOhm = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl61 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl52 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqBrakeResistorKw = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl62 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl53 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqPowerA = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl63 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl54 = new DevExpress.XtraEditors.LabelControl();
-            this.cbEleqPowerKw = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbEleqMainPowerCable = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.panelControl67 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl58 = new DevExpress.XtraEditors.LabelControl();
+            this.cbEleqMainMccbSpec = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl54 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl58 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl50 = new DevExpress.XtraEditors.LabelControl();
@@ -311,11 +317,13 @@
             this.labelControl47 = new DevExpress.XtraEditors.LabelControl();
             this.cbEleqMccbModel = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panel160 = new System.Windows.Forms.Panel();
+            this.transparentPanel3 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.rtbxEleq = new System.Windows.Forms.RichTextBox();
             this.gridEleq = new DevExpress.XtraGrid.GridControl();
             this.gridViewEleq = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageLift = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel4 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpLiftSensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlLiftSensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpLiftDrive = new DevExpress.XtraEditors.GroupControl();
@@ -432,6 +440,7 @@
             this.gridViewLift = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageTrav1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel5 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpTrav1SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlTrav1SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpTrav1Drive = new DevExpress.XtraEditors.GroupControl();
@@ -548,6 +557,7 @@
             this.gridViewTrav1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageTrav2 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel6 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpTrav2SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlTrav2SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpTrav2Drive = new DevExpress.XtraEditors.GroupControl();
@@ -664,6 +674,7 @@
             this.gridViewTrav2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageFork1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel7 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpFork1SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlFork1SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpFork1Drive = new DevExpress.XtraEditors.GroupControl();
@@ -771,6 +782,7 @@
             this.gridViewFork1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageFork2 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel8 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpFork2SensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlFork2SensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpFork2Drive = new DevExpress.XtraEditors.GroupControl();
@@ -878,6 +890,7 @@
             this.gridViewFork2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPageCarr = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.transparentPanel9 = new Eplan.EplAddin.HMX_MCNS.TransparentPanel();
             this.grpCarrSensorList = new DevExpress.XtraEditors.GroupControl();
             this.fpnlCarrSensorList = new System.Windows.Forms.FlowLayoutPanel();
             this.grpCarrSensor = new DevExpress.XtraEditors.GroupControl();
@@ -909,6 +922,8 @@
             this.xtraTabPageMCAG = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl206 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageOP = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl208 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageLargeGenerating = new DevExpress.XtraTab.XtraTabPage();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
@@ -1132,8 +1147,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqSensorType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpEleqPower)).BeginInit();
             this.grpEleqPower.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl59)).BeginInit();
+            this.panelControl59.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl60)).BeginInit();
+            this.panelControl60.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorOhm.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl61)).BeginInit();
+            this.panelControl61.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorKw.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl62)).BeginInit();
+            this.panelControl62.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl63)).BeginInit();
+            this.panelControl63.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerKw.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl74)).BeginInit();
             this.panelControl74.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl48)).BeginInit();
+            this.panelControl48.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl77)).BeginInit();
             this.panelControl77.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqSafetyQuantity.Properties)).BeginInit();
@@ -1162,26 +1197,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl66)).BeginInit();
             this.panelControl66.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqFanQuantity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).BeginInit();
-            this.panelControl67.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl68)).BeginInit();
             this.panelControl68.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl59)).BeginInit();
-            this.panelControl59.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl60)).BeginInit();
-            this.panelControl60.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorOhm.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl61)).BeginInit();
-            this.panelControl61.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorKw.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl62)).BeginInit();
-            this.panelControl62.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerA.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl63)).BeginInit();
-            this.panelControl63.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerKw.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainPowerCable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).BeginInit();
+            this.panelControl67.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainMccbSpec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl54)).BeginInit();
             this.panelControl54.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl58)).BeginInit();
@@ -1872,6 +1893,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCarr)).BeginInit();
             this.xtraTabPageMCAG.SuspendLayout();
             this.xtraTabPageOP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPageLargeGenerating.SuspendLayout();
             this.panel164.SuspendLayout();
             this.panel199.SuspendLayout();
@@ -2664,12 +2687,12 @@
             // 
             // btnOPdefault
             // 
-            this.btnOPdefault.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnOPdefault.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnOPdefault.Appearance.Options.UseBackColor = true;
             this.btnOPdefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOPdefault.Location = new System.Drawing.Point(816, 6);
+            this.btnOPdefault.Location = new System.Drawing.Point(816, 4);
             this.btnOPdefault.Name = "btnOPdefault";
-            this.btnOPdefault.Size = new System.Drawing.Size(75, 23);
+            this.btnOPdefault.Size = new System.Drawing.Size(60, 26);
             this.btnOPdefault.TabIndex = 68;
             this.btnOPdefault.Text = "Default";
             // 
@@ -2916,12 +2939,12 @@
             // 
             // btnMSPdefault
             // 
-            this.btnMSPdefault.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMSPdefault.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnMSPdefault.Appearance.Options.UseBackColor = true;
             this.btnMSPdefault.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMSPdefault.Location = new System.Drawing.Point(816, 6);
+            this.btnMSPdefault.Location = new System.Drawing.Point(816, 4);
             this.btnMSPdefault.Name = "btnMSPdefault";
-            this.btnMSPdefault.Size = new System.Drawing.Size(75, 23);
+            this.btnMSPdefault.Size = new System.Drawing.Size(60, 26);
             this.btnMSPdefault.TabIndex = 68;
             this.btnMSPdefault.Text = "Default";
             // 
@@ -3356,7 +3379,6 @@
             // 
             // panelControl9
             // 
-            this.panelControl9.Controls.Add(this.labelControl17);
             this.panelControl9.Controls.Add(this.panelControl10);
             this.panelControl9.Controls.Add(this.panelControl15);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3364,19 +3386,6 @@
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(942, 88);
             this.panelControl9.TabIndex = 1;
-            // 
-            // labelControl17
-            // 
-            this.labelControl17.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.labelControl17.Appearance.Options.UseFont = true;
-            this.labelControl17.Appearance.Options.UseTextOptions = true;
-            this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl17.Location = new System.Drawing.Point(44, 4);
-            this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(70, 26);
-            this.labelControl17.TabIndex = 61;
-            this.labelControl17.Text = "모델";
             // 
             // panelControl10
             // 
@@ -3722,27 +3731,41 @@
             // 
             this.panelControl15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl15.Controls.Add(this.transparentPanel1);
+            this.panelControl15.Controls.Add(this.labelControl17);
             this.panelControl15.Controls.Add(this.cbMODfullName);
-            this.panelControl15.Location = new System.Drawing.Point(121, 2);
+            this.panelControl15.Location = new System.Drawing.Point(46, 2);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(334, 26);
+            this.panelControl15.Size = new System.Drawing.Size(409, 26);
             this.panelControl15.TabIndex = 60;
             // 
             // transparentPanel1
             // 
-            this.transparentPanel1.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel1.Location = new System.Drawing.Point(-2, 0);
             this.transparentPanel1.Name = "transparentPanel1";
-            this.transparentPanel1.Size = new System.Drawing.Size(334, 26);
-            this.transparentPanel1.TabIndex = 61;
+            this.transparentPanel1.Size = new System.Drawing.Size(411, 26);
+            this.transparentPanel1.TabIndex = 63;
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Appearance.Options.UseTextOptions = true;
+            this.labelControl17.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl17.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl17.Location = new System.Drawing.Point(0, 0);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(70, 26);
+            this.labelControl17.TabIndex = 61;
+            this.labelControl17.Text = "모델";
             // 
             // cbMODfullName
             // 
-            this.cbMODfullName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbMODfullName.Location = new System.Drawing.Point(0, 0);
+            this.cbMODfullName.Location = new System.Drawing.Point(72, 3);
             this.cbMODfullName.Name = "cbMODfullName";
             this.cbMODfullName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbMODfullName.Size = new System.Drawing.Size(334, 20);
+            this.cbMODfullName.Size = new System.Drawing.Size(337, 20);
             this.cbMODfullName.TabIndex = 60;
             // 
             // panelControl2
@@ -3788,12 +3811,12 @@
             // 
             // btnPrjDateNow
             // 
-            this.btnPrjDateNow.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPrjDateNow.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnPrjDateNow.Appearance.Options.UseBackColor = true;
             this.btnPrjDateNow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrjDateNow.Location = new System.Drawing.Point(321, 2);
+            this.btnPrjDateNow.Location = new System.Drawing.Point(352, 0);
             this.btnPrjDateNow.Name = "btnPrjDateNow";
-            this.btnPrjDateNow.Size = new System.Drawing.Size(60, 23);
+            this.btnPrjDateNow.Size = new System.Drawing.Size(60, 26);
             this.btnPrjDateNow.TabIndex = 6;
             this.btnPrjDateNow.Text = "Now";
             // 
@@ -4172,7 +4195,7 @@
             // 
             // btnPlcDetailSheet
             // 
-            this.btnPlcDetailSheet.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPlcDetailSheet.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
             this.btnPlcDetailSheet.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
             this.btnPlcDetailSheet.Appearance.Options.UseBackColor = true;
             this.btnPlcDetailSheet.Appearance.Options.UseFont = true;
@@ -4668,10 +4691,10 @@
             // 
             this.grpEleqPower.AppearanceCaption.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpEleqPower.AppearanceCaption.Options.UseFont = true;
+            this.grpEleqPower.Controls.Add(this.panelControl59);
             this.grpEleqPower.Controls.Add(this.panelControl74);
             this.grpEleqPower.Controls.Add(this.panelControl69);
             this.grpEleqPower.Controls.Add(this.panelControl64);
-            this.grpEleqPower.Controls.Add(this.panelControl59);
             this.grpEleqPower.Controls.Add(this.panelControl54);
             this.grpEleqPower.Dock = System.Windows.Forms.DockStyle.Top;
             this.grpEleqPower.Location = new System.Drawing.Point(0, 75);
@@ -4680,16 +4703,253 @@
             this.grpEleqPower.TabIndex = 16;
             this.grpEleqPower.Text = "01. 파워";
             // 
+            // panelControl59
+            // 
+            this.panelControl59.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl59.Controls.Add(this.panelControl60);
+            this.panelControl59.Controls.Add(this.panelControl61);
+            this.panelControl59.Controls.Add(this.panelControl62);
+            this.panelControl59.Controls.Add(this.panelControl63);
+            this.panelControl59.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl59.Location = new System.Drawing.Point(2, 207);
+            this.panelControl59.Name = "panelControl59";
+            this.panelControl59.Size = new System.Drawing.Size(563, 46);
+            this.panelControl59.TabIndex = 72;
+            // 
+            // panelControl60
+            // 
+            this.panelControl60.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl60.Controls.Add(this.labelControl51);
+            this.panelControl60.Controls.Add(this.cbEleqBrakeResistorOhm);
+            this.panelControl60.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl60.Location = new System.Drawing.Point(390, 0);
+            this.panelControl60.Name = "panelControl60";
+            this.panelControl60.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl60.Size = new System.Drawing.Size(130, 46);
+            this.panelControl60.TabIndex = 69;
+            // 
+            // labelControl51
+            // 
+            this.labelControl51.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl51.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl51.Appearance.Options.UseFont = true;
+            this.labelControl51.Appearance.Options.UseForeColor = true;
+            this.labelControl51.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl51.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl51.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl51.Location = new System.Drawing.Point(7, 2);
+            this.labelControl51.Name = "labelControl51";
+            this.labelControl51.Size = new System.Drawing.Size(116, 18);
+            this.labelControl51.TabIndex = 63;
+            this.labelControl51.Text = "Brake Resistor(Ω)";
+            // 
+            // cbEleqBrakeResistorOhm
+            // 
+            this.cbEleqBrakeResistorOhm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqBrakeResistorOhm.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqBrakeResistorOhm.Name = "cbEleqBrakeResistorOhm";
+            this.cbEleqBrakeResistorOhm.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqBrakeResistorOhm.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqBrakeResistorOhm.TabIndex = 60;
+            // 
+            // panelControl61
+            // 
+            this.panelControl61.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl61.Controls.Add(this.labelControl52);
+            this.panelControl61.Controls.Add(this.cbEleqBrakeResistorKw);
+            this.panelControl61.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl61.Location = new System.Drawing.Point(260, 0);
+            this.panelControl61.Name = "panelControl61";
+            this.panelControl61.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl61.Size = new System.Drawing.Size(130, 46);
+            this.panelControl61.TabIndex = 68;
+            // 
+            // labelControl52
+            // 
+            this.labelControl52.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl52.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl52.Appearance.Options.UseFont = true;
+            this.labelControl52.Appearance.Options.UseForeColor = true;
+            this.labelControl52.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl52.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl52.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl52.Location = new System.Drawing.Point(7, 2);
+            this.labelControl52.Name = "labelControl52";
+            this.labelControl52.Size = new System.Drawing.Size(116, 18);
+            this.labelControl52.TabIndex = 63;
+            this.labelControl52.Text = "Brake Resistor(kW)";
+            // 
+            // cbEleqBrakeResistorKw
+            // 
+            this.cbEleqBrakeResistorKw.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqBrakeResistorKw.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqBrakeResistorKw.Name = "cbEleqBrakeResistorKw";
+            this.cbEleqBrakeResistorKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqBrakeResistorKw.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqBrakeResistorKw.TabIndex = 60;
+            // 
+            // panelControl62
+            // 
+            this.panelControl62.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl62.Controls.Add(this.labelControl53);
+            this.panelControl62.Controls.Add(this.cbEleqPowerA);
+            this.panelControl62.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl62.Location = new System.Drawing.Point(130, 0);
+            this.panelControl62.Name = "panelControl62";
+            this.panelControl62.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl62.Size = new System.Drawing.Size(130, 46);
+            this.panelControl62.TabIndex = 67;
+            // 
+            // labelControl53
+            // 
+            this.labelControl53.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl53.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl53.Appearance.Options.UseFont = true;
+            this.labelControl53.Appearance.Options.UseForeColor = true;
+            this.labelControl53.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl53.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl53.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl53.Location = new System.Drawing.Point(7, 2);
+            this.labelControl53.Name = "labelControl53";
+            this.labelControl53.Size = new System.Drawing.Size(116, 18);
+            this.labelControl53.TabIndex = 63;
+            this.labelControl53.Text = "인버터 용량(A)";
+            // 
+            // cbEleqPowerA
+            // 
+            this.cbEleqPowerA.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqPowerA.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqPowerA.Name = "cbEleqPowerA";
+            this.cbEleqPowerA.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqPowerA.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqPowerA.TabIndex = 60;
+            // 
+            // panelControl63
+            // 
+            this.panelControl63.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl63.Controls.Add(this.labelControl54);
+            this.panelControl63.Controls.Add(this.cbEleqPowerKw);
+            this.panelControl63.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl63.Location = new System.Drawing.Point(0, 0);
+            this.panelControl63.Name = "panelControl63";
+            this.panelControl63.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl63.Size = new System.Drawing.Size(130, 46);
+            this.panelControl63.TabIndex = 66;
+            // 
+            // labelControl54
+            // 
+            this.labelControl54.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl54.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl54.Appearance.Options.UseFont = true;
+            this.labelControl54.Appearance.Options.UseForeColor = true;
+            this.labelControl54.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl54.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl54.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl54.Location = new System.Drawing.Point(7, 2);
+            this.labelControl54.Name = "labelControl54";
+            this.labelControl54.Size = new System.Drawing.Size(116, 18);
+            this.labelControl54.TabIndex = 63;
+            this.labelControl54.Text = "인버터 용량(kW)";
+            // 
+            // cbEleqPowerKw
+            // 
+            this.cbEleqPowerKw.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqPowerKw.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqPowerKw.Name = "cbEleqPowerKw";
+            this.cbEleqPowerKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqPowerKw.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqPowerKw.TabIndex = 60;
+            // 
             // panelControl74
             // 
             this.panelControl74.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl74.Controls.Add(this.panelControl48);
+            this.panelControl74.Controls.Add(this.panelControl1);
             this.panelControl74.Controls.Add(this.panelControl77);
             this.panelControl74.Controls.Add(this.panelControl78);
             this.panelControl74.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl74.Location = new System.Drawing.Point(2, 207);
+            this.panelControl74.Location = new System.Drawing.Point(2, 161);
             this.panelControl74.Name = "panelControl74";
             this.panelControl74.Size = new System.Drawing.Size(563, 46);
             this.panelControl74.TabIndex = 71;
+            // 
+            // panelControl48
+            // 
+            this.panelControl48.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl48.Controls.Add(this.labelControl64);
+            this.panelControl48.Controls.Add(this.cbEleqPowerCable);
+            this.panelControl48.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl48.Location = new System.Drawing.Point(390, 0);
+            this.panelControl48.Name = "panelControl48";
+            this.panelControl48.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl48.Size = new System.Drawing.Size(130, 46);
+            this.panelControl48.TabIndex = 69;
+            // 
+            // labelControl64
+            // 
+            this.labelControl64.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl64.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl64.Appearance.Options.UseFont = true;
+            this.labelControl64.Appearance.Options.UseForeColor = true;
+            this.labelControl64.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl64.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl64.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl64.Location = new System.Drawing.Point(7, 2);
+            this.labelControl64.Name = "labelControl64";
+            this.labelControl64.Size = new System.Drawing.Size(116, 18);
+            this.labelControl64.TabIndex = 63;
+            this.labelControl64.Text = "Power Cable(SQ)";
+            // 
+            // cbEleqPowerCable
+            // 
+            this.cbEleqPowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqPowerCable.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqPowerCable.Name = "cbEleqPowerCable";
+            this.cbEleqPowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqPowerCable.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqPowerCable.TabIndex = 60;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl1.Controls.Add(this.labelControl44);
+            this.panelControl1.Controls.Add(this.cbEleqMccbSpec);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl1.Location = new System.Drawing.Point(260, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl1.Size = new System.Drawing.Size(130, 46);
+            this.panelControl1.TabIndex = 68;
+            // 
+            // labelControl44
+            // 
+            this.labelControl44.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl44.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl44.Appearance.Options.UseFont = true;
+            this.labelControl44.Appearance.Options.UseForeColor = true;
+            this.labelControl44.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl44.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl44.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl44.Location = new System.Drawing.Point(7, 2);
+            this.labelControl44.Name = "labelControl44";
+            this.labelControl44.Size = new System.Drawing.Size(116, 18);
+            this.labelControl44.TabIndex = 63;
+            this.labelControl44.Text = "MCCB 사양";
+            // 
+            // cbEleqMccbSpec
+            // 
+            this.cbEleqMccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqMccbSpec.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqMccbSpec.Name = "cbEleqMccbSpec";
+            this.cbEleqMccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbEleqMccbSpec.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqMccbSpec.TabIndex = 60;
             // 
             // panelControl77
             // 
@@ -4716,7 +4976,7 @@
             this.labelControl66.Name = "labelControl66";
             this.labelControl66.Size = new System.Drawing.Size(116, 18);
             this.labelControl66.TabIndex = 63;
-            this.labelControl66.Text = "SAFETY 수량";
+            this.labelControl66.Text = "EMO 수량";
             // 
             // cbEleqSafetyQuantity
             // 
@@ -4773,7 +5033,7 @@
             this.panelControl69.Controls.Add(this.panelControl72);
             this.panelControl69.Controls.Add(this.panelControl73);
             this.panelControl69.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl69.Location = new System.Drawing.Point(2, 161);
+            this.panelControl69.Location = new System.Drawing.Point(2, 115);
             this.panelControl69.Name = "panelControl69";
             this.panelControl69.Size = new System.Drawing.Size(563, 46);
             this.panelControl69.TabIndex = 70;
@@ -4931,10 +5191,10 @@
             this.panelControl64.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl64.Controls.Add(this.panelControl65);
             this.panelControl64.Controls.Add(this.panelControl66);
-            this.panelControl64.Controls.Add(this.panelControl67);
             this.panelControl64.Controls.Add(this.panelControl68);
+            this.panelControl64.Controls.Add(this.panelControl67);
             this.panelControl64.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl64.Location = new System.Drawing.Point(2, 115);
+            this.panelControl64.Location = new System.Drawing.Point(2, 69);
             this.panelControl64.Name = "panelControl64";
             this.panelControl64.Size = new System.Drawing.Size(563, 46);
             this.panelControl64.TabIndex = 69;
@@ -4949,7 +5209,7 @@
             this.panelControl65.Name = "panelControl65";
             this.panelControl65.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl65.Size = new System.Drawing.Size(130, 46);
-            this.panelControl65.TabIndex = 69;
+            this.panelControl65.TabIndex = 73;
             // 
             // labelControl56
             // 
@@ -4986,7 +5246,7 @@
             this.panelControl66.Name = "panelControl66";
             this.panelControl66.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl66.Size = new System.Drawing.Size(130, 46);
-            this.panelControl66.TabIndex = 68;
+            this.panelControl66.TabIndex = 72;
             // 
             // labelControl57
             // 
@@ -5013,54 +5273,17 @@
             this.cbEleqFanQuantity.Size = new System.Drawing.Size(116, 20);
             this.cbEleqFanQuantity.TabIndex = 60;
             // 
-            // panelControl67
-            // 
-            this.panelControl67.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl67.Controls.Add(this.labelControl58);
-            this.panelControl67.Controls.Add(this.cbEleqMccbSpec);
-            this.panelControl67.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl67.Location = new System.Drawing.Point(130, 0);
-            this.panelControl67.Name = "panelControl67";
-            this.panelControl67.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl67.Size = new System.Drawing.Size(130, 46);
-            this.panelControl67.TabIndex = 67;
-            // 
-            // labelControl58
-            // 
-            this.labelControl58.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl58.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl58.Appearance.Options.UseFont = true;
-            this.labelControl58.Appearance.Options.UseForeColor = true;
-            this.labelControl58.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl58.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl58.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl58.Location = new System.Drawing.Point(7, 2);
-            this.labelControl58.Name = "labelControl58";
-            this.labelControl58.Size = new System.Drawing.Size(116, 18);
-            this.labelControl58.TabIndex = 63;
-            this.labelControl58.Text = "MCCB 사양";
-            // 
-            // cbEleqMccbSpec
-            // 
-            this.cbEleqMccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqMccbSpec.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqMccbSpec.Name = "cbEleqMccbSpec";
-            this.cbEleqMccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqMccbSpec.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqMccbSpec.TabIndex = 60;
-            // 
             // panelControl68
             // 
             this.panelControl68.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl68.Controls.Add(this.labelControl59);
-            this.panelControl68.Controls.Add(this.cbEleqPowerCable);
+            this.panelControl68.Controls.Add(this.cbEleqMainPowerCable);
             this.panelControl68.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl68.Location = new System.Drawing.Point(0, 0);
+            this.panelControl68.Location = new System.Drawing.Point(130, 0);
             this.panelControl68.Name = "panelControl68";
             this.panelControl68.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl68.Size = new System.Drawing.Size(130, 46);
-            this.panelControl68.TabIndex = 66;
+            this.panelControl68.TabIndex = 71;
             // 
             // labelControl59
             // 
@@ -5075,178 +5298,54 @@
             this.labelControl59.Name = "labelControl59";
             this.labelControl59.Size = new System.Drawing.Size(116, 18);
             this.labelControl59.TabIndex = 63;
-            this.labelControl59.Text = "Power Cable(SQ)";
+            this.labelControl59.Text = "메인 케이블(SQ)";
             // 
-            // cbEleqPowerCable
+            // cbEleqMainPowerCable
             // 
-            this.cbEleqPowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqPowerCable.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqPowerCable.Name = "cbEleqPowerCable";
-            this.cbEleqPowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbEleqMainPowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqMainPowerCable.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqMainPowerCable.Name = "cbEleqMainPowerCable";
+            this.cbEleqMainPowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqPowerCable.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqPowerCable.TabIndex = 60;
+            this.cbEleqMainPowerCable.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqMainPowerCable.TabIndex = 60;
             // 
-            // panelControl59
+            // panelControl67
             // 
-            this.panelControl59.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl59.Controls.Add(this.panelControl60);
-            this.panelControl59.Controls.Add(this.panelControl61);
-            this.panelControl59.Controls.Add(this.panelControl62);
-            this.panelControl59.Controls.Add(this.panelControl63);
-            this.panelControl59.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl59.Location = new System.Drawing.Point(2, 69);
-            this.panelControl59.Name = "panelControl59";
-            this.panelControl59.Size = new System.Drawing.Size(563, 46);
-            this.panelControl59.TabIndex = 68;
+            this.panelControl67.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl67.Controls.Add(this.labelControl58);
+            this.panelControl67.Controls.Add(this.cbEleqMainMccbSpec);
+            this.panelControl67.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl67.Location = new System.Drawing.Point(0, 0);
+            this.panelControl67.Name = "panelControl67";
+            this.panelControl67.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelControl67.Size = new System.Drawing.Size(130, 46);
+            this.panelControl67.TabIndex = 70;
             // 
-            // panelControl60
+            // labelControl58
             // 
-            this.panelControl60.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl60.Controls.Add(this.labelControl51);
-            this.panelControl60.Controls.Add(this.cbEleqBrakeResistorOhm);
-            this.panelControl60.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl60.Location = new System.Drawing.Point(390, 0);
-            this.panelControl60.Name = "panelControl60";
-            this.panelControl60.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl60.Size = new System.Drawing.Size(130, 46);
-            this.panelControl60.TabIndex = 69;
+            this.labelControl58.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
+            this.labelControl58.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelControl58.Appearance.Options.UseFont = true;
+            this.labelControl58.Appearance.Options.UseForeColor = true;
+            this.labelControl58.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl58.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.labelControl58.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelControl58.Location = new System.Drawing.Point(7, 2);
+            this.labelControl58.Name = "labelControl58";
+            this.labelControl58.Size = new System.Drawing.Size(116, 18);
+            this.labelControl58.TabIndex = 63;
+            this.labelControl58.Text = "메인 차단기 사양";
             // 
-            // labelControl51
+            // cbEleqMainMccbSpec
             // 
-            this.labelControl51.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl51.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl51.Appearance.Options.UseFont = true;
-            this.labelControl51.Appearance.Options.UseForeColor = true;
-            this.labelControl51.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl51.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl51.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl51.Location = new System.Drawing.Point(7, 2);
-            this.labelControl51.Name = "labelControl51";
-            this.labelControl51.Size = new System.Drawing.Size(116, 18);
-            this.labelControl51.TabIndex = 63;
-            this.labelControl51.Text = "Brake Resistor(Ω)";
-            // 
-            // cbEleqBrakeResistorOhm
-            // 
-            this.cbEleqBrakeResistorOhm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqBrakeResistorOhm.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqBrakeResistorOhm.Name = "cbEleqBrakeResistorOhm";
-            this.cbEleqBrakeResistorOhm.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbEleqMainMccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbEleqMainMccbSpec.Location = new System.Drawing.Point(7, 24);
+            this.cbEleqMainMccbSpec.Name = "cbEleqMainMccbSpec";
+            this.cbEleqMainMccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqBrakeResistorOhm.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqBrakeResistorOhm.TabIndex = 60;
-            // 
-            // panelControl61
-            // 
-            this.panelControl61.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl61.Controls.Add(this.labelControl52);
-            this.panelControl61.Controls.Add(this.cbEleqBrakeResistorKw);
-            this.panelControl61.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl61.Location = new System.Drawing.Point(260, 0);
-            this.panelControl61.Name = "panelControl61";
-            this.panelControl61.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl61.Size = new System.Drawing.Size(130, 46);
-            this.panelControl61.TabIndex = 68;
-            // 
-            // labelControl52
-            // 
-            this.labelControl52.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl52.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl52.Appearance.Options.UseFont = true;
-            this.labelControl52.Appearance.Options.UseForeColor = true;
-            this.labelControl52.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl52.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl52.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl52.Location = new System.Drawing.Point(7, 2);
-            this.labelControl52.Name = "labelControl52";
-            this.labelControl52.Size = new System.Drawing.Size(116, 18);
-            this.labelControl52.TabIndex = 63;
-            this.labelControl52.Text = "Brake Resistor(Kw)";
-            // 
-            // cbEleqBrakeResistorKw
-            // 
-            this.cbEleqBrakeResistorKw.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqBrakeResistorKw.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqBrakeResistorKw.Name = "cbEleqBrakeResistorKw";
-            this.cbEleqBrakeResistorKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqBrakeResistorKw.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqBrakeResistorKw.TabIndex = 60;
-            // 
-            // panelControl62
-            // 
-            this.panelControl62.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl62.Controls.Add(this.labelControl53);
-            this.panelControl62.Controls.Add(this.cbEleqPowerA);
-            this.panelControl62.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl62.Location = new System.Drawing.Point(130, 0);
-            this.panelControl62.Name = "panelControl62";
-            this.panelControl62.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl62.Size = new System.Drawing.Size(130, 46);
-            this.panelControl62.TabIndex = 67;
-            // 
-            // labelControl53
-            // 
-            this.labelControl53.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl53.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl53.Appearance.Options.UseFont = true;
-            this.labelControl53.Appearance.Options.UseForeColor = true;
-            this.labelControl53.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl53.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl53.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl53.Location = new System.Drawing.Point(7, 2);
-            this.labelControl53.Name = "labelControl53";
-            this.labelControl53.Size = new System.Drawing.Size(116, 18);
-            this.labelControl53.TabIndex = 63;
-            this.labelControl53.Text = "파워 용량(A)";
-            // 
-            // cbEleqPowerA
-            // 
-            this.cbEleqPowerA.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqPowerA.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqPowerA.Name = "cbEleqPowerA";
-            this.cbEleqPowerA.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqPowerA.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqPowerA.TabIndex = 60;
-            // 
-            // panelControl63
-            // 
-            this.panelControl63.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl63.Controls.Add(this.labelControl54);
-            this.panelControl63.Controls.Add(this.cbEleqPowerKw);
-            this.panelControl63.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl63.Location = new System.Drawing.Point(0, 0);
-            this.panelControl63.Name = "panelControl63";
-            this.panelControl63.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl63.Size = new System.Drawing.Size(130, 46);
-            this.panelControl63.TabIndex = 66;
-            // 
-            // labelControl54
-            // 
-            this.labelControl54.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl54.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl54.Appearance.Options.UseFont = true;
-            this.labelControl54.Appearance.Options.UseForeColor = true;
-            this.labelControl54.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl54.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl54.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl54.Location = new System.Drawing.Point(7, 2);
-            this.labelControl54.Name = "labelControl54";
-            this.labelControl54.Size = new System.Drawing.Size(116, 18);
-            this.labelControl54.TabIndex = 63;
-            this.labelControl54.Text = "파워 용량(Kw)";
-            // 
-            // cbEleqPowerKw
-            // 
-            this.cbEleqPowerKw.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbEleqPowerKw.Location = new System.Drawing.Point(7, 24);
-            this.cbEleqPowerKw.Name = "cbEleqPowerKw";
-            this.cbEleqPowerKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbEleqPowerKw.Size = new System.Drawing.Size(116, 20);
-            this.cbEleqPowerKw.TabIndex = 60;
+            this.cbEleqMainMccbSpec.Size = new System.Drawing.Size(116, 20);
+            this.cbEleqMainMccbSpec.TabIndex = 60;
             // 
             // panelControl54
             // 
@@ -5286,7 +5385,7 @@
             this.labelControl50.Name = "labelControl50";
             this.labelControl50.Size = new System.Drawing.Size(116, 18);
             this.labelControl50.TabIndex = 63;
-            this.labelControl50.Text = "HUB";
+            this.labelControl50.Text = "HUB 제조사";
             // 
             // cbEleqHubModel
             // 
@@ -5323,7 +5422,7 @@
             this.labelControl49.Name = "labelControl49";
             this.labelControl49.Size = new System.Drawing.Size(116, 18);
             this.labelControl49.TabIndex = 63;
-            this.labelControl49.Text = "케이블";
+            this.labelControl49.Text = "케이블 제조사";
             // 
             // cbEleqCableModel
             // 
@@ -5360,7 +5459,7 @@
             this.labelControl48.Name = "labelControl48";
             this.labelControl48.Size = new System.Drawing.Size(116, 18);
             this.labelControl48.TabIndex = 63;
-            this.labelControl48.Text = "SMPS";
+            this.labelControl48.Text = "SMPS 제조사";
             // 
             // cbEleqSmpsModel
             // 
@@ -5397,7 +5496,7 @@
             this.labelControl47.Name = "labelControl47";
             this.labelControl47.Size = new System.Drawing.Size(116, 18);
             this.labelControl47.TabIndex = 63;
-            this.labelControl47.Text = "차단기";
+            this.labelControl47.Text = "차단기 제조사";
             // 
             // cbEleqMccbModel
             // 
@@ -5412,12 +5511,20 @@
             // panel160
             // 
             this.panel160.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel160.Controls.Add(this.transparentPanel3);
             this.panel160.Controls.Add(this.rtbxEleq);
             this.panel160.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel160.Location = new System.Drawing.Point(0, 0);
             this.panel160.Name = "panel160";
             this.panel160.Size = new System.Drawing.Size(567, 75);
             this.panel160.TabIndex = 6;
+            // 
+            // transparentPanel3
+            // 
+            this.transparentPanel3.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel3.Name = "transparentPanel3";
+            this.transparentPanel3.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel3.TabIndex = 62;
             // 
             // rtbxEleq
             // 
@@ -5463,6 +5570,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.transparentPanel4);
             this.splitContainer2.Panel1.Controls.Add(this.grpLiftSensorList);
             this.splitContainer2.Panel1.Controls.Add(this.grpLiftDrive);
             this.splitContainer2.Panel1.Controls.Add(this.grpLiftSensor);
@@ -5476,6 +5584,13 @@
             this.splitContainer2.Size = new System.Drawing.Size(869, 766);
             this.splitContainer2.SplitterDistance = 565;
             this.splitContainer2.TabIndex = 64;
+            // 
+            // transparentPanel4
+            // 
+            this.transparentPanel4.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel4.Name = "transparentPanel4";
+            this.transparentPanel4.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel4.TabIndex = 63;
             // 
             // grpLiftSensorList
             // 
@@ -6763,7 +6878,7 @@
             this.labelControl79.Name = "labelControl79";
             this.labelControl79.Size = new System.Drawing.Size(116, 18);
             this.labelControl79.TabIndex = 63;
-            this.labelControl79.Text = "Brake Resistor(Kw)";
+            this.labelControl79.Text = "Brake Resistor(kW)";
             // 
             // cbLiftBrakeResistorKw
             // 
@@ -6837,7 +6952,7 @@
             this.labelControl81.Name = "labelControl81";
             this.labelControl81.Size = new System.Drawing.Size(116, 18);
             this.labelControl81.TabIndex = 63;
-            this.labelControl81.Text = "인버터 용량(Kw)";
+            this.labelControl81.Text = "인버터 용량(kW)";
             // 
             // cbLiftInverterKw
             // 
@@ -6893,6 +7008,7 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.transparentPanel5);
             this.splitContainer3.Panel1.Controls.Add(this.grpTrav1SensorList);
             this.splitContainer3.Panel1.Controls.Add(this.grpTrav1Drive);
             this.splitContainer3.Panel1.Controls.Add(this.grpTrav1Sensor);
@@ -6906,6 +7022,13 @@
             this.splitContainer3.Size = new System.Drawing.Size(869, 766);
             this.splitContainer3.SplitterDistance = 565;
             this.splitContainer3.TabIndex = 65;
+            // 
+            // transparentPanel5
+            // 
+            this.transparentPanel5.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel5.Name = "transparentPanel5";
+            this.transparentPanel5.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel5.TabIndex = 63;
             // 
             // grpTrav1SensorList
             // 
@@ -8193,7 +8316,7 @@
             this.labelControl108.Name = "labelControl108";
             this.labelControl108.Size = new System.Drawing.Size(116, 18);
             this.labelControl108.TabIndex = 63;
-            this.labelControl108.Text = "Brake Resistor(Kw)";
+            this.labelControl108.Text = "Brake Resistor(kW)";
             // 
             // cbTrav1BrakeResistorKw
             // 
@@ -8267,7 +8390,7 @@
             this.labelControl110.Name = "labelControl110";
             this.labelControl110.Size = new System.Drawing.Size(116, 18);
             this.labelControl110.TabIndex = 63;
-            this.labelControl110.Text = "인버터 용량(Kw)";
+            this.labelControl110.Text = "인버터 용량(kW)";
             // 
             // cbTrav1InverterKw
             // 
@@ -8323,6 +8446,7 @@
             // 
             // splitContainer5.Panel1
             // 
+            this.splitContainer5.Panel1.Controls.Add(this.transparentPanel6);
             this.splitContainer5.Panel1.Controls.Add(this.grpTrav2SensorList);
             this.splitContainer5.Panel1.Controls.Add(this.grpTrav2Drive);
             this.splitContainer5.Panel1.Controls.Add(this.grpTrav2Sensor);
@@ -8336,6 +8460,13 @@
             this.splitContainer5.Size = new System.Drawing.Size(869, 766);
             this.splitContainer5.SplitterDistance = 565;
             this.splitContainer5.TabIndex = 66;
+            // 
+            // transparentPanel6
+            // 
+            this.transparentPanel6.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel6.Name = "transparentPanel6";
+            this.transparentPanel6.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel6.TabIndex = 63;
             // 
             // grpTrav2SensorList
             // 
@@ -9623,7 +9754,7 @@
             this.labelControl159.Name = "labelControl159";
             this.labelControl159.Size = new System.Drawing.Size(116, 18);
             this.labelControl159.TabIndex = 63;
-            this.labelControl159.Text = "Brake Resistor(Kw)";
+            this.labelControl159.Text = "Brake Resistor(kW)";
             // 
             // cbTrav2BrakeResistorKw
             // 
@@ -9697,7 +9828,7 @@
             this.labelControl161.Name = "labelControl161";
             this.labelControl161.Size = new System.Drawing.Size(116, 18);
             this.labelControl161.TabIndex = 63;
-            this.labelControl161.Text = "인버터 용량(Kw)";
+            this.labelControl161.Text = "인버터 용량(kW)";
             // 
             // cbTrav2InverterKw
             // 
@@ -9753,6 +9884,7 @@
             // 
             // splitContainer4.Panel1
             // 
+            this.splitContainer4.Panel1.Controls.Add(this.transparentPanel7);
             this.splitContainer4.Panel1.Controls.Add(this.grpFork1SensorList);
             this.splitContainer4.Panel1.Controls.Add(this.grpFork1Drive);
             this.splitContainer4.Panel1.Controls.Add(this.grpFork1Sensor);
@@ -9766,6 +9898,13 @@
             this.splitContainer4.Size = new System.Drawing.Size(869, 766);
             this.splitContainer4.SplitterDistance = 564;
             this.splitContainer4.TabIndex = 66;
+            // 
+            // transparentPanel7
+            // 
+            this.transparentPanel7.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel7.Name = "transparentPanel7";
+            this.transparentPanel7.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel7.TabIndex = 63;
             // 
             // grpFork1SensorList
             // 
@@ -10936,7 +11075,7 @@
             this.labelControl133.Name = "labelControl133";
             this.labelControl133.Size = new System.Drawing.Size(116, 18);
             this.labelControl133.TabIndex = 63;
-            this.labelControl133.Text = "Brake Resistor(Kw)";
+            this.labelControl133.Text = "Brake Resistor(kW)";
             // 
             // cbFork1BrakeResistorKw
             // 
@@ -11010,7 +11149,7 @@
             this.labelControl135.Name = "labelControl135";
             this.labelControl135.Size = new System.Drawing.Size(116, 18);
             this.labelControl135.TabIndex = 63;
-            this.labelControl135.Text = "인버터 용량(Kw)";
+            this.labelControl135.Text = "인버터 용량(kW)";
             // 
             // cbFork1InverterKw
             // 
@@ -11066,6 +11205,7 @@
             // 
             // splitContainer6.Panel1
             // 
+            this.splitContainer6.Panel1.Controls.Add(this.transparentPanel8);
             this.splitContainer6.Panel1.Controls.Add(this.grpFork2SensorList);
             this.splitContainer6.Panel1.Controls.Add(this.grpFork2Drive);
             this.splitContainer6.Panel1.Controls.Add(this.grpFork2Sensor);
@@ -11079,6 +11219,13 @@
             this.splitContainer6.Size = new System.Drawing.Size(869, 766);
             this.splitContainer6.SplitterDistance = 565;
             this.splitContainer6.TabIndex = 66;
+            // 
+            // transparentPanel8
+            // 
+            this.transparentPanel8.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel8.Name = "transparentPanel8";
+            this.transparentPanel8.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel8.TabIndex = 63;
             // 
             // grpFork2SensorList
             // 
@@ -12249,7 +12396,7 @@
             this.labelControl184.Name = "labelControl184";
             this.labelControl184.Size = new System.Drawing.Size(116, 18);
             this.labelControl184.TabIndex = 63;
-            this.labelControl184.Text = "Brake Resistor(Kw)";
+            this.labelControl184.Text = "Brake Resistor(kW)";
             // 
             // cbFork2BrakeResistorKw
             // 
@@ -12323,7 +12470,7 @@
             this.labelControl186.Name = "labelControl186";
             this.labelControl186.Size = new System.Drawing.Size(116, 18);
             this.labelControl186.TabIndex = 63;
-            this.labelControl186.Text = "인버터 용량(Kw)";
+            this.labelControl186.Text = "인버터 용량(kW)";
             // 
             // cbFork2InverterKw
             // 
@@ -12379,6 +12526,7 @@
             // 
             // splitContainer7.Panel1
             // 
+            this.splitContainer7.Panel1.Controls.Add(this.transparentPanel9);
             this.splitContainer7.Panel1.Controls.Add(this.grpCarrSensorList);
             this.splitContainer7.Panel1.Controls.Add(this.grpCarrSensor);
             this.splitContainer7.Panel1.Controls.Add(this.rtbxCarr);
@@ -12389,6 +12537,13 @@
             this.splitContainer7.Size = new System.Drawing.Size(869, 766);
             this.splitContainer7.SplitterDistance = 565;
             this.splitContainer7.TabIndex = 66;
+            // 
+            // transparentPanel9
+            // 
+            this.transparentPanel9.Location = new System.Drawing.Point(0, 0);
+            this.transparentPanel9.Name = "transparentPanel9";
+            this.transparentPanel9.Size = new System.Drawing.Size(562, 70);
+            this.transparentPanel9.TabIndex = 63;
             // 
             // grpCarrSensorList
             // 
@@ -12735,11 +12890,28 @@
             // 
             // xtraTabPageOP
             // 
+            this.xtraTabPageOP.Controls.Add(this.gridControl2);
             this.xtraTabPageOP.Controls.Add(this.labelControl208);
             this.xtraTabPageOP.ImageOptions.ImageIndex = 1;
             this.xtraTabPageOP.Name = "xtraTabPageOP";
             this.xtraTabPageOP.Size = new System.Drawing.Size(869, 766);
             this.xtraTabPageOP.Text = "OP";
+            // 
+            // gridControl2
+            // 
+            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl2.Location = new System.Drawing.Point(0, 0);
+            this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(869, 766);
+            this.gridControl2.TabIndex = 10;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.Name = "gridView2";
             // 
             // labelControl208
             // 
@@ -13079,8 +13251,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqSensorType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpEleqPower)).EndInit();
             this.grpEleqPower.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl59)).EndInit();
+            this.panelControl59.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl60)).EndInit();
+            this.panelControl60.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorOhm.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl61)).EndInit();
+            this.panelControl61.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorKw.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl62)).EndInit();
+            this.panelControl62.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl63)).EndInit();
+            this.panelControl63.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerKw.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl74)).EndInit();
             this.panelControl74.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl48)).EndInit();
+            this.panelControl48.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl77)).EndInit();
             this.panelControl77.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqSafetyQuantity.Properties)).EndInit();
@@ -13109,26 +13301,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl66)).EndInit();
             this.panelControl66.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbEleqFanQuantity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).EndInit();
-            this.panelControl67.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMccbSpec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl68)).EndInit();
             this.panelControl68.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerCable.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl59)).EndInit();
-            this.panelControl59.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl60)).EndInit();
-            this.panelControl60.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorOhm.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl61)).EndInit();
-            this.panelControl61.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqBrakeResistorKw.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl62)).EndInit();
-            this.panelControl62.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerA.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl63)).EndInit();
-            this.panelControl63.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbEleqPowerKw.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainPowerCable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl67)).EndInit();
+            this.panelControl67.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbEleqMainMccbSpec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl54)).EndInit();
             this.panelControl54.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl58)).EndInit();
@@ -13821,6 +13999,8 @@
             this.xtraTabPageMCAG.PerformLayout();
             this.xtraTabPageOP.ResumeLayout(false);
             this.xtraTabPageOP.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPageLargeGenerating.ResumeLayout(false);
             this.panel164.ResumeLayout(false);
             this.panel199.ResumeLayout(false);
@@ -14084,31 +14264,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl63;
         private DevExpress.XtraEditors.ComboBoxEdit cbEleqPanel;
         private DevExpress.XtraEditors.PanelControl panelControl64;
-        private DevExpress.XtraEditors.PanelControl panelControl65;
-        private DevExpress.XtraEditors.LabelControl labelControl56;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqTerminal;
-        private DevExpress.XtraEditors.PanelControl panelControl66;
-        private DevExpress.XtraEditors.LabelControl labelControl57;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqFanQuantity;
-        private DevExpress.XtraEditors.PanelControl panelControl67;
-        private DevExpress.XtraEditors.LabelControl labelControl58;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMccbSpec;
-        private DevExpress.XtraEditors.PanelControl panelControl68;
-        private DevExpress.XtraEditors.LabelControl labelControl59;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerCable;
-        private DevExpress.XtraEditors.PanelControl panelControl59;
-        private DevExpress.XtraEditors.PanelControl panelControl60;
-        private DevExpress.XtraEditors.LabelControl labelControl51;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqBrakeResistorOhm;
-        private DevExpress.XtraEditors.PanelControl panelControl61;
-        private DevExpress.XtraEditors.LabelControl labelControl52;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqBrakeResistorKw;
-        private DevExpress.XtraEditors.PanelControl panelControl62;
-        private DevExpress.XtraEditors.LabelControl labelControl53;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerA;
-        private DevExpress.XtraEditors.PanelControl panelControl63;
-        private DevExpress.XtraEditors.LabelControl labelControl54;
-        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerKw;
         private DevExpress.XtraEditors.PanelControl panelControl54;
         private DevExpress.XtraEditors.PanelControl panelControl58;
         private DevExpress.XtraEditors.LabelControl labelControl50;
@@ -14461,7 +14616,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCarr;
         private System.Windows.Forms.ImageList imageList1;
         private DevExpress.XtraPrinting.Preview.DocumentViewer documentViewer1;
-        private TransparentPanel transparentPanel1;
         private TransparentPanel transparentPanel2;
         private DevExpress.XtraEditors.LabelControl labelControl206;
         private DevExpress.XtraEditors.LabelControl labelControl208;
@@ -14721,5 +14875,46 @@
         private DevExpress.XtraEditors.PanelControl panelControl75;
         private DevExpress.XtraEditors.LabelControl labelControl168;
         private DevExpress.XtraEditors.ComboBoxEdit cbTrav2LimitSwitch;
+        private TransparentPanel transparentPanel3;
+        private TransparentPanel transparentPanel4;
+        private TransparentPanel transparentPanel5;
+        private TransparentPanel transparentPanel6;
+        private TransparentPanel transparentPanel7;
+        private TransparentPanel transparentPanel8;
+        private TransparentPanel transparentPanel9;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.PanelControl panelControl48;
+        private DevExpress.XtraEditors.LabelControl labelControl64;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerCable;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl44;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMccbSpec;
+        private DevExpress.XtraEditors.PanelControl panelControl65;
+        private DevExpress.XtraEditors.LabelControl labelControl56;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqTerminal;
+        private DevExpress.XtraEditors.PanelControl panelControl66;
+        private DevExpress.XtraEditors.LabelControl labelControl57;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqFanQuantity;
+        private DevExpress.XtraEditors.PanelControl panelControl68;
+        private DevExpress.XtraEditors.LabelControl labelControl59;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMainPowerCable;
+        private DevExpress.XtraEditors.PanelControl panelControl67;
+        private DevExpress.XtraEditors.LabelControl labelControl58;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqMainMccbSpec;
+        private TransparentPanel transparentPanel1;
+        private DevExpress.XtraEditors.PanelControl panelControl59;
+        private DevExpress.XtraEditors.PanelControl panelControl60;
+        private DevExpress.XtraEditors.LabelControl labelControl51;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqBrakeResistorOhm;
+        private DevExpress.XtraEditors.PanelControl panelControl61;
+        private DevExpress.XtraEditors.LabelControl labelControl52;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqBrakeResistorKw;
+        private DevExpress.XtraEditors.PanelControl panelControl62;
+        private DevExpress.XtraEditors.LabelControl labelControl53;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerA;
+        private DevExpress.XtraEditors.PanelControl panelControl63;
+        private DevExpress.XtraEditors.LabelControl labelControl54;
+        private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerKw;
     }
 }

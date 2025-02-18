@@ -31,15 +31,15 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             cbBasicTempletFilePath.Text = CS_PathData.BasicTempletFilePath;
             cbIoExcelFilesPath.Text = CS_PathData.IoListFilePath;
             cbMacroFolderPath.Text = CS_PathData.MacroFolderPath;
-
+            cbMccbFilePath.Text = CS_PathData.MccbFilePath;
 
 
             //경로 바꾸기 액션
             cs_Button.FolderFinder(btnGenPrjFolderPath, cbGenPrjFolderPath);
-            cs_Button.FileFinder(btnGenPrjTempletPath, cbBasicTempletFilePath, CS_PathData.XmlFolderPath, "zw9 File (*.zw9)|*.zw9|All Files (*.*)|*.*");
+            cs_Button.FileFinder(btnBasicTempletFilePath, cbBasicTempletFilePath, CS_PathData.XmlFolderPath, "zw9 File (*.zw9)|*.zw9|All Files (*.*)|*.*");
             cs_Button.FileFinder(btnIoExcelFilesPath, cbIoExcelFilesPath, CS_PathData.XmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
-            cs_Button.FolderFinder(btnACpowerFolderPath, cbMacroFolderPath);
-
+            cs_Button.FolderFinder(btnMacroFolderPath, cbMacroFolderPath);
+            cs_Button.FileFinder(btnMccbFilePath, cbMccbFilePath, CS_PathData.XmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
 
 
         }
@@ -56,7 +56,7 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
 
                 // 검증할 컨트롤 배열
                 Control[] actPath = { cbGenPrjFolderPath, cbMacroFolderPath };
-                Control[] actFile = { cbBasicTempletFilePath, cbIoExcelFilesPath };
+                Control[] actFile = { cbBasicTempletFilePath, cbIoExcelFilesPath, cbMccbFilePath };
 
                 // 경로 검증
                 foreach (ComboBoxEdit cb in actPath)
@@ -121,14 +121,14 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                     string newPrjTempletPath = cbBasicTempletFilePath.Text;
                     string newIoExcelFilesPath = cbIoExcelFilesPath.Text;
                     string newMacroFolderPath = cbMacroFolderPath.Text;
-
+                    string newMccbFilePath = cbMccbFilePath.Text;
 
 
                     CS_PathData.PrjFolderPath = newPrjFolderPath;
                     CS_PathData.BasicTempletFilePath = newPrjTempletPath;
                     CS_PathData.IoListFilePath = newIoExcelFilesPath;
                     CS_PathData.MacroFolderPath = newMacroFolderPath;
-
+                    CS_PathData.MccbFilePath = newMccbFilePath;
 
 
                     // XML 내용 수정
@@ -142,9 +142,10 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                         .FirstOrDefault(x => (string)x.Attribute("key") == "IoListFilePath")?.SetAttributeValue("value", newIoExcelFilesPath);
 
                     xdoc.Descendants("add")
-                        .FirstOrDefault(x => (string)x.Attribute("key") == "macroFolderPath")?.SetAttributeValue("value", newMacroFolderPath);
+                        .FirstOrDefault(x => (string)x.Attribute("key") == "MacroFolderPath")?.SetAttributeValue("value", newMacroFolderPath);
 
-
+                    xdoc.Descendants("add")
+                        .FirstOrDefault(x => (string)x.Attribute("key") == "MccbFilePath")?.SetAttributeValue("value", newMccbFilePath);
 
 
                     // 수정된 XML 파일 저장

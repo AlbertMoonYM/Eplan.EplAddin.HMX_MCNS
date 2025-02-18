@@ -41,9 +41,9 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             // 기초 파일 paths 가져오기
             CS_PathData.PrjFolderPath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "ProjectSaveFolder")?.Attribute("value")?.Value;
             CS_PathData.BasicTempletFilePath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "BasicTempletFilePath")?.Attribute("value")?.Value;
+            CS_PathData.MacroFolderPath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "MacroFolderPath")?.Attribute("value")?.Value;
             CS_PathData.IoListFilePath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "IoListFilePath")?.Attribute("value")?.Value;
-            CS_PathData.MacroFolderPath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "macroFolderPath")?.Attribute("value")?.Value;
-
+            CS_PathData.MccbFilePath = configXml.Descendants("add").FirstOrDefault(x => (string)x.Attribute("key") == "MccbFilePath")?.Attribute("value")?.Value;
         }
 
         private void ControlFormFunction()
@@ -61,6 +61,12 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                     return;
                 }
 
+                if (!IsValidFile(CS_PathData.BasicTempletFilePath))
+                {
+                    MessageBox.Show("기본 프로젝트 경로가 올바르지 않습니다. 설정에서 경로를 설정하세요");
+                    return;
+                }
+
                 if (!IsValidPath(CS_PathData.MacroFolderPath))
                 {
                     MessageBox.Show("매크로 폴더 경로가 올바르지 않습니다. 설정에서 경로를 설정하세요");
@@ -73,9 +79,9 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                     return;
                 }
 
-                if (!IsValidFile(CS_PathData.BasicTempletFilePath))
+                if (!IsValidFile(CS_PathData.MccbFilePath))
                 {
-                    MessageBox.Show("기본 프로젝트 경로가 올바르지 않습니다. 설정에서 경로를 설정하세요");
+                    MessageBox.Show("IO 템플릿 엑셀 경로가 올바르지 않습니다. 설정에서 경로를 설정하세요");
                     return;
                 }
 
