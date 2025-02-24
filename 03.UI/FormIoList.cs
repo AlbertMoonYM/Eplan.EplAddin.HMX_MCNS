@@ -54,8 +54,8 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             {
                 // 종료 확인 메시지 표시
                 DialogResult result = MessageBox.Show(
-                    "정말 종료하시겠습니까?",
-                    "종료 확인",
+                    "IO 리스트 작성을 종료하시겠습니까?",
+                    "IO 리스트 작성하기 종료",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 

@@ -1365,6 +1365,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             // 기타 열에 기본 값 설정
                             newRow["LOCATION"] = cbEleqLocation.Text;
                             newRow["TYPE1"] = cbEleqType.Text;
+                            newRow["TYPE2"] = "DI1";
                             newRow["PARTS"] = cbEleqParts.Text;
                             newRow["DT"] = cbEleqDt.Text;
                             newRow["기능"] = "";
@@ -3072,6 +3073,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             CheckMcnsEngineFunction(this.mcnsControl.InsertInverterPublicEmpMacro(installSiteType, inverterMakerType, inverterType, inverterRegenType, powerDpType, controllerType, forkType, travelType, controlVoltageType));
                             CheckMcnsEngineFunction(this.mcnsControl.InsertSLDPageMacro(installSiteType, inverterMakerType, inverterType, controllerType));
                             CheckMcnsEngineFunction(this.mcnsControl.InsertCfgPageMacro(inverterMakerType, controllerType));
+                            CheckMcnsEngineFunction(this.mcnsControl.InsertSystemEmpMacro(sensorOutputType,controllerType,controlVoltageType,installSiteType));
 
 
                             int brakeCount = 0;
