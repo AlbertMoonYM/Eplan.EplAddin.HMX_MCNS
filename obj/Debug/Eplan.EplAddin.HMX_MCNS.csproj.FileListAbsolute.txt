@@ -515,11 +515,7 @@ C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCN
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.csproj.AssemblyReference.cache
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.FormConceptSheet.resources
-C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS._03.UI.FormConfigPage.resources
-C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS._03.UI.FormInitialPage.resources
-C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS._03.UI.FormIoList.resources
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.FormItemsList.resources
-C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS._03.UI.XtraReport1.resources
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.Properties.Resources.resources
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.csproj.GenerateResource.cache
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.dll.licenses
@@ -532,3 +528,7 @@ C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCN
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\McnsSchemGenEngine.pdb
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\Microsoft.WindowsAPICodePack.dll
 C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.FormConfigPage.resources
+C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.FormInitialPage.resources
+C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.FormIoList.resources
+C:\Users\kr70009769\Desktop\01.Task\02. API 소스\03. C#\Eplan.EplAddin.HMX_MCNS\obj\Debug\Eplan.EplAddin.HMX_MCNS.XtraReport1.resources

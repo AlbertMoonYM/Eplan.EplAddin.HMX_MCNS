@@ -11,13 +11,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Eplan.MCNS.Lib;
-using Eplan.MCNS.Lib.Share_CS;
-using Eplan.MCNS.Lib.UI_CS;
 using System.Reflection.Emit;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
 using DevExpress.XtraPrinting.Preview;
-using Eplan.EplAddin.HMX_MCNS._03.UI;
 using System.Diagnostics;
 using System.Xml.Linq;
 using ClosedXML.Excel;
@@ -39,35 +36,37 @@ namespace Eplan.EplAddin.HMX_MCNS
 
         //외부 CS 정의
         //외부 CS 정의
-        CS_Label cs_Label = new CS_Label();
-        CS_ComboBox cs_ComboBox = new CS_ComboBox();
-        CS_DataTable cs_DataTable = new CS_DataTable();
-        CS_DataGridView cs_DataGrid = new CS_DataGridView();
-        CS_GroupControl cs_GroupControl = new CS_GroupControl();
-        CS_XtraTabControl cs_XtraTabControl = new CS_XtraTabControl();
-        CS_CheckBox cs_CheckBox = new CS_CheckBox();
-        CS_InterLock interLock = new CS_InterLock();
-        CS_ListItems cs_ListItems = new CS_ListItems();
+        LabelManager lblManager = new LabelManager();
+        ComboBoxManager cbManager = new ComboBoxManager();
+        DataTableManager dtManager = new DataTableManager();
+        GridViewManager gvManager = new GridViewManager();
+        GroupControlManager gcManager = new GroupControlManager();
+        XtraTabControlManager xtcManager = new XtraTabControlManager();
+        CheckboxManager ckbManager = new CheckboxManager();
+        InterLockLibrary interLock = new InterLockLibrary();
+        FilePathManager pathManager = new FilePathManager();
         FileSystemWatcher watcher; // FileSystemWatcher 선언
         ToolTip tip = new ToolTip();
         McnsSchemGenEngine.Controls.McnsControl mcnsControl = new McnsSchemGenEngine.Controls.McnsControl();
-
-        //전역 변수 설정
-        private DataTable excelIoDt = new DataTable();
-        private DataTable excelMccbDt = new DataTable();
+        
 
         public FormConceptSheet()
         {
             InitializeComponent();
-            
 
+
+            SetProjectObjecstSetting();
+            SetModelObjectsSetting();
+            SetMainSpecObjectsSetting();
+            SetLayOutObjectsSetting();
+            SetOptionObjectsSetting();
+            SetFunctionObjectsSetting();
             SetPanel3D();
-            SetComboBoxFunction();
-            SetComboBoxItems();
-            SetFunctionPageData();
             SetToolTip();
-
+            SetComboBoxItems();
+            GetSetFunctionData();
             ControlFormFunction();
+
             ControlPlcFunction();
             LoadIoFromExcel();
             LoadMccbFromExcel();
@@ -76,297 +75,7 @@ namespace Eplan.EplAddin.HMX_MCNS
             UpdateComboBoxItemList();
             Interlock();
         }
-        public void SetComboBoxFunction()
-        {
-
-            // button을 Radio button으로 사용
-            cs_CheckBox.ChangeToRadioButton(ckbPRJdomestic, ckbPRJoverseas);
-            // 프로젝트 ChangeToTextBox 설정
-            cs_ComboBox.ChangeToTextBox(cbPRJnumber, "텍스트를 기입하세요.", false, TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbPRJname, "텍스트를 기입하세요.", false, TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbPRJwriter, "텍스트를 기입하세요.", false, TypeFlag.strFlag);
-            // 프로젝트 SettingComboBox 설정
-            cs_ComboBox.SettingComboBox(cbPRJyear, "년도", false);
-            cs_ComboBox.SettingComboBox(cbPRJmonth, "월", false);
-            cs_ComboBox.SettingComboBox(cbPRJday, "일", false);
-            int currentYear = DateTime.Now.Year;
-            // 연도 추가 (현재 연도를 기준으로 ±10년)
-            cbPRJyear.Properties.Items.AddRange(
-                Enumerable.Range(currentYear - 10, 21).Select(y => y.ToString()).ToArray()
-            );
-
-            // 월 추가 (1~12)
-            cbPRJmonth.Properties.Items.AddRange(
-                Enumerable.Range(1, 12).Select(m => m.ToString("D2")).ToArray()
-            );
-
-            // 일 추가 (1~31)
-            cbPRJday.Properties.Items.AddRange(
-                Enumerable.Range(1, 31).Select(d => d.ToString("D2")).ToArray());
-
-            // 모델 ChangeToTextBox 설정
-            cs_ComboBox.ChangeToTextBox(cbMODfullName,"-",false,TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbMODheight, "높이", false, TypeFlag.intFlag);
-            cs_ComboBox.ChangeToTextBox(cbMODweight, "화물 중량", false, TypeFlag.intFlag);
-            cs_ComboBox.ChangeToTextBox(cbMODfullName, "", false, TypeFlag.intFlag);
-            // 모델 SettingComboBox 설정
-            cs_ComboBox.SettingComboBox(cbMODname, "모델명", false);
-            cs_ComboBox.SettingComboBox(cbMODoption1, "-", false);
-            cs_ComboBox.SettingComboBox(cbMODoption2, "-", false);
-            cs_ComboBox.SettingComboBox(cbMODoption3, "-", false);
-            cs_ComboBox.SettingComboBox(cbMODoption4, "-", false);
-
-
-            // 주요 사양 ChangeToTextBox 설정
-            cs_ComboBox.ChangeToTextBox(cbMSPpanelSizeW, "W", false, TypeFlag.intFlag);
-            cs_ComboBox.ChangeToTextBox(cbMSPpanelSizeD, "D", false, TypeFlag.intFlag);
-            cs_ComboBox.ChangeToTextBox(cbMSPpanelSizeH, "H", false, TypeFlag.intFlag);
-            // 주요 사양 SettingComboBox 설정
-            cs_ComboBox.SettingComboBox(cbMSPinputVolt, "V", true);
-            cs_ComboBox.SettingComboBox(cbMSPinputHz, "Hz", true);
-            cs_ComboBox.SettingComboBox(cbMSPpanelSize, "-", false);
-            cs_ComboBox.SettingComboBox(cbMSPcontrollerSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbMSPinverterMaker, "-", false);
-            cs_ComboBox.SettingComboBox(cbMSPinverterSpec, "-", false);
-
-            // 레이아웃 ChangeToTextBox 설정
-            cs_ComboBox.ChangeToTextBox(cbLOUTtravLength, "M", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLOUTliftHeight, "M", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLOUTstationNum, "EA", true, TypeFlag.intFlag);
-
-            // 레이아웃 화물 DataGridView 셋업
-            cs_DataTable.GetDataTable(CS_StaticUnit.dtLout, CS_StaticString.dArrDtLoutColums);
-            // 레이아웃 화물 DataTable 3행 셋업
-            CS_StaticUnit.dtLout.Rows.Add("화물1");
-            CS_StaticUnit.dtLout.Rows.Add("화물2");
-            CS_StaticUnit.dtLout.Rows.Add("화물3");
-            CS_StaticUnit.dtLout.Rows.Add("화물4");
-            gridLOUTcargo.DataSource = CS_StaticUnit.dtLout;
-            cs_DataGrid.SetLoutCargo(gridViewCargo);
-
-            // 옵션 SettingComboBox 설정
-            cs_ComboBox.SettingComboBox(cbOPmachineControl, "-", false);
-            cs_ComboBox.SettingComboBox(cbOPremoteControl, "-", false);
-            cs_ComboBox.SettingComboBox(cbOPemergencyPower, "-", false);
-            cs_ComboBox.SettingComboBox(cbOPemergencyLocation, "-", false);
-
-
-            // ELEQ 기능 그룹
-            // ChangeToTextBox 호출
-            cs_ComboBox.ChangeToTextBox(cbEleqBrakeResistorKw, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbEleqBrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
-
-            // SettingComboBox 호출
-            cs_ComboBox.SettingComboBox(cbEleqPowerKw, "kW", true);
-            cs_ComboBox.SettingComboBox(cbEleqPowerA, "A", true);
-            cs_ComboBox.SettingComboBox(cbEleqMainMccbSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqMainPowerCable, "SQ", true);
-            cs_ComboBox.SettingComboBox(cbEleqMccbSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqPowerCable, "SQ", true);
-            cs_ComboBox.SettingComboBox(cbMSPusingVoltage, "V", true);
-            cs_ComboBox.SettingComboBox(cbEleqMccbModel, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqSmpsModel, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqCableModel, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqHubModel, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqFanQuantity, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqTerminal, "-", false);
-
-            cs_ComboBox.SettingComboBox(cbEleqPanel, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqHmi, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqOpt, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqTowerLamp, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqSafety, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqSafetyQuantity, "-", false);
-
-            cs_ComboBox.SettingComboBox(cbEleqSensorType, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqModem, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqInterLockSensorSide, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqInterLockBit, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqLocation, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqType, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqDt, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqParts, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqPoint, "-", false);
-            cs_ComboBox.SettingComboBox(cbEleqSensorItem, "-", false);
-
-
-            // LIFT 기능 그룹
-            cs_ComboBox.SettingComboBox(cbLiftInverterKw, "kW", true);
-            cs_ComboBox.SettingComboBox(cbLiftInverterA, "A", true);
-            cs_ComboBox.ChangeToTextBox(cbLiftBrakeResistorKw, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftBrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbLiftPowerCable, "SQ", true);
-            cs_ComboBox.SettingComboBox(cbLiftMccbSpec, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbLiftOutPut, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftSpeed, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftGearRatio, "i", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftRatedCurrent, "A", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftBkVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbLiftBrakeOption, "-", false);
-            cs_ComboBox.SettingComboBox(cbLiftMotorSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbLiftMotorMaker, "-", false);
-            cs_ComboBox.SettingComboBox(cbLiftMotorMethod, "-", false);
-            cs_ComboBox.ChangeToTextBox(cbLiftMotorType, "텍스트 기입", false, TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftMotorVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftMotorHz, "Hz", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftMotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
-
-            cs_ComboBox.SettingComboBox(cbLiftAbsLocation, "-", false);
-            cs_ComboBox.SettingComboBox(cbLiftRightPosition, "-", false);
-            cs_ComboBox.SettingComboBox(cbLiftLimitSwitch, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbLiftNoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftNoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftNoneLoadAcceleration, "", false, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbLiftLoadAcceleration, "", false, TypeFlag.fltFlag);
-
-
-            // TRAV1 기능 그룹
-            cs_ComboBox.SettingComboBox(cbTrav1InverterKw, "kW", true);
-            cs_ComboBox.SettingComboBox(cbTrav1InverterA, "A", true);
-            cs_ComboBox.ChangeToTextBox(cbTrav1BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbTrav1PowerCable, "SQ", true);
-            cs_ComboBox.SettingComboBox(cbTrav1MccbSpec, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbTrav1OutPut, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1Speed, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1GearRatio, "i", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1RatedCurrent, "A", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1BkVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbTrav1BrakeOption, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav1MotorSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav1MotorMaker, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav1MotorMethod, "-", false);
-            cs_ComboBox.ChangeToTextBox(cbTrav1MotorType, "텍스트 기입", false, TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1MotorVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1MotorHz, "Hz", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
-
-            cs_ComboBox.SettingComboBox(cbTrav1AbsLocation, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav1RightPosition, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav1LimitSwitch, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbTrav1NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav1LoadAcceleration, "", false, TypeFlag.fltFlag);
-
-
-
-
-            // Trav2 기능 그룹
-            cs_ComboBox.SettingComboBox(cbTrav2InverterKw, "kW", true);
-            cs_ComboBox.SettingComboBox(cbTrav2InverterA, "A", true);
-            cs_ComboBox.ChangeToTextBox(cbTrav2BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbTrav2PowerCable, "SQ", true);
-            cs_ComboBox.SettingComboBox(cbTrav2MccbSpec, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbTrav2OutPut, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2Speed, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2GearRatio, "i", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2RatedCurrent, "A", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2BkVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbTrav2BrakeOption, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav2MotorSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav2MotorMaker, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav2MotorMethod, "-", false);
-            cs_ComboBox.ChangeToTextBox(cbTrav2MotorType, "텍스트 기입", false, TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2MotorVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2MotorHz, "Hz", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
-
-            cs_ComboBox.SettingComboBox(cbTrav2AbsLocation, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav2RightPosition, "-", false);
-            cs_ComboBox.SettingComboBox(cbTrav2LimitSwitch, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbTrav2NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbTrav2LoadAcceleration, "", false, TypeFlag.fltFlag);
-
-
-
-            // FORK1 기능 그룹
-            cs_ComboBox.SettingComboBox(cbFork1InverterKw, "kW", true);
-            cs_ComboBox.SettingComboBox(cbFork1InverterA, "A", true);
-            cs_ComboBox.ChangeToTextBox(cbFork1BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbFork1PowerCable, "SQ", true);
-            cs_ComboBox.SettingComboBox(cbFork1MccbSpec, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbFork1OutPut, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1Speed, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1GearRatio, "i", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1RatedCurrent, "A", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1BkVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbFork1BrakeOption, "-", false);
-            cs_ComboBox.SettingComboBox(cbFork1MotorSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbFork1MotorMaker, "-", false);
-            cs_ComboBox.SettingComboBox(cbFork1MotorMethod, "-", false);
-            cs_ComboBox.ChangeToTextBox(cbFork1MotorType, "텍스트 기입", false, TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1MotorVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1MotorHz, "Hz", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
-
-            cs_ComboBox.SettingComboBox(cbFork1RightPosition, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbFork1NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork1LoadAcceleration, "", false, TypeFlag.fltFlag);
-
-            // FORK2 기능 그룹
-            cs_ComboBox.SettingComboBox(cbFork2InverterKw, "kW", true);
-            cs_ComboBox.SettingComboBox(cbFork2InverterA, "A", true);
-            cs_ComboBox.ChangeToTextBox(cbFork2BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbFork2PowerCable, "SQ", true);
-            cs_ComboBox.SettingComboBox(cbFork2MccbSpec, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbFork2OutPut, "kW", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2Speed, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2GearRatio, "i", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2RatedCurrent, "A", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2BkVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.SettingComboBox(cbFork2BrakeOption, "-", false);
-            cs_ComboBox.SettingComboBox(cbFork2MotorSpec, "-", false);
-            cs_ComboBox.SettingComboBox(cbFork2MotorMaker, "-", false);
-            cs_ComboBox.SettingComboBox(cbFork2MotorMethod, "-", false);
-            cs_ComboBox.ChangeToTextBox(cbFork2MotorType, "텍스트 기입", false, TypeFlag.strFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2MotorVoltage, "V", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2MotorHz, "Hz", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
-
-            cs_ComboBox.SettingComboBox(cbFork2RightPosition, "-", false);
-
-            cs_ComboBox.ChangeToTextBox(cbFork2NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
-            cs_ComboBox.ChangeToTextBox(cbFork2LoadAcceleration, "", false, TypeFlag.fltFlag);
-
-            // CARR 기능 그룹
-            // SettingComboBox 호출
-            cs_ComboBox.SettingComboBox(cbCarrSensor, "-", false);
-            cs_ComboBox.SettingComboBox(cbCarrDoubleInput, "-", false);
-
-
-
-
-        }
-        public void SetPanel3D()
+        private void SetPanel3D()
         {
             LabelControl[] labelControls = new LabelControl[] 
             {
@@ -383,88 +92,346 @@ namespace Eplan.EplAddin.HMX_MCNS
             }
 
         }
-        public void SetComboBoxItems()
+        private void SetProjectObjecstSetting()
+        {
+            // button을 Radio button으로 사용
+            ckbManager.ChangeToRadioButton(ckbPRJdomestic, ckbPRJoverseas);
+            // 프로젝트 ChangeToTextBox 설정
+            cbManager.ChangeToTextBox(cbPRJnumber, "텍스트를 기입하세요.", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbPRJname, "텍스트를 기입하세요.", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbPRJwriter, "텍스트를 기입하세요.", false, TypeFlag.strFlag);
+            // 프로젝트 SettingComboBox 설정
+            cbManager.SettingComboBox(cbPRJyear, "년도", false);
+            cbManager.SettingComboBox(cbPRJmonth, "월", false);
+            cbManager.SettingComboBox(cbPRJday, "일", false);
+            int currentYear = DateTime.Now.Year;
+            // 연도 추가 (현재 연도를 기준으로 ±10년)
+            cbPRJyear.Properties.Items.AddRange(
+                Enumerable.Range(currentYear - 10, 21).Select(y => y.ToString()).ToArray());
+
+            // 월 추가 (1~12)
+            cbPRJmonth.Properties.Items.AddRange(
+                Enumerable.Range(1, 12).Select(m => m.ToString("D2")).ToArray());
+
+            // 일 추가 (1~31)
+            cbPRJday.Properties.Items.AddRange(
+                Enumerable.Range(1, 31).Select(d => d.ToString("D2")).ToArray());
+        }
+        private void SetModelObjectsSetting()
+        {
+            // 모델 ChangeToTextBox 설정
+            cbManager.ChangeToTextBox(cbMODfullName, "-", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbMODheight, "높이", false, TypeFlag.intFlag);
+            cbManager.ChangeToTextBox(cbMODweight, "화물 중량", false, TypeFlag.intFlag);
+            cbManager.ChangeToTextBox(cbMODfullName, "", false, TypeFlag.intFlag);
+            // 모델 SettingComboBox 설정
+            cbManager.SettingComboBox(cbMODname, "모델명", false);
+            cbManager.SettingComboBox(cbMODoption1, "-", false);
+            cbManager.SettingComboBox(cbMODoption2, "-", false);
+            cbManager.SettingComboBox(cbMODoption3, "-", false);
+            cbManager.SettingComboBox(cbMODoption4, "-", false);
+        }
+        private void SetMainSpecObjectsSetting()
+        {
+            // 주요 사양 ChangeToTextBox 설정
+            cbManager.ChangeToTextBox(cbMSPpanelSizeW, "W", false, TypeFlag.intFlag);
+            cbManager.ChangeToTextBox(cbMSPpanelSizeD, "D", false, TypeFlag.intFlag);
+            cbManager.ChangeToTextBox(cbMSPpanelSizeH, "H", false, TypeFlag.intFlag);
+            // 주요 사양 SettingComboBox 설정
+            cbManager.SettingComboBox(cbMSPinputVolt, "V", true);
+            cbManager.SettingComboBox(cbMSPinputHz, "Hz", true);
+            cbManager.SettingComboBox(cbMSPpanelSize, "-", false);
+            cbManager.SettingComboBox(cbMSPcontrollerSpec, "-", false);
+            cbManager.SettingComboBox(cbMSPinverterMaker, "-", false);
+            cbManager.SettingComboBox(cbMSPinverterSpec, "-", false);
+        }
+        private void SetLayOutObjectsSetting()
+        {
+            // 레이아웃 ChangeToTextBox 설정
+            cbManager.ChangeToTextBox(cbLOUTtravLength, "M", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLOUTliftHeight, "M", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLOUTstationNum, "EA", true, TypeFlag.intFlag);
+
+            // 레이아웃 화물 DataGridView 셋업
+            dtManager.GetDataTable(DataTableUnits.dtLout, StringUnits.dArrDtLoutColums);
+            // 레이아웃 화물 DataTable 3행 셋업
+            DataTableUnits.dtLout.Rows.Add("화물1");
+            DataTableUnits.dtLout.Rows.Add("화물2");
+            DataTableUnits.dtLout.Rows.Add("화물3");
+            DataTableUnits.dtLout.Rows.Add("화물4");
+            gridLOUTcargo.DataSource = DataTableUnits.dtLout;
+            gvManager.SetLoutCargo(gridViewCargo);
+        }
+        private void SetOptionObjectsSetting()
+        {
+            // 옵션 SettingComboBox 설정
+            cbManager.SettingComboBox(cbOPmachineControl, "-", false);
+            cbManager.SettingComboBox(cbOPremoteControl, "-", false);
+            cbManager.SettingComboBox(cbOPemergencyPower, "-", false);
+            cbManager.SettingComboBox(cbOPemergencyLocation, "-", false);
+        }
+        private void SetFunctionObjectsSetting()
+        {
+            // ELEQ 기능 그룹
+            cbManager.ChangeToTextBox(cbEleqBrakeResistorKw, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbEleqBrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbEleqPowerKw, "kW", true);
+            cbManager.SettingComboBox(cbEleqPowerA, "A", true);
+            cbManager.SettingComboBox(cbEleqMainMccbSpec, "-", false);
+            cbManager.SettingComboBox(cbEleqMainPowerCable, "SQ", true);
+            cbManager.SettingComboBox(cbEleqMccbSpec, "-", false);
+            cbManager.SettingComboBox(cbEleqPowerCable, "SQ", true);
+            cbManager.SettingComboBox(cbMSPusingVoltage, "V", true);
+            cbManager.SettingComboBox(cbEleqMccbModel, "-", false);
+            cbManager.SettingComboBox(cbEleqSmpsModel, "-", false);
+            cbManager.SettingComboBox(cbEleqCableModel, "-", false);
+            cbManager.SettingComboBox(cbEleqHubModel, "-", false);
+            cbManager.SettingComboBox(cbEleqFanQuantity, "-", false);
+            cbManager.SettingComboBox(cbEleqTerminal, "-", false);
+            cbManager.SettingComboBox(cbEleqPanel, "-", false);
+            cbManager.SettingComboBox(cbEleqHmi, "-", false);
+            cbManager.SettingComboBox(cbEleqOpt, "-", false);
+            cbManager.SettingComboBox(cbEleqTowerLamp, "-", false);
+            cbManager.SettingComboBox(cbEleqSafety, "-", false);
+            cbManager.SettingComboBox(cbEleqSafetyQuantity, "-", false);
+            cbManager.SettingComboBox(cbEleqSensorType, "-", false);
+            cbManager.SettingComboBox(cbEleqModem, "-", false);
+            cbManager.SettingComboBox(cbEleqInterLockSensorSide, "-", false);
+            cbManager.SettingComboBox(cbEleqInterLockBit, "-", false);
+            cbManager.SettingComboBox(cbEleqLocation, "-", false);
+            cbManager.SettingComboBox(cbEleqType, "-", false);
+            cbManager.SettingComboBox(cbEleqDt, "-", false);
+            cbManager.SettingComboBox(cbEleqParts, "-", false);
+            cbManager.SettingComboBox(cbEleqPoint, "-", false);
+            cbManager.SettingComboBox(cbEleqSensorItem, "-", false);
+
+            // LIFT 기능 그룹
+            cbManager.SettingComboBox(cbLiftInverterKw, "kW", true);
+            cbManager.SettingComboBox(cbLiftInverterA, "A", true);
+            cbManager.ChangeToTextBox(cbLiftBrakeResistorKw, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftBrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbLiftPowerCable, "SQ", true);
+            cbManager.SettingComboBox(cbLiftMccbSpec, "-", false);
+            cbManager.ChangeToTextBox(cbLiftOutPut, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftSpeed, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftGearRatio, "i", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftRatedCurrent, "A", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftBkVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbLiftBrakeOption, "-", false);
+            cbManager.SettingComboBox(cbLiftMotorSpec, "-", false);
+            cbManager.SettingComboBox(cbLiftMotorMaker, "-", false);
+            cbManager.SettingComboBox(cbLiftMotorMethod, "-", false);
+            cbManager.ChangeToTextBox(cbLiftMotorType, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbLiftMotorVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftMotorHz, "Hz", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftMotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.SettingComboBox(cbLiftAbsLocation, "-", false);
+            cbManager.SettingComboBox(cbLiftRightPosition, "-", false);
+            cbManager.SettingComboBox(cbLiftLimitSwitch, "-", false);
+            cbManager.ChangeToTextBox(cbLiftNoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftNoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftNoneLoadAcceleration, "", false, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbLiftLoadAcceleration, "", false, TypeFlag.fltFlag);
+
+            // TRAV1 기능 그룹
+            cbManager.SettingComboBox(cbTrav1InverterKw, "kW", true);
+            cbManager.SettingComboBox(cbTrav1InverterA, "A", true);
+            cbManager.ChangeToTextBox(cbTrav1BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbTrav1PowerCable, "SQ", true);
+            cbManager.SettingComboBox(cbTrav1MccbSpec, "-", false);
+            cbManager.ChangeToTextBox(cbTrav1OutPut, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1Speed, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1GearRatio, "i", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1RatedCurrent, "A", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1BkVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbTrav1BrakeOption, "-", false);
+            cbManager.SettingComboBox(cbTrav1MotorSpec, "-", false);
+            cbManager.SettingComboBox(cbTrav1MotorMaker, "-", false);
+            cbManager.SettingComboBox(cbTrav1MotorMethod, "-", false);
+            cbManager.ChangeToTextBox(cbTrav1MotorType, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbTrav1MotorVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1MotorHz, "Hz", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.SettingComboBox(cbTrav1AbsLocation, "-", false);
+            cbManager.SettingComboBox(cbTrav1RightPosition, "-", false);
+            cbManager.SettingComboBox(cbTrav1LimitSwitch, "-", false);
+            cbManager.ChangeToTextBox(cbTrav1NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav1LoadAcceleration, "", false, TypeFlag.fltFlag);
+
+            // Trav2 기능 그룹
+            cbManager.SettingComboBox(cbTrav2InverterKw, "kW", true);
+            cbManager.SettingComboBox(cbTrav2InverterA, "A", true);
+            cbManager.ChangeToTextBox(cbTrav2BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbTrav2PowerCable, "SQ", true);
+            cbManager.SettingComboBox(cbTrav2MccbSpec, "-", false);
+            cbManager.ChangeToTextBox(cbTrav2OutPut, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2Speed, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2GearRatio, "i", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2RatedCurrent, "A", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2BkVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbTrav2BrakeOption, "-", false);
+            cbManager.SettingComboBox(cbTrav2MotorSpec, "-", false);
+            cbManager.SettingComboBox(cbTrav2MotorMaker, "-", false);
+            cbManager.SettingComboBox(cbTrav2MotorMethod, "-", false);
+            cbManager.ChangeToTextBox(cbTrav2MotorType, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbTrav2MotorVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2MotorHz, "Hz", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.SettingComboBox(cbTrav2AbsLocation, "-", false);
+            cbManager.SettingComboBox(cbTrav2RightPosition, "-", false);
+            cbManager.SettingComboBox(cbTrav2LimitSwitch, "-", false);
+            cbManager.ChangeToTextBox(cbTrav2NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbTrav2LoadAcceleration, "", false, TypeFlag.fltFlag);
+
+            // FORK1 기능 그룹
+            cbManager.SettingComboBox(cbFork1InverterKw, "kW", true);
+            cbManager.SettingComboBox(cbFork1InverterA, "A", true);
+            cbManager.ChangeToTextBox(cbFork1BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbFork1PowerCable, "SQ", true);
+            cbManager.SettingComboBox(cbFork1MccbSpec, "-", false);
+            cbManager.ChangeToTextBox(cbFork1OutPut, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1Speed, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1GearRatio, "i", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1RatedCurrent, "A", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1BkVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbFork1BrakeOption, "-", false);
+            cbManager.SettingComboBox(cbFork1MotorSpec, "-", false);
+            cbManager.SettingComboBox(cbFork1MotorMaker, "-", false);
+            cbManager.SettingComboBox(cbFork1MotorMethod, "-", false);
+            cbManager.ChangeToTextBox(cbFork1MotorType, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbFork1MotorVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1MotorHz, "Hz", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.SettingComboBox(cbFork1RightPosition, "-", false);
+            cbManager.ChangeToTextBox(cbFork1NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork1LoadAcceleration, "", false, TypeFlag.fltFlag);
+
+            // FORK2 기능 그룹
+            cbManager.SettingComboBox(cbFork2InverterKw, "kW", true);
+            cbManager.SettingComboBox(cbFork2InverterA, "A", true);
+            cbManager.ChangeToTextBox(cbFork2BrakeResistorKw, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2BrakeResistorOhm, "Ω", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbFork2PowerCable, "SQ", true);
+            cbManager.SettingComboBox(cbFork2MccbSpec, "-", false);
+            cbManager.ChangeToTextBox(cbFork2OutPut, "kW", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2Speed, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2GearRatio, "i", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2RatedCurrent, "A", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2BkVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.SettingComboBox(cbFork2BrakeOption, "-", false);
+            cbManager.SettingComboBox(cbFork2MotorSpec, "-", false);
+            cbManager.SettingComboBox(cbFork2MotorMaker, "-", false);
+            cbManager.SettingComboBox(cbFork2MotorMethod, "-", false);
+            cbManager.ChangeToTextBox(cbFork2MotorType, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.ChangeToTextBox(cbFork2MotorVoltage, "V", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2MotorHz, "Hz", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2MotorEncoderSpec, "텍스트 기입", false, TypeFlag.strFlag);
+            cbManager.SettingComboBox(cbFork2RightPosition, "-", false);
+            cbManager.ChangeToTextBox(cbFork2NoneLoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2NoneLoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2NoneLoadAcceleration, "", false, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2LoadHighSpeed, "MPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2LoadRotationNum, "RPM", true, TypeFlag.fltFlag);
+            cbManager.ChangeToTextBox(cbFork2LoadAcceleration, "", false, TypeFlag.fltFlag);
+
+            // CARR 기능 그룹
+            cbManager.SettingComboBox(cbCarrSensor, "-", false);
+            cbManager.SettingComboBox(cbCarrDoubleInput, "-", false);
+        }
+        private void SetComboBoxItems()
         {
             // 모델 콤보 박스 리스트 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMODName", cbMODname);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMODOption", cbMODoption1);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMODOption", cbMODoption2);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMODOption", cbMODoption3);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMODOption", cbMODoption4);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMODName", cbMODname);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMODOption", cbMODoption1);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMODOption", cbMODoption2);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMODOption", cbMODoption3);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMODOption", cbMODoption4);
 
             // 주요 사양 콤보 박스 리스트 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMSPinputVolt", cbMSPinputVolt);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMSPinputHz", cbMSPinputHz);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMSPpanelSize", cbMSPpanelSize);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMSPcontrollerSpec", cbMSPcontrollerSpec);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMSPinverterMaker", cbMSPinverterMaker);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listMSPinverterSpec", cbMSPinverterSpec);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMSPinputVolt", cbMSPinputVolt);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMSPinputHz", cbMSPinputHz);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMSPpanelSize", cbMSPpanelSize);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMSPcontrollerSpec", cbMSPcontrollerSpec);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMSPinverterMaker", cbMSPinverterMaker);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listMSPinverterSpec", cbMSPinverterSpec);
 
             // 옵션 콤보 박스 리스트 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listOPmachineControl", cbOPmachineControl);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listOPremoteControl", cbOPremoteControl);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listOPemergencyPower", cbOPemergencyPower);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listOPemergencyLocation", cbOPemergencyLocation);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listOPmachineControl", cbOPmachineControl);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listOPremoteControl", cbOPremoteControl);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listOPemergencyPower", cbOPemergencyPower);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listOPemergencyLocation", cbOPemergencyLocation);
 
-            // ComboBox List 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqUsingVoltage", cbMSPusingVoltage);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqMccbModel", cbEleqMccbModel);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqSmpsModel", cbEleqSmpsModel);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqCableModel", cbEleqCableModel);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqHubModel", cbEleqHubModel);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqFanQuantity", cbEleqFanQuantity);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqTerminal", cbEleqTerminal);
+            // ELEQ 콤보 박스 리스트 설정
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqUsingVoltage", cbMSPusingVoltage);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqMccbModel", cbEleqMccbModel);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqSmpsModel", cbEleqSmpsModel);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqCableModel", cbEleqCableModel);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqHubModel", cbEleqHubModel);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqFanQuantity", cbEleqFanQuantity);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqTerminal", cbEleqTerminal);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqPanel", cbEleqPanel);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqHmi", cbEleqHmi);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqOpt", cbEleqOpt);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqTowerLamp", cbEleqTowerLamp);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqSafety", cbEleqSafety);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqSafetyQuantity", cbEleqSafetyQuantity);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqSensorType", cbEleqSensorType);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqInterLockSensorSide", cbEleqInterLockSensorSide);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqInterLockBit", cbEleqInterLockBit);
 
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqPanel", cbEleqPanel);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqHmi", cbEleqHmi);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqOpt", cbEleqOpt);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqTowerLamp", cbEleqTowerLamp);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqSafety", cbEleqSafety);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqSafetyQuantity", cbEleqSafetyQuantity);
-
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqSensorType", cbEleqSensorType);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqInterLockSensorSide", cbEleqInterLockSensorSide);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqInterLockBit", cbEleqInterLockBit);
-
-
-            // ComboBox List 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftMotorSpec", cbLiftMotorSpec);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftMotorMaker", cbLiftMotorMaker);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftMotorMethod", cbLiftMotorMethod);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftLimitSwitch", cbLiftLimitSwitch);
-           
-
-            // ComboBox List 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravMotorSpec", cbTrav1MotorSpec);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravMotorMaker", cbTrav1MotorMaker);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravMotorMethod", cbTrav1MotorMethod);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravLimitSwitch", cbTrav1LimitSwitch);
-
-            // ComboBox List 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravMotorSpec", cbTrav2MotorSpec);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravMotorMaker", cbTrav2MotorMaker);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravMotorMethod", cbTrav2MotorMethod);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravLimitSwitch", cbTrav2LimitSwitch);
-
-            // ComboBox List 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkMotorSpec", cbFork1MotorSpec);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkMotorMaker", cbFork1MotorMaker);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkMotorMethod", cbFork1MotorMethod);
+            // LIFT 콤보 박스 리스트 설정
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftMotorSpec", cbLiftMotorSpec);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftMotorMaker", cbLiftMotorMaker);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftMotorMethod", cbLiftMotorMethod);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftLimitSwitch", cbLiftLimitSwitch);
 
 
-            // ComboBox List 설정
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkMotorSpec", cbFork2MotorSpec);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkMotorMaker", cbFork2MotorMaker);
-            cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkMotorMethod", cbFork2MotorMethod);
+            // TRAV 콤보 박스 리스트 설정
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravMotorSpec", cbTrav1MotorSpec);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravMotorMaker", cbTrav1MotorMaker);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravMotorMethod", cbTrav1MotorMethod);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravLimitSwitch", cbTrav1LimitSwitch);
+
+            // TRAV2 콤보 박스 리스트 설정
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravMotorSpec", cbTrav2MotorSpec);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravMotorMaker", cbTrav2MotorMaker);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravMotorMethod", cbTrav2MotorMethod);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravLimitSwitch", cbTrav2LimitSwitch);
+
+            // FORK 콤보 박스 리스트 설정
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkMotorSpec", cbFork1MotorSpec);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkMotorMaker", cbFork1MotorMaker);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkMotorMethod", cbFork1MotorMethod);
+
+            // FORK2 콤보 박스 리스트 설정
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkMotorSpec", cbFork2MotorSpec);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkMotorMaker", cbFork2MotorMaker);
+            pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkMotorMethod", cbFork2MotorMethod);
 
             
 
         }
-        private void SetFunctionPageData()
+        private void GetSetFunctionData()
         {
-
             // ModelPage ComboBox 배열을 포함하는 Dictionary를 정의
-            Dictionary<string, Control[]> dicCtrlMod = new Dictionary<string, Control[]>
+            DictionaryUnits.dicCtrlMod = new Dictionary<string, Control[]>
             {
                 { "프로젝트", new Control[] { ckbPRJdomestic, ckbPRJoverseas, cbPRJnumber, cbPRJname, cbPRJwriter, cbPRJyear, cbPRJmonth,cbPRJday } },
                 { "모델", new Control[] { cbMODname, cbMODheight, cbMODweight, ckbMODforkoption, cbMODoption1, cbMODoption2, cbMODoption3, cbMODoption4 } },
@@ -473,7 +440,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                 { "옵션", new Control[] { cbOPmachineControl, cbOPremoteControl, cbOPemergencyPower, cbOPemergencyLocation, ckbVibrationControlTrue, ckbCctvTrue, ckbTravDoubleMotorTrue, ckbRegenerativeUnitTrue } }
             };
             // FunctionPage ComboBox 배열을 포함하는 Dictionary를 정의
-            Dictionary<string, Control[]> dicCtrlFunc = new Dictionary<string, Control[]>
+            DictionaryUnits.dicCtrlFunc = new Dictionary<string, Control[]>
             {
                 { "ELEQ_파워", new Control[] { cbEleqMccbModel, cbEleqSmpsModel, cbEleqCableModel, cbEleqHubModel,
                     cbEleqMainMccbSpec, cbEleqMainPowerCable, cbEleqFanQuantity, cbEleqTerminal, 
@@ -531,7 +498,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                 { "CARR_센서", new Control[] { cbCarrSensor, cbCarrDoubleInput } }
             };
             // FunctionPage GroupControl 배열을 포함하는 Dictionary를 정의
-            Dictionary<string, GroupControl[]> dicGrpFunc = new Dictionary<string, GroupControl[]>
+            DictionaryUnits.dicGrpSrmFunc = new Dictionary<string, GroupControl[]>
             {
                 { "Eleq", new GroupControl[] { grpEleqPower, grpEleqSensor,grpEleqPlc } },
                 { "Lift", new GroupControl[] { grpLiftInverter, grpLiftMotor, grpLiftSensor, grpLiftDrive, grpLiftSensorList } },
@@ -542,7 +509,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                 { "Carr", new GroupControl[] { grpCarrSensor, grpCarrSensorList } }
             };
             // FunctionPage GridControl 배열을 정의
-            GridControl[] arrGcFunc = new GridControl[]
+            ControlUnits.arrGcFunc = new GridControl[]
             {
                 gridEleq,
                 gridLift,
@@ -553,7 +520,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                 gridCarr
             };
             // FunctionPage GridView 배열을 정의
-            GridView[] arrGvFunc = new GridView[]
+            ControlUnits.arrGvFunc = new GridView[]
             {
                 gridViewEleq,
                 gridViewLift,
@@ -565,79 +532,77 @@ namespace Eplan.EplAddin.HMX_MCNS
             };
 
             // FunctionPage ComboBox 그룹 배열을 생성
-            Control[][] arrCtrlGrpFunc = new Control[][]
+            ControlUnits.arrCtrlGrpSrmFunc = new Control[][]
             {
-                dicCtrlFunc.Where(kvp => kvp.Key.Contains("ELEQ")).SelectMany(kvp => kvp.Value).ToArray(),
-                dicCtrlFunc.Where(kvp => kvp.Key.Contains("LIFT")).SelectMany(kvp => kvp.Value).ToArray(),
-                dicCtrlFunc.Where(kvp => kvp.Key.Contains("TRAV1")).SelectMany(kvp => kvp.Value).ToArray(),
-                dicCtrlFunc.Where(kvp => kvp.Key.Contains("TRAV2")).SelectMany(kvp => kvp.Value).ToArray(),
-                dicCtrlFunc.Where(kvp => kvp.Key.Contains("FORK1")).SelectMany(kvp => kvp.Value).ToArray(),
-                dicCtrlFunc.Where(kvp => kvp.Key.Contains("FORK2")).SelectMany(kvp => kvp.Value).ToArray(),
-                dicCtrlFunc.Where(kvp => kvp.Key.Contains("CARR")).SelectMany(kvp => kvp.Value).ToArray()
+                DictionaryUnits.dicCtrlFunc.Where(kvp => kvp.Key.Contains("ELEQ")).SelectMany(kvp => kvp.Value).ToArray(),
+                DictionaryUnits.dicCtrlFunc.Where(kvp => kvp.Key.Contains("LIFT")).SelectMany(kvp => kvp.Value).ToArray(),
+                DictionaryUnits.dicCtrlFunc.Where(kvp => kvp.Key.Contains("TRAV1")).SelectMany(kvp => kvp.Value).ToArray(),
+                DictionaryUnits.dicCtrlFunc.Where(kvp => kvp.Key.Contains("TRAV2")).SelectMany(kvp => kvp.Value).ToArray(),
+                DictionaryUnits.dicCtrlFunc.Where(kvp => kvp.Key.Contains("FORK1")).SelectMany(kvp => kvp.Value).ToArray(),
+                DictionaryUnits.dicCtrlFunc.Where(kvp => kvp.Key.Contains("FORK2")).SelectMany(kvp => kvp.Value).ToArray(),
+                DictionaryUnits.dicCtrlFunc.Where(kvp => kvp.Key.Contains("CARR")).SelectMany(kvp => kvp.Value).ToArray()
             };
             // FunctionPage DataTable 그룹 배열을 생성
-            DataTable[] arrDtFunc = new DataTable[dicGrpFunc.Count];
+            DataTableUnits.arrDtSrmFunc = new DataTable[DictionaryUnits.dicGrpSrmFunc.Count];
             // DataTable 그룹 배열의 값을 거치할 BindingSource 배열 생성
-            BindingSource[] bindingSource = new BindingSource[arrDtFunc.Length];
+            ControlUnits.bindingSource = new BindingSource[DataTableUnits.arrDtSrmFunc.Length];
             // FunctionPage GroupControl 그룹 배열을 생성
-            GroupControl[] arrGrpAll = dicGrpFunc.Values.SelectMany(arr => arr).ToArray();
-
+            ControlUnits.arrGrpAll = DictionaryUnits.dicGrpSrmFunc.Values.SelectMany(arr => arr).ToArray();
 
             // 각 DataTable 생성 및 DataGridView 설정
-            for (int i = 0; i < dicGrpFunc.Count; i++)
+            for (int i = 0; i < DictionaryUnits.dicGrpSrmFunc.Count; i++)
             {
-                arrDtFunc[i] = new DataTable();
+                DataTableUnits.arrDtSrmFunc[i] = new DataTable();
 
-                cs_DataTable.GetDataTable(arrDtFunc[i], CS_StaticString.dArrDtColums);
+                dtManager.GetDataTable(DataTableUnits.arrDtSrmFunc[i], StringUnits.dArrDtColums);
 
                 // DataTable에 데이터 추가
-                for (int j = 0; j < arrCtrlGrpFunc[i].Length; j++)
+                for (int j = 0; j < ControlUnits.arrCtrlGrpSrmFunc[i].Length; j++)
                 {
                     // 각 콤보박스 항목에서 정보 추출
                     string pageName = "기능"; // 페이지 이름, 필요에 따라 수정
-                    string funcName = arrCtrlGrpFunc[i][j].Parent.Parent.Parent.Parent.Parent.Text;
-                    string grpName = arrCtrlGrpFunc[i][j].Parent.Parent.Parent.Text;
-                    string lblName = arrCtrlGrpFunc[i][j].Parent.Controls.OfType<LabelControl>().FirstOrDefault()?.Text;
-                    string objectType = arrCtrlGrpFunc[i][j].GetType().ToString();
+                    string funcName = ControlUnits.arrCtrlGrpSrmFunc[i][j].Parent.Parent.Parent.Parent.Parent.Text;
+                    string grpName = ControlUnits.arrCtrlGrpSrmFunc[i][j].Parent.Parent.Parent.Text;
+                    string lblName = ControlUnits.arrCtrlGrpSrmFunc[i][j].Parent.Controls.OfType<LabelControl>().FirstOrDefault()?.Text;
+                    string objectType = ControlUnits.arrCtrlGrpSrmFunc[i][j].GetType().ToString();
 
                     // DataTable에 행 추가
-                    arrDtFunc[i].Rows.Add(j + 1, pageName, funcName, grpName, lblName, "", objectType);
+                    DataTableUnits.arrDtSrmFunc[i].Rows.Add(j + 1, pageName, funcName, grpName, lblName, "", objectType);
                 }
-                arrGcFunc[i].DataSource = arrDtFunc[i];
+                ControlUnits.arrGcFunc[i].DataSource = DataTableUnits.arrDtSrmFunc[i];
 
                 // GridView 설정
-                cs_DataGrid.SetGridView(arrGvFunc[i]);
+                gvManager.SetGridView(ControlUnits.arrGvFunc[i]);
             }
 
-
             // 콤보박스 타이핑
-            for (int i = 0; i < dicGrpFunc.Count; i++)
+            for (int i = 0; i < DictionaryUnits.dicGrpSrmFunc.Count; i++)
             {
                 int index = i; // 지역 변수로 캡처
-                arrGvFunc[index].FocusedRowChanged += (o, e) =>
+                ControlUnits.arrGvFunc[index].FocusedRowChanged += (o, e) =>
                 {
                     if (e.FocusedRowHandle >= 0)
                     {
                         int rowIndex = e.FocusedRowHandle; // 선택된 행의 인덱스를 가져옴
 
                         // 행 인덱스에 맞는 콤보박스를 선택하고 포커스
-                        if (rowIndex >= 0 && rowIndex < arrCtrlGrpFunc[index].Length)
+                        if (rowIndex >= 0 && rowIndex < ControlUnits.arrCtrlGrpSrmFunc[index].Length)
                         {
                             // 콤보박스에 포커스를 주고 선택 상태로 만듭니다.
-                            arrCtrlGrpFunc[index][rowIndex].Focus();
+                            ControlUnits.arrCtrlGrpSrmFunc[index][rowIndex].Focus();
                         }
                     }
                 };
 
-                string[] initialValues = new string[arrCtrlGrpFunc[index].Length];
+                string[] initialValues = new string[ControlUnits.arrCtrlGrpSrmFunc[index].Length];
                 // 각 콤보박스와 체크박스에 KeyUp 이벤트 핸들러를 등록
-                for (int j = 0; j < arrCtrlGrpFunc[index].Length; j++)
+                for (int j = 0; j < ControlUnits.arrCtrlGrpSrmFunc[index].Length; j++)
                 {
                     // 지역 변수로 캡처
                     int indexRow = j;
 
                     // arrCbGrpFunc[index][indexRow]가 ComboBox인지 확인
-                    if (arrCtrlGrpFunc[index][indexRow] is ComboBoxEdit cb)
+                    if (ControlUnits.arrCtrlGrpSrmFunc[index][indexRow] is ComboBoxEdit cb)
                     {
                         // 초기값 저장
                         initialValues[indexRow] = cb.Text;
@@ -646,10 +611,10 @@ namespace Eplan.EplAddin.HMX_MCNS
                         cb.TextChanged += (o, e) =>
                         {
                             // 텍스트가 초기값과 같으면 공란으로 설정
-                            arrDtFunc[index].Rows[indexRow]["Data"] = cb.Text == initialValues[indexRow] ? "" : cb.Text;
+                            DataTableUnits.arrDtSrmFunc[index].Rows[indexRow]["Data"] = cb.Text == initialValues[indexRow] ? "" : cb.Text;
                         };
                     }
-                    else if (arrCtrlGrpFunc[index][indexRow] is CheckEdit ckb)
+                    else if (ControlUnits.arrCtrlGrpSrmFunc[index][indexRow] is CheckEdit ckb)
                     {
                         // 초기값 저장
                         initialValues[indexRow] = ckb.Text;
@@ -658,51 +623,21 @@ namespace Eplan.EplAddin.HMX_MCNS
                         ckb.CheckedChanged += (o, e) =>
                         {
                             // 체크 상태에 따라 Data를 설정
-                            arrDtFunc[index].Rows[indexRow]["Data"] = ckb.Checked ? ckb.Text : "";
+                            DataTableUnits.arrDtSrmFunc[index].Rows[indexRow]["Data"] = ckb.Checked ? ckb.Text : "";
                         };
                     }
                 }
 
             }
 
-
             // 각 GroupControl에 Spread Event 적용
-            for (int i = 0; i < arrGrpAll.Length; i++)
+            for (int i = 0; i < ControlUnits.arrGrpAll.Length; i++)
             {
-                cs_GroupControl.SpreadGroupControl(arrGrpAll[i], Eplan.EplAddin.HMX_MCNS.Properties.Resources.CaretBelow, Eplan.EplAddin.HMX_MCNS.Properties.Resources.CaretRight);
+                gcManager.SpreadGroupControl(ControlUnits.arrGrpAll[i], Eplan.EplAddin.HMX_MCNS.Properties.Resources.CaretBelow, Eplan.EplAddin.HMX_MCNS.Properties.Resources.CaretRight);
             }
-            
 
             //Event에 사용하기 위해 static으로 저장
-            CS_StaticUnit.dicCtrlSrmAll = dicCtrlMod.Concat(dicCtrlFunc).ToDictionary(x => x.Key, x => x.Value);
-            CS_StaticUnit.dicCtrlMod = dicCtrlMod;
-            CS_StaticUnit.dicCtrlFunc = dicCtrlFunc;
-            CS_StaticUnit.dicGrpSrmFunc = dicGrpFunc;
-            CS_StaticUnit.arrCtrlGrpSrmFunc = arrCtrlGrpFunc;
-            CS_StaticUnit.arrDtSrmFunc = arrDtFunc;
-
-            // 모든 컨트롤의 TabIndex를 -1로 설정하여 탭 순서에서 제외
-            foreach (Control control in this.Controls)
-            {
-                control.TabIndex = 0;  // TabIndex를 -1로 설정하여 탭 순서에서 제외
-            }
-
-            // 탭 순서 부여를 위한 초기 탭 인덱스 설정
-            int tabIndex = 1;
-
-            // dicCtrlSrmAll의 컨트롤에 대해 TabIndex와 TabStop 설정
-            foreach (var keyValuePair in CS_StaticUnit.dicCtrlSrmAll)
-            {
-                foreach (var control in keyValuePair.Value)
-                {
-                    // TabStop을 지원하는 컨트롤에만 TabIndex와 TabStop 설정
-                    if (control is Control)
-                    {
-                        control.TabIndex = tabIndex++;  // TabIndex를 순서대로 증가
-                        control.TabStop = true;         // TabStop을 true로 설정하여 탭 순서에 포함
-                    }
-                }
-            }
+            DictionaryUnits.dicCtrlSrmAll = DictionaryUnits.dicCtrlMod.Concat(DictionaryUnits.dicCtrlFunc).ToDictionary(x => x.Key, x => x.Value);
         }
         private void SetToolTip()
         {
@@ -715,23 +650,18 @@ namespace Eplan.EplAddin.HMX_MCNS
         }
         private void ControlFormFunction()
         {
-            // 로고 색상 변경
-            lblLogo.ForeColor = CS_StaticEtc.colors[4];
+            // 초기 설정
+            lblLogo.ForeColor = ColorUtility.colors[Ecolor.Logo];
+            lblSRM.ForeColor = ColorUtility.colors[Ecolor.HmxGreen];
             // xtraTabControl 헤더 숨기기
             xtraTabControlLarge.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            lblSRM.ForeColor = CS_StaticEtc.colors[1];
             // 각 Label에 Event 적용
-            cs_Label.HoverLabel(lblTAPmodel, CS_StaticEtc.colors[1]);
-            cs_Label.HoverLabel(lblTAPfunction, CS_StaticEtc.colors[2]);
-            cs_Label.HoverLabel(lblTAPexport, CS_StaticEtc.colors[3]);
+            lblManager.HoverLabel(lblTAPmodel, ColorUtility.colors[Ecolor.HmxGreen]);
+            lblManager.HoverLabel(lblTAPfunction, ColorUtility.colors[Ecolor.HmxYellow]);
+            lblManager.HoverLabel(lblTAPexport, ColorUtility.colors[Ecolor.HmxBlue]);
             // 기능페이지 패널 기능 추가
-            cs_XtraTabControl.AddPanelToTabPage(xtraTabControlFunction, CS_StaticString.dArrStrFunc);
+            xtcManager.AddPanelToTabPage(xtraTabControlFunction, StringUnits.dArrStrFunc);
 
-            //Panel Action
-            pnlTap.MouseDown += (o, e) => { if (e.Button == MouseButtons.Left) { CS_StaticEtc.On = true; CS_StaticEtc.Pos = e.Location; } };
-            pnlTap.MouseMove += (o, e) => { if (CS_StaticEtc.On) Location = new Point(Location.X + (e.X - CS_StaticEtc.Pos.X), Location.Y + (e.Y - CS_StaticEtc.Pos.Y)); };
-            pnlTap.MouseUp += (o, e) => { if (e.Button == MouseButtons.Left) { CS_StaticEtc.On = false; CS_StaticEtc.Pos = e.Location; } };
-            
             this.FormClosing += (o, e) =>
             {
                 // 종료 확인 메시지 표시
@@ -743,7 +673,7 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if (result == DialogResult.Yes)
                 {
-                    Ui_StaticForm.formInitialPage.Close();
+                    FormUnits.formInitialPage.Close();
                 }
                 else if(result == DialogResult.No)
                 {
@@ -766,26 +696,26 @@ namespace Eplan.EplAddin.HMX_MCNS
                 if (result == DialogResult.Yes)
                 {
                     // formConceptSheet가 null 또는 해제된 상태가 아닌지 확인
-                    if (Ui_StaticForm.formConceptSheet != null && !Ui_StaticForm.formConceptSheet.IsDisposed)
+                    if (FormUnits.formConceptSheet != null && !FormUnits.formConceptSheet.IsDisposed)
                     {
-                        Ui_StaticForm.formConceptSheet.Dispose();
+                        FormUnits.formConceptSheet.Dispose();
                     }
 
                     // formInitialPage가 이미 열려 있는지 확인 후 표시
-                    if (Ui_StaticForm.formInitialPage == null || Ui_StaticForm.formInitialPage.IsDisposed)
+                    if (FormUnits.formInitialPage == null || FormUnits.formInitialPage.IsDisposed)
                     {
-                        Ui_StaticForm.formInitialPage.Close();
-                        Ui_StaticForm.formInitialPage = new FormInitialPage();
+                        FormUnits.formInitialPage.Close();
+                        FormUnits.formInitialPage = new FormInitialPage();
                     }
 
-                    Ui_StaticForm.formInitialPage.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
+                    FormUnits.formInitialPage.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
                 }
             };
             picBoxSave.MouseClick += (o, e) =>
             {
                 using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    saveFileDialog.InitialDirectory = CS_PathData.XmlFolderPath;
+                    saveFileDialog.InitialDirectory = StringUnits.strXmlFolderPath;
                     saveFileDialog.Filter = "XML Files (*.xml)|*.xml|All Files (*.*)|*.*";
                     saveFileDialog.Title = "xml 데이터 저장";
                     saveFileDialog.FileName = String.Concat(cbPRJnumber.Text, "_", cbMODfullName.Text); // 기본 파일 이름 설정
@@ -795,16 +725,16 @@ namespace Eplan.EplAddin.HMX_MCNS
                     {
                         try
                         {
-                            CS_PathData.XmlFilePath = saveFileDialog.FileName;
+                            StringUnits.strXmlFilePath = saveFileDialog.FileName;
 
                             XElement root = new XElement("Data",
-                                new XElement("Controls", CS_StaticUnit.dicCtrlSrmAll.Select(dic =>
+                                new XElement("Controls", DictionaryUnits.dicCtrlSrmAll.Select(dic =>
                                     new XElement("ControlGroup", new XAttribute("Key", dic.Key), dic.Value.Select((ctrl, index) =>
                                     {
                                         if (ctrl is ComboBoxEdit cb)
                                         {
 
-                                            string text = cb.BackColor == System.Drawing.Color.White ? cb.EditValue?.ToString() : null;
+                                            string text = cb.BackColor == ColorUtility.colors[Ecolor.Active] ? cb.EditValue?.ToString() : null;
                                             string labelText = cb.Parent.Controls.OfType<LabelControl>().FirstOrDefault()?.Text ?? "No Label";
 
                                             return new XElement("ComboBox",
@@ -824,46 +754,46 @@ namespace Eplan.EplAddin.HMX_MCNS
                                         return null;
                                     }).Where(x => x != null)))),
                                 new XElement("DataTable_Lout",
-                                CS_StaticUnit.dtLout != null
-                                ? CS_StaticUnit.dtLout.AsEnumerable().Select(row =>
+                                DataTableUnits.dtLout != null
+                                ? DataTableUnits.dtLout.AsEnumerable().Select(row =>
                                 new XElement("Row",
                                 row.ItemArray.Select((item, index) =>
                                 new XElement($"Column{index}", item?.ToString() ?? string.Empty))))
                                 : Enumerable.Empty<XElement>()),
 
                                 new XElement("DataTable_SensorIo",
-                                CS_StaticSensor.sensorIoDt != null
-                                ? CS_StaticSensor.sensorIoDt.AsEnumerable().Select(row =>
+                                DataTableUnits.dtSensorIo != null
+                                ? DataTableUnits.dtSensorIo.AsEnumerable().Select(row =>
                                 new XElement("Row",
                                 row.ItemArray.Select((item, index) =>
                                 new XElement($"Column{index}", item?.ToString() ?? string.Empty))))
                                 : Enumerable.Empty<XElement>()),
 
                                 new XElement("DataTable_SensorCopyIo",
-                                CS_StaticSensor.sensorCopyIoDt != null
-                                ? CS_StaticSensor.sensorCopyIoDt.AsEnumerable().Select(row =>
+                                DataTableUnits.dtSensorCopyIo != null
+                                ? DataTableUnits.dtSensorCopyIo.AsEnumerable().Select(row =>
                                 new XElement("Row",
                                 row.ItemArray.Select((item, index) =>
                                 new XElement($"Column{index}", item?.ToString() ?? string.Empty))))
                                 : Enumerable.Empty<XElement>()),
 
                                 new XElement("DataTable_logicIo",
-                                CS_StaticSensor.logicIoDt != null
-                                ? CS_StaticSensor.logicIoDt.AsEnumerable().Select(row =>
+                                DataTableUnits.dtLogicIo != null
+                                ? DataTableUnits.dtLogicIo.AsEnumerable().Select(row =>
                                 new XElement("Row",
                                 row.ItemArray.Select((item, index) =>
                                 new XElement($"Column{index}", item?.ToString() ?? string.Empty))))
                                 : Enumerable.Empty<XElement>()),
 
                                 new XElement("DataTable_UniqueIo",
-                                CS_StaticSensor.uniqueIoDt != null
-                                ? CS_StaticSensor.uniqueIoDt.AsEnumerable().Select(row =>
+                                DataTableUnits.dtUniqueIo != null
+                                ? DataTableUnits.dtUniqueIo.AsEnumerable().Select(row =>
                                 new XElement("Row",
                                 row.ItemArray.Select((item, index) =>
                                 new XElement($"Column{index}", item?.ToString() ?? string.Empty))))
                                 : Enumerable.Empty<XElement>()));
 
-                            root.Save(CS_PathData.XmlFilePath);
+                            root.Save(StringUnits.strXmlFilePath);
                             MessageBox.Show("파일이 저장되었습니다.");
                         }
                         catch (Exception ex)
@@ -877,7 +807,7 @@ namespace Eplan.EplAddin.HMX_MCNS
             {
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
-                    openFileDialog.InitialDirectory = CS_PathData.XmlFolderPath;
+                    openFileDialog.InitialDirectory = StringUnits.strXmlFolderPath;
                     openFileDialog.Filter = "XML Files (*.xml)|*.xml|All Files (*.*)|*.*";
                     openFileDialog.Title = "xml 데이터 로드";
 
@@ -885,8 +815,8 @@ namespace Eplan.EplAddin.HMX_MCNS
                     {
                         try
                         {
-                            CS_PathData.XmlFilePath = openFileDialog.FileName;
-                            XElement root = XElement.Load(CS_PathData.XmlFilePath);
+                            StringUnits.strXmlFilePath = openFileDialog.FileName;
+                            XElement root = XElement.Load(StringUnits.strXmlFilePath);
 
                             xtraTabControlLarge.SelectedTabPageIndex = 0;
 
@@ -897,7 +827,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             foreach (var group in root.Element("Controls").Elements("ControlGroup"))
                             {
                                 string key = group.Attribute("Key").Value;
-                                if (CS_StaticUnit.dicCtrlSrmAll.TryGetValue(key, out var controls))
+                                if (DictionaryUnits.dicCtrlSrmAll.TryGetValue(key, out var controls))
                                 {
                                     foreach (var controlElement in group.Elements())
                                     {
@@ -943,7 +873,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             if (mccbElement != null)
                             {
                                 string key = mccbElement.Parent.Attribute("Key").Value;
-                                if (CS_StaticUnit.dicCtrlSrmAll.TryGetValue(key, out var controls))
+                                if (DictionaryUnits.dicCtrlSrmAll.TryGetValue(key, out var controls))
                                 {
                                     int index = int.Parse(mccbElement.Attribute("Index").Value);
                                     if (index < controls.Length && controls[index] is ComboBoxEdit cb)
@@ -961,7 +891,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             if (mainBreakerElement != null)
                             {
                                 string key = mainBreakerElement.Parent.Attribute("Key").Value;
-                                if (CS_StaticUnit.dicCtrlSrmAll.TryGetValue(key, out var controls))
+                                if (DictionaryUnits.dicCtrlSrmAll.TryGetValue(key, out var controls))
                                 {
                                     int index = int.Parse(mainBreakerElement.Attribute("Index").Value);
                                     if (index < controls.Length && controls[index] is ComboBoxEdit cb)
@@ -975,106 +905,106 @@ namespace Eplan.EplAddin.HMX_MCNS
                                 }
                             }
                             // DataTable_Lout 데이터 로드
-                            if (CS_StaticUnit.dtLout == null)
+                            if (DataTableUnits.dtLout == null)
                             {
-                                CS_StaticUnit.dtLout = new DataTable();
+                                DataTableUnits.dtLout = new DataTable();
                             }
                             else
                             {
-                                CS_StaticUnit.dtLout.Clear();
+                                DataTableUnits.dtLout.Clear();
                             }
 
                             foreach (XElement rowElement in root.Element("DataTable_Lout")?.Elements("Row") ?? Enumerable.Empty<XElement>())
                             {
-                                DataRow row = CS_StaticUnit.dtLout.NewRow();
-                                foreach (DataColumn col in CS_StaticUnit.dtLout.Columns)
+                                DataRow row = DataTableUnits.dtLout.NewRow();
+                                foreach (DataColumn col in DataTableUnits.dtLout.Columns)
                                 {
-                                    string cellValue = rowElement.Element($"Column{CS_StaticUnit.dtLout.Columns.IndexOf(col)}")?.Value;
+                                    string cellValue = rowElement.Element($"Column{DataTableUnits.dtLout.Columns.IndexOf(col)}")?.Value;
                                     row[col.ColumnName] = string.IsNullOrEmpty(cellValue) ? (object)DBNull.Value : cellValue;
                                 }
-                                CS_StaticUnit.dtLout.Rows.Add(row);
+                                DataTableUnits.dtLout.Rows.Add(row);
                             }
 
                             // sensorIoDt, sensorCopyIoDt 데이터 로드
-                            if (CS_StaticSensor.sensorIoDt == null)
+                            if (DataTableUnits.dtSensorIo == null)
                             {
-                                CS_StaticSensor.sensorIoDt = new DataTable();
+                                DataTableUnits.dtSensorIo = new DataTable();
                             }
                             else
                             {
-                                CS_StaticSensor.sensorIoDt.Clear();
+                                DataTableUnits.dtSensorIo.Clear();
                             }
 
                             foreach (XElement rowElement in root.Element("DataTable_SensorIo")?.Elements("Row") ?? Enumerable.Empty<XElement>())
                             {
-                                DataRow row = CS_StaticSensor.sensorIoDt.NewRow();
-                                foreach (DataColumn col in CS_StaticSensor.sensorIoDt.Columns)
+                                DataRow row = DataTableUnits.dtSensorIo.NewRow();
+                                foreach (DataColumn col in DataTableUnits.dtSensorIo.Columns)
                                 {
-                                    string cellValue = rowElement.Element($"Column{CS_StaticSensor.sensorIoDt.Columns.IndexOf(col)}")?.Value;
+                                    string cellValue = rowElement.Element($"Column{DataTableUnits.dtSensorIo.Columns.IndexOf(col)}")?.Value;
                                     row[col.ColumnName] = string.IsNullOrEmpty(cellValue) ? (object)DBNull.Value : cellValue;
                                 }
-                                CS_StaticSensor.sensorIoDt.Rows.Add(row);
+                                DataTableUnits.dtSensorIo.Rows.Add(row);
                             }
 
-                            if (CS_StaticSensor.sensorCopyIoDt == null)
+                            if (DataTableUnits.dtSensorCopyIo == null)
                             {
-                                CS_StaticSensor.sensorCopyIoDt = new DataTable();
+                                DataTableUnits.dtSensorCopyIo = new DataTable();
                             }
                             else
                             {
-                                CS_StaticSensor.sensorCopyIoDt.Clear();
+                                DataTableUnits.dtSensorCopyIo.Clear();
                             }
 
                             foreach (XElement rowElement in root.Element("DataTable_SensorCopyIo")?.Elements("Row") ?? Enumerable.Empty<XElement>())
                             {
-                                DataRow row = CS_StaticSensor.sensorCopyIoDt.NewRow();
-                                foreach (DataColumn col in CS_StaticSensor.sensorCopyIoDt.Columns)
+                                DataRow row = DataTableUnits.dtSensorCopyIo.NewRow();
+                                foreach (DataColumn col in DataTableUnits.dtSensorCopyIo.Columns)
                                 {
-                                    string cellValue = rowElement.Element($"Column{CS_StaticSensor.sensorCopyIoDt.Columns.IndexOf(col)}")?.Value;
+                                    string cellValue = rowElement.Element($"Column{DataTableUnits.dtSensorCopyIo.Columns.IndexOf(col)}")?.Value;
                                     row[col.ColumnName] = string.IsNullOrEmpty(cellValue) ? (object)DBNull.Value : cellValue;
                                 }
-                                CS_StaticSensor.sensorCopyIoDt.Rows.Add(row);
+                                DataTableUnits.dtSensorCopyIo.Rows.Add(row);
                             }
 
-                            // uniqueIoDt 데이터 로드
-                            if (CS_StaticSensor.logicIoDt == null)
+                            // dtUniqueIo 데이터 로드
+                            if (DataTableUnits.dtLogicIo == null)
                             {
-                                CS_StaticSensor.logicIoDt = new DataTable();
+                                DataTableUnits.dtLogicIo = new DataTable();
                             }
                             else
                             {
-                                CS_StaticSensor.logicIoDt.Clear();
+                                DataTableUnits.dtLogicIo.Clear();
                             }
 
                             foreach (XElement rowElement in root.Element("DataTable_logicIo")?.Elements("Row") ?? Enumerable.Empty<XElement>())
                             {
-                                DataRow row = CS_StaticSensor.logicIoDt.NewRow();
-                                foreach (DataColumn col in CS_StaticSensor.logicIoDt.Columns)
+                                DataRow row = DataTableUnits.dtLogicIo.NewRow();
+                                foreach (DataColumn col in DataTableUnits.dtLogicIo.Columns)
                                 {
-                                    string cellValue = rowElement.Element($"Column{CS_StaticSensor.logicIoDt.Columns.IndexOf(col)}")?.Value;
+                                    string cellValue = rowElement.Element($"Column{DataTableUnits.dtLogicIo.Columns.IndexOf(col)}")?.Value;
                                     row[col.ColumnName] = string.IsNullOrEmpty(cellValue) ? (object)DBNull.Value : cellValue;
                                 }
-                                CS_StaticSensor.logicIoDt.Rows.Add(row);
+                                DataTableUnits.dtLogicIo.Rows.Add(row);
                             }
 
-                            if (CS_StaticSensor.uniqueIoDt == null)
+                            if (DataTableUnits.dtUniqueIo == null)
                             {
-                                CS_StaticSensor.uniqueIoDt = new DataTable();
+                                DataTableUnits.dtUniqueIo = new DataTable();
                             }
                             else
                             {
-                                CS_StaticSensor.uniqueIoDt.Clear();
+                                DataTableUnits.dtUniqueIo.Clear();
                             }
 
                             foreach (XElement rowElement in root.Element("DataTable_UniqueIo")?.Elements("Row") ?? Enumerable.Empty<XElement>())
                             {
-                                DataRow row = CS_StaticSensor.uniqueIoDt.NewRow();
-                                foreach (DataColumn col in CS_StaticSensor.uniqueIoDt.Columns)
+                                DataRow row = DataTableUnits.dtUniqueIo.NewRow();
+                                foreach (DataColumn col in DataTableUnits.dtUniqueIo.Columns)
                                 {
-                                    string cellValue = rowElement.Element($"Column{CS_StaticSensor.uniqueIoDt.Columns.IndexOf(col)}")?.Value;
+                                    string cellValue = rowElement.Element($"Column{DataTableUnits.dtUniqueIo.Columns.IndexOf(col)}")?.Value;
                                     row[col.ColumnName] = string.IsNullOrEmpty(cellValue) ? (object)DBNull.Value : cellValue;
                                 }
-                                CS_StaticSensor.uniqueIoDt.Rows.Add(row);
+                                DataTableUnits.dtUniqueIo.Rows.Add(row);
                             }
 
                             MessageBox.Show("파일이 성공적으로 로드되었습니다.");
@@ -1086,11 +1016,10 @@ namespace Eplan.EplAddin.HMX_MCNS
                     }
                 }
             };
-
             picBoxItems.MouseClick += (o, e) =>
             {
-                Ui_StaticForm.formItemsList = new FormItemsList();
-                Ui_StaticForm.formItemsList.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
+                FormUnits.formItemsList = new FormItemsList();
+                FormUnits.formItemsList.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
             };
             picBoxPDFexport.MouseClick += (o, e) =>
             {
@@ -1108,7 +1037,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         {
                             // 선택한 경로에 PDF 저장
                             string filePath = saveFileDialog.FileName;
-                            Ui_StaticForm.xtraReport1.ExportToPdf(filePath);
+                            FormUnits.xtraReport1.ExportToPdf(filePath);
 
                             // PDF가 성공적으로 저장되면 메시지를 표시
                             MessageBox.Show("PDF로 저장되었습니다: " + filePath, "저장 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1122,30 +1051,26 @@ namespace Eplan.EplAddin.HMX_MCNS
                 }
             };
             //Label Action
-            lblTAPmodel.MouseClick += (e, o) => { xtraTabPageLargeModel.Show(); lblSRM.ForeColor = CS_StaticEtc.colors[1]; };
-            lblTAPfunction.MouseClick += (e, o) => { xtraTabPageLargeFunction.Show(); lblSRM.ForeColor = CS_StaticEtc.colors[2]; };
+            lblTAPmodel.MouseClick += (e, o) => { xtraTabPageLargeModel.Show(); lblSRM.ForeColor = ColorUtility.colors[Ecolor.HmxGreen]; };
+            lblTAPfunction.MouseClick += (e, o) => { xtraTabPageLargeFunction.Show(); lblSRM.ForeColor = ColorUtility.colors[Ecolor.HmxYellow]; };
             lblTAPexport.MouseClick += (e, o) =>
             {
                 xtraTabPageLargeGenerating.Show();
-                lblSRM.ForeColor = CS_StaticEtc.colors[3];
+                lblSRM.ForeColor = ColorUtility.colors[Ecolor.HmxBlue];
 
                 // XtraReport1 인스턴스 생성
-                Ui_StaticForm.xtraReport1 = new XtraReport1
+                FormUnits.xtraReport1 = new XtraReport1
                 {
                     PaperKind = System.Drawing.Printing.PaperKind.A4, // A4 크기 설정
                     Margins = new System.Drawing.Printing.Margins(90, 90, 0, 0), // 마진 설정
                 };
 
                 // 문서 생성 및 페이지 너비에 맞추기
-                Ui_StaticForm.xtraReport1.CreateDocument();
-                Ui_StaticForm.xtraReport1.PrintingSystem.Document.AutoFitToPagesWidth = 1;
+                FormUnits.xtraReport1.CreateDocument();
+                FormUnits.xtraReport1.PrintingSystem.Document.AutoFitToPagesWidth = 1;
 
                 // DocumentViewer에 바인딩
-                documentViewer1.DocumentSource = Ui_StaticForm.xtraReport1;
-
-
-                //gridControl2.DataSource = CS_StaticSensor.logicIoDt;
-                //gridControl3.DataSource = CS_StaticSensor.uniqueIoDt;
+                documentViewer1.DocumentSource = FormUnits.xtraReport1;
             };
             lblLogo.MouseClick += (o, e) =>
             {
@@ -1161,18 +1086,18 @@ namespace Eplan.EplAddin.HMX_MCNS
                 if (result == DialogResult.Yes)
                 {
                     // formConceptSheet가 null 또는 해제된 상태가 아닌지 확인
-                    if (Ui_StaticForm.formConceptSheet != null && !Ui_StaticForm.formConceptSheet.IsDisposed)
+                    if (FormUnits.formConceptSheet != null && !FormUnits.formConceptSheet.IsDisposed)
                     {
-                        Ui_StaticForm.formConceptSheet.Dispose();
+                        FormUnits.formConceptSheet.Dispose();
                     }
 
                     // formInitialPage가 이미 열려 있는지 확인 후 표시
-                    if (Ui_StaticForm.formInitialPage == null || Ui_StaticForm.formInitialPage.IsDisposed)
+                    if (FormUnits.formInitialPage == null || FormUnits.formInitialPage.IsDisposed)
                     {
-                        Ui_StaticForm.formInitialPage = new FormInitialPage();
+                        FormUnits.formInitialPage = new FormInitialPage();
                     }
 
-                    Ui_StaticForm.formInitialPage.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
+                    FormUnits.formInitialPage.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
                 }
             };
 
@@ -1200,7 +1125,6 @@ namespace Eplan.EplAddin.HMX_MCNS
                 UpdateComboBox();
                 UpdatePlcCard();
             };
-
 
             cbMODfullName.VisibleChanged += (o, e) =>
             {
@@ -1232,7 +1156,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     try
                     {
                         // 선택한 LOCATION 값에 따른 DT 값 중 최대값 가져오기
-                        var maxDtRow = CS_StaticSensor.uniqueIoDt.AsEnumerable()
+                        var maxDtRow = DataTableUnits.dtUniqueIo.AsEnumerable()
                             .Where(row => row.Field<string>("LOCATION") == selectedLocation)
                             .OrderByDescending(row => row.Field<string>("DT"))
                             .FirstOrDefault();
@@ -1245,8 +1169,8 @@ namespace Eplan.EplAddin.HMX_MCNS
                             {
                                 string nextValue = "KE" + (maxNumber + 1); // 다음 값 설정
                                 cbEleqDt.Text = nextValue; // cbEleqDt에 설정
-                                cbEleqDt.BackColor = Color.White;
-                                cbEleqDt.ForeColor = Color.Black;
+                                cbEleqDt.BackColor = ColorUtility.colors[Ecolor.Active];
+                                cbEleqDt.ForeColor = ColorUtility.colors[Ecolor.TextBlack];
                             }
                         }
                     }
@@ -1310,25 +1234,25 @@ namespace Eplan.EplAddin.HMX_MCNS
             };
             btnEleqPlcPlus.Click += (o, e) =>
             {
-                if (cbEleqLocation.BackColor != Color.White || cbEleqType.BackColor != Color.White || cbEleqPoint.BackColor != Color.White || cbEleqParts.BackColor != Color.White || cbEleqDt.BackColor != Color.White
+                if (cbEleqLocation.BackColor != ColorUtility.colors[Ecolor.Active] || cbEleqType.BackColor != ColorUtility.colors[Ecolor.Active] || cbEleqPoint.BackColor != ColorUtility.colors[Ecolor.Active] || cbEleqParts.BackColor != ColorUtility.colors[Ecolor.Active] || cbEleqDt.BackColor != ColorUtility.colors[Ecolor.Active]
                 || cbEleqLocation.Text == "" || cbEleqType.Text == "" || cbEleqPoint.Text == "" || cbEleqParts.Text == "" || cbEleqDt.Text == "")
                 {
                     MessageBox.Show("모델 및 컨트롤러 사양을 확정하세요.");
                     return;
                 }
-                // CS_StaticSensor.uniqueIoDt의 DataTable 객체가 존재하는지 확인
-                if (CS_StaticSensor.uniqueIoDt != null)
+                // CS_StaticSensor.dtUniqueIo의 DataTable 객체가 존재하는지 확인
+                if (DataTableUnits.dtUniqueIo != null)
                 {
                     // NO 컬럼의 최대값 구하기
                     int maxNo = 0;
-                    if (CS_StaticSensor.uniqueIoDt.Rows.Count > 0)
+                    if (DataTableUnits.dtUniqueIo.Rows.Count > 0)
                     {
-                        maxNo = CS_StaticSensor.uniqueIoDt.AsEnumerable()
+                        maxNo = DataTableUnits.dtUniqueIo.AsEnumerable()
                                                           .Max(row => row.Field<int>("NO"));
                     }
 
                     // 새 행 생성
-                    DataRow newRow = CS_StaticSensor.uniqueIoDt.NewRow();
+                    DataRow newRow = DataTableUnits.dtUniqueIo.NewRow();
 
                     // NO 컬럼에 최대값 + 1 설정
                     newRow["NO"] = maxNo + 1;
@@ -1347,12 +1271,12 @@ namespace Eplan.EplAddin.HMX_MCNS
 
 
                     // DataTable에 새 행 추가
-                    CS_StaticSensor.uniqueIoDt.Rows.Add(newRow);
-                    gridControl1.DataSource = CS_StaticSensor.uniqueIoDt;
+                    DataTableUnits.dtUniqueIo.Rows.Add(newRow);
+                    gridControl1.DataSource = DataTableUnits.dtUniqueIo;
 
                 }
 
-                if (CS_StaticSensor.sensorIoDt != null)
+                if (DataTableUnits.dtSensorIo != null)
                 {
                     // cbEleqPoint.Text가 숫자인지 확인하고, 숫자라면 그 값을 사용하여 행 추가
                     if (int.TryParse(cbEleqPoint.Text, out int numberOfRowsToAdd))
@@ -1360,7 +1284,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         for (int i = 0; i < numberOfRowsToAdd; i++)
                         {
                             // 새 행 생성
-                            DataRow newRow = CS_StaticSensor.sensorIoDt.NewRow();
+                            DataRow newRow = DataTableUnits.dtSensorIo.NewRow();
 
                             // 기타 열에 기본 값 설정
                             newRow["LOCATION"] = cbEleqLocation.Text;
@@ -1373,7 +1297,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             newRow["DESCRIPTION"] = "";
 
                             // DataTable에 새 행 추가
-                            CS_StaticSensor.sensorIoDt.Rows.Add(newRow);
+                            DataTableUnits.dtSensorIo.Rows.Add(newRow);
                         }
                     }
                     else
@@ -1457,7 +1381,7 @@ namespace Eplan.EplAddin.HMX_MCNS
 
             btnPlcDetailSheet.MouseClick += (o, e) =>
             {
-                if (cbMODfullName.BackColor != Color.White)
+                if (cbMODfullName.BackColor != ColorUtility.colors[Ecolor.Active])
                 {
                     MessageBox.Show("모델명이 확정되지 않았습니다.");
                     return;
@@ -1466,7 +1390,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                 try
                 {
                     // Excel 파일을 열고 입력된 텍스트에 맞는 워크시트 로드
-                    using (var workbook = new XLWorkbook(CS_PathData.IoListFilePath))
+                    using (var workbook = new XLWorkbook(StringUnits.strIoListFilePath))
                     {
                         if (!workbook.Worksheets.Contains(cbMSPcontrollerSpec.Text))
                         {
@@ -1482,22 +1406,22 @@ namespace Eplan.EplAddin.HMX_MCNS
                     return;
                 }
 
-                if (CS_StaticSensor.sensorCopyIoDt == CS_StaticSensor.sensorIoDt)
+                if (DataTableUnits.dtSensorCopyIo == DataTableUnits.dtSensorIo)
                 {
                     return;
                 }
                 else
                 {
-                    CS_StaticSensor.sensorCopyIoDt = CS_StaticSensor.sensorIoDt.Copy();
+                    DataTableUnits.dtSensorCopyIo = DataTableUnits.dtSensorIo.Copy();
                 }
 
-                Ui_StaticForm.formIoList = new FormIoList();
-                Ui_StaticForm.formIoList.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
+                FormUnits.formIoList = new FormIoList();
+                FormUnits.formIoList.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
             };
 
             void UpdateSensorList()
             {
-                if (cbMODname.BackColor != Color.White || cbMODheight.BackColor != Color.White || cbMODweight.BackColor != Color.White ||
+                if (cbMODname.BackColor != ColorUtility.colors[Ecolor.Active] || cbMODheight.BackColor != ColorUtility.colors[Ecolor.Active] || cbMODweight.BackColor != Color.White ||
                      cbMODname.Text == "" || cbMODheight.Text == "" || cbMODweight.Text == "")
                 {
                     ClearSensorList();
@@ -1524,14 +1448,14 @@ namespace Eplan.EplAddin.HMX_MCNS
                 UpdateSensorListToLabel(funcSensorList, "CARR", fpnl5, new Font("맑은 고딕", 8, FontStyle.Regular));
                 UpdateSensorListToLabel(funcSensorList, "CARR", fpnlCarrSensorList, new Font("맑은 고딕", 9, FontStyle.Regular));
 
-                CS_StaticSensor.listLiftSensor = UpdateSensorListToString(funcSensorList, "LIFT");
-                CS_StaticSensor.listTrav1Sensor = UpdateSensorListToString(funcSensorList, "TRAV");
-                CS_StaticSensor.listTrav2Sensor = UpdateSensorListToString(funcSensorList, "TRAV2");
-                CS_StaticSensor.listFork1Sensor = UpdateSensorListToString(funcSensorList, "FORK");
-                CS_StaticSensor.listFork2Sensor = UpdateSensorListToString(funcSensorList, "FORK2");
-                CS_StaticSensor.listCarrSensor = UpdateSensorListToString(funcSensorList, "CARR");
+                StringUnits.strLiftSensor = UpdateSensorListToString(funcSensorList, "LIFT");
+                StringUnits.strTrav1Sensor = UpdateSensorListToString(funcSensorList, "TRAV");
+                StringUnits.strTrav2Sensor = UpdateSensorListToString(funcSensorList, "TRAV2");
+                StringUnits.strFork1Sensor = UpdateSensorListToString(funcSensorList, "FORK");
+                StringUnits.strFork2Sensor = UpdateSensorListToString(funcSensorList, "FORK2");
+                StringUnits.strCarrSensor = UpdateSensorListToString(funcSensorList, "CARR");
 
-                CS_StaticSensor.funcSensorDict = funcSensorList;
+                DictionaryUnits.dicfuncSensor = funcSensorList;
             }
             void UpdateSensorListToLabel(Dictionary<string, List<string>> dict, string function, Panel pnl, Font font)
             {
@@ -1569,8 +1493,8 @@ namespace Eplan.EplAddin.HMX_MCNS
             }
             void UpdatePartsItems(object sender, EventArgs e)
             {
-                // uniqueIoDt가 null인지 확인하고, null인 경우 메서드를 종료
-                if (CS_StaticSensor.uniqueIoDt == null)
+                // dtUniqueIo가 null인지 확인하고, null인 경우 메서드를 종료
+                if (DataTableUnits.dtUniqueIo == null)
                     return;
 
                 string selectedType = cbEleqType.Text;
@@ -1580,7 +1504,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                 cbEleqParts.Properties.Items.Clear();
 
                 // TYPE 및 POINT 값과 일치하는 PARTS 항목 필터링 및 중복 제거
-                var filteredParts = CS_StaticSensor.uniqueIoDt.AsEnumerable()
+                var filteredParts = DataTableUnits.dtUniqueIo.AsEnumerable()
                     .Where(row => row.Field<string>("TYPE1") == selectedType &&
                                   row.Field<int>("POINT").ToString() == selectedPoint)
                     .Select(row => row.Field<string>("PARTS"))
@@ -1597,32 +1521,32 @@ namespace Eplan.EplAddin.HMX_MCNS
                     gridControl1.DataSource = null;
 
                     // DataTable 확인 및 복사
-                    if (CS_StaticSensor.sensorIoDt == null)
+                    if (DataTableUnits.dtSensorIo == null)
                         return;
 
-                    DataTable copyDt = CS_StaticSensor.sensorIoDt.Copy();
+                    DataTable copyDt = DataTableUnits.dtSensorIo.Copy();
 
                     // 고유 데이터 테이블 생성
-                    CS_StaticSensor.logicIoDt = new DataView(copyDt).ToTable(true, "LOCATION", "TYPE1", "TYPE2", "PARTS", "DT");
+                    DataTableUnits.dtLogicIo = new DataView(copyDt).ToTable(true, "LOCATION", "TYPE1", "TYPE2", "PARTS", "DT");
                     // NO 열 추가 및 순번 할당
-                    CS_StaticSensor.logicIoDt.Columns.Add("NO", typeof(int)).SetOrdinal(0);
-                    for (int i = 0; i < CS_StaticSensor.logicIoDt.Rows.Count; i++)
-                        CS_StaticSensor.logicIoDt.Rows[i]["NO"] = i + 1;
+                    DataTableUnits.dtLogicIo.Columns.Add("NO", typeof(int)).SetOrdinal(0);
+                    for (int i = 0; i < DataTableUnits.dtLogicIo.Rows.Count; i++)
+                        DataTableUnits.dtLogicIo.Rows[i]["NO"] = i + 1;
 
                     // 추가 열 생성
-                    CS_StaticSensor.logicIoDt.Columns.Add("POINT", typeof(int)).SetOrdinal(4);
+                    DataTableUnits.dtLogicIo.Columns.Add("POINT", typeof(int)).SetOrdinal(4);
                     string[] boolColumns = { "IFB1", "IFB2", "IFB3", "IFB4", "8BIT" };
                     foreach (string colName in boolColumns)
-                        CS_StaticSensor.logicIoDt.Columns.Add(colName, typeof(bool));
+                        DataTableUnits.dtLogicIo.Columns.Add(colName, typeof(bool));
 
                     // 기본 값 설정
-                    foreach (DataRow row in CS_StaticSensor.logicIoDt.Rows)
+                    foreach (DataRow row in DataTableUnits.dtLogicIo.Rows)
                     {
                         foreach (string colName in boolColumns)
                             row[colName] = true;
                     }
 
-                    foreach (DataRow row in CS_StaticSensor.logicIoDt.Rows)
+                    foreach (DataRow row in DataTableUnits.dtLogicIo.Rows)
                     {
                         string type2Value = row.Field<string>("TYPE2");
                         string type1Value = row.Field<string>("TYPE1");
@@ -1677,15 +1601,15 @@ namespace Eplan.EplAddin.HMX_MCNS
                     
 
 
-                    CS_StaticSensor.uniqueIoDt = new DataView(copyDt).ToTable(true, "LOCATION", "TYPE1", "PARTS", "DT");
-                    CS_StaticSensor.uniqueIoDt.Columns.Add("NO", typeof(int)).SetOrdinal(0);
-                    for (int i = 0; i < CS_StaticSensor.uniqueIoDt.Rows.Count; i++)
-                        CS_StaticSensor.uniqueIoDt.Rows[i]["NO"] = i + 1;
+                    DataTableUnits.dtUniqueIo = new DataView(copyDt).ToTable(true, "LOCATION", "TYPE1", "PARTS", "DT");
+                    DataTableUnits.dtUniqueIo.Columns.Add("NO", typeof(int)).SetOrdinal(0);
+                    for (int i = 0; i < DataTableUnits.dtUniqueIo.Rows.Count; i++)
+                        DataTableUnits.dtUniqueIo.Rows[i]["NO"] = i + 1;
 
                     // 추가 열 생성
-                    CS_StaticSensor.uniqueIoDt.Columns.Add("POINT", typeof(int)).SetOrdinal(4);
+                    DataTableUnits.dtUniqueIo.Columns.Add("POINT", typeof(int)).SetOrdinal(4);
                     // POINT 값 설정
-                    foreach (DataRow row in CS_StaticSensor.uniqueIoDt.Rows)
+                    foreach (DataRow row in DataTableUnits.dtUniqueIo.Rows)
                     {
                         string locationValue = row.Field<string>("LOCATION");
                         string dtValue = row.Field<string>("DT");
@@ -1697,10 +1621,10 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                     string[] boolColumns1 = { "IFB1", "IFB2", "IFB3", "IFB4", "8BIT" };
                     foreach (string colName in boolColumns1)
-                        CS_StaticSensor.uniqueIoDt.Columns.Add(colName, typeof(bool));
+                        DataTableUnits.dtUniqueIo.Columns.Add(colName, typeof(bool));
 
                     // 기본 값 설정
-                    foreach (DataRow row in CS_StaticSensor.uniqueIoDt.Rows)
+                    foreach (DataRow row in DataTableUnits.dtUniqueIo.Rows)
                     {
                         foreach (string colName in boolColumns1)
                             row[colName] = false;
@@ -1708,7 +1632,7 @@ namespace Eplan.EplAddin.HMX_MCNS
 
 
 
-                    foreach (DataRow logicRow in CS_StaticSensor.logicIoDt.Rows)
+                    foreach (DataRow logicRow in DataTableUnits.dtLogicIo.Rows)
                     {
                         // LOCATION과 DT 값을 확인
                         string logicLocation = logicRow.Field<string>("LOCATION");
@@ -1721,7 +1645,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         bool logic8bit = logicRow.Field<bool>("8BIT");
 
 
-                        foreach (DataRow uniqueRow in CS_StaticSensor.uniqueIoDt.Rows)
+                        foreach (DataRow uniqueRow in DataTableUnits.dtUniqueIo.Rows)
                         {
                             string uniqueLocation = uniqueRow.Field<string>("LOCATION");
                             string uniqueDt = uniqueRow.Field<string>("DT");
@@ -1745,7 +1669,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     }
 
                     //test
-                    gridControl1.DataSource = CS_StaticSensor.uniqueIoDt;
+                    gridControl1.DataSource = DataTableUnits.dtUniqueIo;
 
                     // GridView 설정
                     ConfigureGridView();
@@ -1802,11 +1726,11 @@ namespace Eplan.EplAddin.HMX_MCNS
                 cbEleqParts.SelectedIndex = -1;
                 cbEleqPoint.SelectedIndex = -1;
 
-                cs_ComboBox.SettingComboBox(cbEleqLocation, "-", false);
-                cs_ComboBox.SettingComboBox(cbEleqType, "-", false);
-                cs_ComboBox.SettingComboBox(cbEleqDt, "-", false);
-                cs_ComboBox.SettingComboBox(cbEleqParts, "-", false);
-                cs_ComboBox.SettingComboBox(cbEleqPoint, "-", false);
+                cbManager.SettingComboBox(cbEleqLocation, "-", false);
+                cbManager.SettingComboBox(cbEleqType, "-", false);
+                cbManager.SettingComboBox(cbEleqDt, "-", false);
+                cbManager.SettingComboBox(cbEleqParts, "-", false);
+                cbManager.SettingComboBox(cbEleqPoint, "-", false);
 
                 // 기본 LOCATION, TYPE, POINT 값 추가
                 cbEleqLocation.Properties.Items.AddRange(new string[] { "MP", "SB" });
@@ -1832,7 +1756,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     string userText = cbMODfullName.Text; // 실제 입력값으로 변경
                     string[] userTextParts = userText.Split('-'); // 텍스트를 '-'로 분리하여 배열로 저장
 
-                    DataTable tempDt = excelIoDt.Copy();
+                    DataTable tempDt = DataTableUnits.dtExcelIo.Copy();
 
                     // 공통 시그널 항목 추가
                     foreach (var row in tempDt.AsEnumerable().Where(row => row.Field<string>("구분") == "공통"))
@@ -2189,11 +2113,11 @@ namespace Eplan.EplAddin.HMX_MCNS
                     }
 
                     // 필요한 열만 선택하여 새 DataTable로 변환
-                    CS_StaticSensor.sensorIoDt = tempDt.DefaultView.ToTable(false, "PARTS", "LOCATION", "DT", "TYPE1", "TYPE2", "CN.", "NO.", "ADD.", "SIGNAL", "DESCRIPTION", "구분", "포함조건", "제외조건", "기능", "타입");
+                    DataTableUnits.dtSensorIo = tempDt.DefaultView.ToTable(false, "PARTS", "LOCATION", "DT", "TYPE1", "TYPE2", "CN.", "NO.", "ADD.", "SIGNAL", "DESCRIPTION", "구분", "포함조건", "제외조건", "기능", "타입");
 
 
                     // LOCATION 및 DT로 그룹화하여 SIGNAL 또는 DESCRIPTION이 없는 그룹 필터링
-                    var filteredRows = CS_StaticSensor.sensorIoDt.AsEnumerable()
+                    var filteredRows = DataTableUnits.dtSensorIo.AsEnumerable()
                         .GroupBy(row => new { LOCATION = row.Field<string>("LOCATION"), DT = row.Field<string>("DT") })
                         .Where(group =>
                             group.Any(row =>
@@ -2202,9 +2126,9 @@ namespace Eplan.EplAddin.HMX_MCNS
                         .SelectMany(group => group);
 
                     // 결과를 새로운 DataTable로 변환
-                    CS_StaticSensor.sensorIoDt = filteredRows.Any()
+                    DataTableUnits.dtSensorIo = filteredRows.Any()
                         ? filteredRows.CopyToDataTable()
-                        : CS_StaticSensor.sensorIoDt.Clone(); // 결과가 없으면 빈 테이블 생성
+                        : DataTableUnits.dtSensorIo.Clone(); // 결과가 없으면 빈 테이블 생성
 
                 }
                 catch (Exception ex) { }
@@ -2277,15 +2201,15 @@ namespace Eplan.EplAddin.HMX_MCNS
         private void LoadIoFromExcel()
         {
             // DataTable 초기화 (데이터 및 컬럼 제거)
-            excelIoDt.Clear();
-            excelIoDt.Columns.Clear(); // 컬럼도 제거하여 중복 방지
+            DataTableUnits.dtExcelIo.Clear();
+            DataTableUnits.dtExcelIo.Columns.Clear(); // 컬럼도 제거하여 중복 방지
 
             try
             {
 
 
                 // Excel 파일을 열고 입력된 텍스트에 맞는 워크시트 로드
-                using (var workbook = new XLWorkbook(CS_PathData.IoListFilePath))
+                using (var workbook = new XLWorkbook(StringUnits.strIoListFilePath))
                 {
                     // 필요한 변수 선언 (이전 값 저장용)
                     string previousParts = string.Empty;
@@ -2305,41 +2229,41 @@ namespace Eplan.EplAddin.HMX_MCNS
                             // 첫 번째 행은 컬럼 이름으로 사용
                             foreach (var cell in row.Cells())
                             {
-                                excelIoDt.Columns.Add(cell.Value.ToString()); // 컬럼 추가
+                                DataTableUnits.dtExcelIo.Columns.Add(cell.Value.ToString()); // 컬럼 추가
                             }
                             firstRow = false;
                         }
                         else
                         {
                             // 데이터 행 처리
-                            DataRow dataRow = excelIoDt.NewRow();
+                            DataRow dataRow = DataTableUnits.dtExcelIo.NewRow();
                             int i = 0;
                             foreach (var cell in row.Cells())
                             {
                                 string cellValue = cell.Value.ToString();
 
                                 // 공란 필드가 있는 경우 이전 행의 값을 가져와 채움
-                                if (excelIoDt.Columns[i].ColumnName == "PARTS")
+                                if (DataTableUnits.dtExcelIo.Columns[i].ColumnName == "PARTS")
                                 {
                                     dataRow[i] = string.IsNullOrWhiteSpace(cellValue) ? previousParts : cellValue;
                                     previousParts = dataRow[i].ToString(); // 현재 값 저장
                                 }
-                                else if (excelIoDt.Columns[i].ColumnName == "LOCATION")
+                                else if (DataTableUnits.dtExcelIo.Columns[i].ColumnName == "LOCATION")
                                 {
                                     dataRow[i] = string.IsNullOrWhiteSpace(cellValue) ? previousLocation : cellValue;
                                     previousLocation = dataRow[i].ToString(); // 현재 값 저장
                                 }
-                                else if (excelIoDt.Columns[i].ColumnName == "DT")
+                                else if (DataTableUnits.dtExcelIo.Columns[i].ColumnName == "DT")
                                 {
                                     dataRow[i] = string.IsNullOrWhiteSpace(cellValue) ? previousDt : cellValue;
                                     previousDt = dataRow[i].ToString(); // 현재 값 저장
                                 }
-                                else if (excelIoDt.Columns[i].ColumnName == "TYPE1")
+                                else if (DataTableUnits.dtExcelIo.Columns[i].ColumnName == "TYPE1")
                                 {
                                     dataRow[i] = string.IsNullOrWhiteSpace(cellValue) ? previousType1 : cellValue;
                                     previousType1 = dataRow[i].ToString(); // 현재 값 저장
                                 }
-                                else if (excelIoDt.Columns[i].ColumnName == "TYPE2")
+                                else if (DataTableUnits.dtExcelIo.Columns[i].ColumnName == "TYPE2")
                                 {
                                     dataRow[i] = string.IsNullOrWhiteSpace(cellValue) ? previousType2 : cellValue;
                                     previousType2 = dataRow[i].ToString(); // 현재 값 저장
@@ -2354,7 +2278,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             }
 
                             // DataTable에 데이터 추가
-                            excelIoDt.Rows.Add(dataRow);
+                            DataTableUnits.dtExcelIo.Rows.Add(dataRow);
                         }
                     }
                 }
@@ -2368,14 +2292,14 @@ namespace Eplan.EplAddin.HMX_MCNS
         private void LoadMccbFromExcel()
         {
             // DataTable 초기화 (데이터 및 컬럼 제거)
-            excelMccbDt.Clear();
-            excelMccbDt.Columns.Clear(); // 컬럼도 제거하여 중복 방지
+            DataTableUnits.dtExcelMccb.Clear();
+            DataTableUnits.dtExcelMccb.Columns.Clear(); // 컬럼도 제거하여 중복 방지
 
 
             try
             {
                 // Excel 파일 열기
-                using (var workbook = new XLWorkbook(CS_PathData.MccbFilePath))
+                using (var workbook = new XLWorkbook(StringUnits.strMccbFilePath))
                 {
                     // 특정 워크시트 선택
                     var worksheet = workbook.Worksheet("차단기");
@@ -2383,29 +2307,29 @@ namespace Eplan.EplAddin.HMX_MCNS
                     if (worksheet != null) // 워크시트가 존재하는 경우만 실행
                     {
                         // 첫 번째 행에서 컬럼명 읽기 (중복 컬럼명 방지)
-                        if (excelMccbDt.Columns.Count == 0)
+                        if (DataTableUnits.dtExcelMccb.Columns.Count == 0)
                         {
                             var firstRow = worksheet.FirstRowUsed();
                             foreach (var cell in firstRow.CellsUsed())
                             {
-                                excelMccbDt.Columns.Add(cell.Value.ToString()); // 컬럼 추가
+                                DataTableUnits.dtExcelMccb.Columns.Add(cell.Value.ToString()); // 컬럼 추가
                             }
                         }
 
                         // 데이터 읽기 (첫 번째 행 이후부터)
                         foreach (var row in worksheet.RowsUsed().Skip(1))
                         {
-                            var dataRow = excelMccbDt.NewRow();
+                            var dataRow = DataTableUnits.dtExcelMccb.NewRow();
                             int columnIndex = 0;
 
                             foreach (var cell in row.CellsUsed())
                             {
-                                if (columnIndex < excelMccbDt.Columns.Count)
+                                if (columnIndex < DataTableUnits.dtExcelMccb.Columns.Count)
                                     dataRow[columnIndex] = cell.Value;
                                 columnIndex++;
                             }
 
-                            excelMccbDt.Rows.Add(dataRow);
+                            DataTableUnits.dtExcelMccb.Rows.Add(dataRow);
                         }
                     }
                 }
@@ -2452,7 +2376,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             {
                                 funcCtrl.SelectedIndex = -1;
 
-                                List<string> listInverterKw = excelMccbDt.AsEnumerable()
+                                List<string> listInverterKw = DataTableUnits.dtExcelMccb.AsEnumerable()
                                     .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2495,7 +2419,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             {
                                 funcCtrl.SelectedIndex = -1;
 
-                                List<string> listInverterKw = excelMccbDt.AsEnumerable()
+                                List<string> listInverterKw = DataTableUnits.dtExcelMccb.AsEnumerable()
                                     .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2530,7 +2454,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                 {
                     strInverterKw = funcControls[0].Text;
                     
-                    List<string> listInverterA = excelMccbDt.AsEnumerable()
+                    List<string> listInverterA = DataTableUnits.dtExcelMccb.AsEnumerable()
                         .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2545,7 +2469,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     funcControls[1].SelectedIndex = 0;
                     strInverterA = funcControls[1].EditValue?.ToString();
                     
-                    List<string> listPowerCable = excelMccbDt.AsEnumerable()
+                    List<string> listPowerCable = DataTableUnits.dtExcelMccb.AsEnumerable()
                         .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2561,7 +2485,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     funcControls[2].SelectedIndex = 0;
                     strPowerCable = funcControls[2].EditValue?.ToString();
 
-                    List<string> listMccbSpec = excelMccbDt.AsEnumerable()
+                    List<string> listMccbSpec = DataTableUnits.dtExcelMccb.AsEnumerable()
                         .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2626,7 +2550,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         (((liftAmp * liftMotorVolt / mspInputVolt) + (trav1Amp * trav1MotorVolt / mspInputVolt) + (trav2Amp * trav2MotorVolt / mspInputVolt)) * 1.4) + 5;
 
 
-                        listInverterA = excelMccbDt.AsEnumerable()
+                        listInverterA = DataTableUnits.dtExcelMccb.AsEnumerable()
                                 .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                             row.Field<string>("인버터 제조사") == strInverterMaker &&
                                             row.Field<string>("인버터") == strInverterSpec &&
@@ -2688,7 +2612,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         strInverterSpec = cbMSPinverterSpec.Text;
                         strEleqMccbModel = cbEleqMccbModel.Text;
 
-                        List<string> listMainPowerCable = excelMccbDt.AsEnumerable()
+                        List<string> listMainPowerCable = DataTableUnits.dtExcelMccb.AsEnumerable()
                         .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2698,7 +2622,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         .Distinct()
                         .ToList();
 
-                        List<string> listPowerCable = excelMccbDt.AsEnumerable()
+                        List<string> listPowerCable = DataTableUnits.dtExcelMccb.AsEnumerable()
                         .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2716,7 +2640,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         cbEleqPowerCable.Properties.Items.AddRange(listPowerCable);
                         cbEleqPowerCable.SelectedIndex = 0;
 
-                        List<string> listPowerKw = excelMccbDt.AsEnumerable()
+                        List<string> listPowerKw = DataTableUnits.dtExcelMccb.AsEnumerable()
                         .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2731,7 +2655,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                         cbEleqPowerKw.Properties.Items.AddRange(listPowerKw);
                         cbEleqPowerKw.SelectedIndex = 0;
 
-                        List<string> listPowerA = excelMccbDt.AsEnumerable()
+                        List<string> listPowerA = DataTableUnits.dtExcelMccb.AsEnumerable()
                         .Where(row => row.Field<string>("타겟") == strPrjTarget &&
                                 row.Field<string>("인버터 제조사") == strInverterMaker &&
                                 row.Field<string>("인버터") == strInverterSpec &&
@@ -2760,23 +2684,26 @@ namespace Eplan.EplAddin.HMX_MCNS
 
             cbEleqMainMccbSpec.Click += (o, e) =>
             {
-                if(cbLiftInverterKw.BackColor != Color.White|| cbTrav1InverterKw.BackColor != Color.White)
+                if(cbLiftInverterKw.BackColor != ColorUtility.colors[Ecolor.Active] || cbTrav1InverterKw.BackColor != ColorUtility.colors[Ecolor.Active])
                 {
                     MessageBox.Show("LIFT, TRAV 인버터 선정을 해주세요.","주의",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             };
             cbEleqMccbSpec.Click += (o, e) =>
             {
-                if(cbLiftInverterKw.BackColor != Color.White|| cbTrav1InverterKw.BackColor != Color.White)
+                if(cbLiftInverterKw.BackColor != ColorUtility.colors[Ecolor.Active] || cbTrav1InverterKw.BackColor != ColorUtility.colors[Ecolor.Active])
                 {
                     MessageBox.Show("LIFT, TRAV 인버터 선정을 해주세요.", "주의", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             };
         }
-
-        
         private void ActivateEplan()
         {
+            DataTableUnits.dtBrakeOption.Rows.Clear();
+            DataTableUnits.dtBrakeOption.Columns.Clear();
+            DataTableUnits.dtBrakeOption.Columns.Add("functionTxt", typeof(string));
+            DataTableUnits.dtBrakeOption.Columns.Add("valueBool", typeof(bool));
+
             picBoxProjectGenerate.Click += (o, e) =>
             {
                 bool trav2Flag = false;
@@ -2790,6 +2717,14 @@ namespace Eplan.EplAddin.HMX_MCNS
                 int fork1Count = 0;
                 int fork2Count = 0;
                 Control[] brakeOptionControl = { cbLiftBrakeOption, cbTrav1BrakeOption, cbTrav2BrakeOption, cbFork1BrakeOption, cbFork2BrakeOption };
+
+                DataTableUnits.dtBrakeOption.Clear();
+                foreach (Control control in brakeOptionControl)
+                {
+                    string funcTxt = control.Parent.Parent.Parent.Parent.Parent.Parent.Text ?? "";
+                    bool valueBool = control.Text == "BME 1.5" ? true : false;
+                    DataTableUnits.dtBrakeOption.Rows.Add(funcTxt, valueBool);
+                }
 
                 if (ckbTravDoubleMotorTrue.Checked)
                 {
@@ -3010,7 +2945,7 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                     foreach (var (cb, checkFlag) in comboBoxList)
                     {
-                        if (checkFlag && (cb.BackColor != Color.White || string.IsNullOrEmpty(cb.Text)))
+                        if (checkFlag && (cb.BackColor != ColorUtility.colors[Ecolor.Active] || string.IsNullOrEmpty(cb.Text)))
                         {
                             // 레이블 텍스트 찾기 (부모 컨트롤에서 검색)
                             var labelText = cb.Parent.Controls.OfType<LabelControl>().FirstOrDefault()?.Text;
@@ -3033,16 +2968,16 @@ namespace Eplan.EplAddin.HMX_MCNS
                 void GeneratePageMacro()
                 {
 
-                    mcnsControl.SetMacroRootDirectory(CS_PathData.MacroFolderPath);
+                    mcnsControl.SetMacroRootDirectory(StringUnits.strMacroFolderPath);
 
                     string elkName = string.Concat(cbPRJnumber.Text, "_", cbMODfullName.Text);
-                    string prjFullFilePath = Path.Combine(CS_PathData.PrjFolderPath, elkName + ".elk");
+                    string prjFullFilePath = Path.Combine(StringUnits.strPrjFolderPath, elkName + ".elk");
 
                     // 프로젝트 파일이 이미 존재하는지 확인
                     if (File.Exists(prjFullFilePath))
                     {
                         // 덮어쓰기 여부를 묻는 메시지 박스
-                        DialogResult dialogResult = MessageBox.Show(string.Concat("이미 생성된 프로젝트가 있습니다.", "\n경로 : ", CS_PathData.PrjFolderPath, "\n파일이름 : ", elkName), "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        DialogResult dialogResult = MessageBox.Show(string.Concat("이미 생성된 프로젝트가 있습니다.", "\n경로 : ", StringUnits.strPrjFolderPath, "\n파일이름 : ", elkName), "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -3055,7 +2990,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             oProgress.BeginPart(13.5, "");
                             oProgress.SetActionText("프로젝트 자동 생성");
                             oProgress.SetNeededSteps(1);
-                            oProgress.Step(1); this.mcnsControl.CreateAndOpenProject(prjFullFilePath, CS_PathData.BasicTempletFilePath);
+                            oProgress.Step(1); this.mcnsControl.CreateAndOpenProject(prjFullFilePath, StringUnits.strBasicTempletFilePath);
                             oProgress.EndPart(false);
 
                             //part 2
@@ -3159,7 +3094,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                             CheckMcnsEngineFunction(this.mcnsControl.InsertWindowMacorFluorenscentLamp(fluorescentType, installSiteType, controlVoltageType));
                             CheckMcnsEngineFunction(this.mcnsControl.InsertWindowMacorHMI(cbEleqHmi.Text));
                             CheckMcnsEngineFunction(this.mcnsControl.InsertWindowMacorHub(cbEleqHubModel.Text));
-                            CheckMcnsEngineFunction(this.mcnsControl.InsertWindowMacorOPT(installSiteType, controllerType, CS_StaticSensor.uniqueIoDt, cbEleqOpt.Text));
+                            CheckMcnsEngineFunction(this.mcnsControl.InsertWindowMacorOPT(installSiteType, controllerType, DataTableUnits.dtUniqueIo, cbEleqOpt.Text));
                             CheckMcnsEngineFunction(this.mcnsControl.InsertWindowMacorSafetyEmergency(installSiteType, int.Parse(cbEleqSafetyQuantity.Text), forkType, travelType, cbEleqSafety.Text));
                             if (ckbPRJoverseas.Checked)
                             {
@@ -3167,8 +3102,8 @@ namespace Eplan.EplAddin.HMX_MCNS
                                 CheckMcnsEngineFunction(this.mcnsControl.InsertWindowMacroSafetyReset(cbEleqSafety.Text));
                             }
 
-                            CheckMcnsEngineFunction(this.mcnsControl.InsertControllerMacro(controllerType, CS_StaticSensor.uniqueIoDt, CS_StaticSensor.sensorIoDt));
-                            CheckMcnsEngineFunction(this.mcnsControl.InsertControllerBitIOMacro(controllerType, CS_StaticSensor.uniqueIoDt, CS_StaticSensor.sensorIoDt, brakeOptionBitFlag));
+                            CheckMcnsEngineFunction(this.mcnsControl.InsertControllerMacro(controllerType, DataTableUnits.dtUniqueIo, DataTableUnits.dtSensorIo));
+                            CheckMcnsEngineFunction(this.mcnsControl.InsertControllerBitIOMacro(controllerType, DataTableUnits.dtUniqueIo, DataTableUnits.dtSensorIo, brakeOptionBitFlag, DataTableUnits.dtBrakeOption));
                             CheckMcnsEngineFunction(this.mcnsControl.InsertPlcIOSwitchWindowMacro(installSiteType, controllerType, int.Parse(cbEleqSafetyQuantity.Text)));
                             CheckMcnsEngineFunction(this.mcnsControl.InsertPlcTowerLampWindowMacro(controllerType, towerLampType));
 
@@ -3213,10 +3148,10 @@ namespace Eplan.EplAddin.HMX_MCNS
                                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Sheet1");
 
                                 // DataTable 데이터를 워크시트에 로드
-                                worksheet.Cells["A1"].LoadFromDataTable(CS_StaticSensor.sensorIoDt, true);
+                                worksheet.Cells["A1"].LoadFromDataTable(DataTableUnits.dtSensorIo, true);
 
                                 // 파일 저장
-                                FileInfo file = new FileInfo(Path.Combine(CS_PathData.PrjFolderPath, elkName + ".xlsx"));
+                                FileInfo file = new FileInfo(Path.Combine(StringUnits.strPrjFolderPath, elkName + ".xlsx"));
                                 package.SaveAs(file);
                             }
                             this.mcnsControl.GeneratePdf();
@@ -3231,8 +3166,6 @@ namespace Eplan.EplAddin.HMX_MCNS
                 }
             };
         }
-        
-
         private void Interlock()
         {
             
@@ -3314,7 +3247,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     cbEleqFanQuantity.SelectedIndex = -1;
                 }
             }
-
+            
             //프로젝트 옵션 콤보 박스 visble 인터락
             List<string> opItemsList = cbMODoption1.Properties.Items.Cast<string>().ToList();
             cbMODoption2.Hide();
@@ -3338,7 +3271,7 @@ namespace Eplan.EplAddin.HMX_MCNS
             void FilterComboBox(ComboBoxEdit currentCb, ComboBoxEdit nextCb, List<string> items, params ComboBoxEdit[] previousCbs)
             {
                 // White 배경일 때만 필터링을 적용하고 다음 ComboBox를 보여줍니다.
-                if (currentCb.BackColor == Color.White)
+                if (currentCb.BackColor == ColorUtility.colors[Ecolor.Active])
                 {
                     // 모든 이전 ComboBox와 현재 ComboBox에서 선택된 최대 인덱스를 가져옵니다.
                     int maxIndex = previousCbs
@@ -3359,7 +3292,7 @@ namespace Eplan.EplAddin.HMX_MCNS
             void UpdateComboBoxVisibility()
             {
                 // cbMODoption1의 배경이 흰색이 아닌 경우 2, 3, 4번 콤보박스를 숨기고 텍스트를 지웁니다.
-                if (cbMODoption1.BackColor != Color.White)
+                if (cbMODoption1.BackColor != ColorUtility.colors[Ecolor.Active])
                 {
                     cbMODoption2.Hide();
                     cbMODoption2.Text = ""; // 텍스트 지우기
@@ -3369,7 +3302,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     cbMODoption4.Text = ""; // 텍스트 지우기
                 }
                 // cbMODoption2의 배경이 흰색이 아닌 경우 3, 4번 콤보박스를 숨기고 텍스트를 지웁니다.
-                else if (cbMODoption2.BackColor != Color.White)
+                else if (cbMODoption2.BackColor != ColorUtility.colors[Ecolor.Active])
                 {
                     cbMODoption3.Hide();
                     cbMODoption3.Text = ""; // 텍스트 지우기
@@ -3377,7 +3310,7 @@ namespace Eplan.EplAddin.HMX_MCNS
                     cbMODoption4.Text = ""; // 텍스트 지우기
                 }
                 // cbMODoption3의 배경이 흰색이 아닌 경우 4번 콤보박스를 숨기고 텍스트를 지웁니다.
-                else if (cbMODoption3.BackColor != Color.White)
+                else if (cbMODoption3.BackColor != ColorUtility.colors[Ecolor.Active])
                 {
                     cbMODoption4.Hide();
                     cbMODoption4.Text = ""; // 텍스트 지우기
@@ -3390,6 +3323,8 @@ namespace Eplan.EplAddin.HMX_MCNS
                     cbMODoption4.Show();
                 }
             }
+            
+
 
             //화물 셀 기입 인터락
             gridViewCargo.CellValueChanged += (o, e) =>
@@ -3489,11 +3424,11 @@ namespace Eplan.EplAddin.HMX_MCNS
             };
 
             // button을 Radio button으로 사용
-            cs_CheckBox.ChangeToRadioButton(ckbLiftRaser, ckbLiftBarcode);
+            ckbManager.ChangeToRadioButton(ckbLiftRaser, ckbLiftBarcode);
             // button을 Radio button으로 사용
-            cs_CheckBox.ChangeToRadioButton(ckbTrav1Raser, ckbTrav1Barcode);
+            ckbManager.ChangeToRadioButton(ckbTrav1Raser, ckbTrav1Barcode);
             // button을 Radio button으로 사용
-            cs_CheckBox.ChangeToRadioButton(ckbTrav2Raser, ckbTrav2Barcode);
+            ckbManager.ChangeToRadioButton(ckbTrav2Raser, ckbTrav2Barcode);
 
             //NPN,PNP,COLD 타입에 따른 목록 인터락
             cbMODoption1.TextChanged += ColdTypeOption_TextChanged;
@@ -3525,37 +3460,37 @@ namespace Eplan.EplAddin.HMX_MCNS
                     cbFork1BrakeOption.Properties.Items.Clear();
                     cbFork2BrakeOption.Properties.Items.Clear();
 
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdEleqModem", cbEleqModem);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdEleqSensorItem", cbEleqSensorItem);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdLiftBrakeOption", cbLiftBrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdTravBrakeOption", cbTrav1BrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdTravBrakeOption", cbTrav2BrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdForkBrakeOption", cbFork1BrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdForkBrakeOption", cbFork2BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdEleqModem", cbEleqModem);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdEleqSensorItem", cbEleqSensorItem);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdLiftBrakeOption", cbLiftBrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdTravBrakeOption", cbTrav1BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdTravBrakeOption", cbTrav2BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdForkBrakeOption", cbFork1BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdForkBrakeOption", cbFork2BrakeOption);
 
                     if (ckbLiftRaser.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listRaserColdLiftAbsLocation", cbLiftAbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listRaserColdLiftAbsLocation", cbLiftAbsLocation);
                     }
                     else if (ckbLiftBarcode.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listBarcodeColdLiftAbsLocation", cbLiftAbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listBarcodeColdLiftAbsLocation", cbLiftAbsLocation);
                     }
                     if (ckbTrav1Raser.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listRaserColdTravAbsLocation", cbTrav1AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listRaserColdTravAbsLocation", cbTrav1AbsLocation);
                     }
                     else if (ckbTrav1Barcode.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav1AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav1AbsLocation);
                     }
                     if (ckbTrav2Raser.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listRaserColdTravAbsLocation", cbTrav2AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listRaserColdTravAbsLocation", cbTrav2AbsLocation);
                     }
                     else if (ckbTrav2Barcode.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav2AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav2AbsLocation);
                     }
 
                     cbEleqModem.SelectedIndex = -1;
@@ -3574,44 +3509,44 @@ namespace Eplan.EplAddin.HMX_MCNS
                     cbOPmachineControl.SelectedIndex = 0;
                     cbEleqFanQuantity.Enabled = true;
 
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqModem", cbEleqModem);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftBrakeOption", cbLiftBrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravBrakeOption", cbTrav1BrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravBrakeOption", cbTrav2BrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkBrakeOption", cbFork1BrakeOption);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkBrakeOption", cbFork2BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqModem", cbEleqModem);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftBrakeOption", cbLiftBrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravBrakeOption", cbTrav1BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravBrakeOption", cbTrav2BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkBrakeOption", cbFork1BrakeOption);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkBrakeOption", cbFork2BrakeOption);
 
                     if (cbEleqSensorType.Text == "NPN")
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqNpnSensorItem", cbEleqSensorItem);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqNpnSensorItem", cbEleqSensorItem);
                     }
                     else if (cbEleqSensorType.Text == "PNP")
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqPnpSensorItem", cbEleqSensorItem);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqPnpSensorItem", cbEleqSensorItem);
                     }
                     if (ckbLiftRaser.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftRaserAbsLocation", cbLiftAbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftRaserAbsLocation", cbLiftAbsLocation);
                     }
                     else if (ckbLiftBarcode.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftBarcodeAbsLocation", cbLiftAbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftBarcodeAbsLocation", cbLiftAbsLocation);
                     }
                     if (ckbTrav1Raser.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravRaserAbsLocation", cbTrav1AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravRaserAbsLocation", cbTrav1AbsLocation);
                     }
                     else if (ckbTrav1Barcode.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravBarcodeAbsLocation", cbTrav1AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravBarcodeAbsLocation", cbTrav1AbsLocation);
                     }
                     if (ckbTrav2Raser.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravRaserAbsLocation", cbTrav2AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravRaserAbsLocation", cbTrav2AbsLocation);
                     }
                     else if (ckbTrav2Barcode.Checked)
                     {
-                        cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravBarcodeAbsLocation", cbTrav2AbsLocation);
+                        pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravBarcodeAbsLocation", cbTrav2AbsLocation);
                     }
                 }
             }
@@ -3655,38 +3590,38 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if (coldFlag)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdEleqModem", cbEleqModem);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listColdEleqSensorItem", cbEleqSensorItem);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdEleqModem", cbEleqModem);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listColdEleqSensorItem", cbEleqSensorItem);
                 }
                 else if(!coldFlag && npnFlag)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqNpnSensorItem", cbEleqSensorItem);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqNpnSensorItem", cbEleqSensorItem);
                 }
                 else if (!coldFlag && pnpFlag)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listEleqPnpSensorItem", cbEleqSensorItem);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listEleqPnpSensorItem", cbEleqSensorItem);
                 }
 
                 if (npnFlag)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftNpnRightPosition", cbLiftRightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravNpnRightPosition", cbTrav1RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravNpnRightPosition", cbTrav2RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkNpnRightPosition", cbFork1RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkNpnRightPosition", cbFork2RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listCarrNpnSensor", cbCarrSensor);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listCarrNpnDoubleInput", cbCarrDoubleInput);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftNpnRightPosition", cbLiftRightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravNpnRightPosition", cbTrav1RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravNpnRightPosition", cbTrav2RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkNpnRightPosition", cbFork1RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkNpnRightPosition", cbFork2RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listCarrNpnSensor", cbCarrSensor);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listCarrNpnDoubleInput", cbCarrDoubleInput);
 
                 }
                 else if (pnpFlag)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftPnpRightPosition", cbLiftRightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravPnpRightPosition", cbTrav1RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravPnpRightPosition", cbTrav2RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkPnpRightPosition", cbFork1RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listForkPnpRightPosition", cbFork2RightPosition);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listCarrPnpSensor", cbCarrSensor);
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listCarrPnpDoubleInput", cbCarrDoubleInput);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftPnpRightPosition", cbLiftRightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravPnpRightPosition", cbTrav1RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravPnpRightPosition", cbTrav2RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkPnpRightPosition", cbFork1RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listForkPnpRightPosition", cbFork2RightPosition);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listCarrPnpSensor", cbCarrSensor);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listCarrPnpDoubleInput", cbCarrDoubleInput);
 
                 }
             };
@@ -3696,11 +3631,11 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if ((cbMODoption1.Text == "C" || cbMODoption2.Text == "C" || cbMODoption3.Text == "C" || cbMODoption4.Text == "C") && ckbLiftRaser.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listRaserColdLiftAbsLocation", cbLiftAbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listRaserColdLiftAbsLocation", cbLiftAbsLocation);
                 }
                 else if (ckbLiftRaser.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftRaserAbsLocation", cbLiftAbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftRaserAbsLocation", cbLiftAbsLocation);
                 }
             };
             ckbLiftBarcode.CheckedChanged += (o, e) =>
@@ -3709,11 +3644,11 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if ((cbMODoption1.Text == "C" || cbMODoption2.Text == "C" || cbMODoption3.Text == "C" || cbMODoption4.Text == "C") && ckbLiftBarcode.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listBarcodeColdLiftAbsLocation", cbLiftAbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listBarcodeColdLiftAbsLocation", cbLiftAbsLocation);
                 }
                 else if (ckbLiftBarcode.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listLiftBarcodeAbsLocation", cbLiftAbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listLiftBarcodeAbsLocation", cbLiftAbsLocation);
                 }
             };
             ckbTrav1Raser.CheckedChanged += (o, e) =>
@@ -3722,11 +3657,11 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if ((cbMODoption1.Text == "C" || cbMODoption2.Text == "C" || cbMODoption3.Text == "C" || cbMODoption4.Text == "C") && ckbTrav1Raser.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listRaserColdTravAbsLocation", cbTrav1AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listRaserColdTravAbsLocation", cbTrav1AbsLocation);
                 }
                 else if (ckbTrav1Raser.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravRaserAbsLocation", cbTrav1AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravRaserAbsLocation", cbTrav1AbsLocation);
                 }
             };
             ckbTrav1Barcode.CheckedChanged += (o, e) =>
@@ -3735,11 +3670,11 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if ((cbMODoption1.Text == "C" || cbMODoption2.Text == "C" || cbMODoption3.Text == "C" || cbMODoption4.Text == "C") && ckbTrav1Barcode.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav1AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav1AbsLocation);
                 }
                 else if (ckbTrav1Barcode.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravBarcodeAbsLocation", cbTrav1AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravBarcodeAbsLocation", cbTrav1AbsLocation);
                 }
             };
             ckbTrav2Raser.CheckedChanged += (o, e) =>
@@ -3748,11 +3683,11 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if ((cbMODoption1.Text == "C" || cbMODoption2.Text == "C" || cbMODoption3.Text == "C" || cbMODoption4.Text == "C") && ckbTrav2Raser.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listRaserColdTravAbsLocation", cbTrav2AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listRaserColdTravAbsLocation", cbTrav2AbsLocation);
                 }
                 else if (ckbTrav2Raser.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravRaserAbsLocation", cbTrav2AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravRaserAbsLocation", cbTrav2AbsLocation);
                 }
             };
             ckbTrav2Barcode.CheckedChanged += (o, e) =>
@@ -3761,14 +3696,14 @@ namespace Eplan.EplAddin.HMX_MCNS
 
                 if ((cbMODoption1.Text == "C" || cbMODoption2.Text == "C" || cbMODoption3.Text == "C" || cbMODoption4.Text == "C") && ckbTrav2Barcode.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav2AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listBarcodeColdTravAbsLocation", cbTrav2AbsLocation);
                 }
                 else if (ckbTrav2Barcode.Checked)
                 {
-                    cs_ListItems.LoadListFromXmlToComboBox(CS_PathData.ItemListFilePath, "listTravBarcodeAbsLocation", cbTrav2AbsLocation);
+                    pathManager.LoadListFromXmlToComboBox(StringUnits.strItemListFilePath, "listTravBarcodeAbsLocation", cbTrav2AbsLocation);
                 }
             };
-
+            
             ComboBoxEdit[] cbModular = { cbEleqPowerKw, cbEleqPowerA, cbEleqBrakeResistorKw, cbEleqBrakeResistorOhm, cbEleqMccbSpec,cbEleqPowerCable };
             ComboBoxEdit[] cbSystem =
                 {
@@ -3887,11 +3822,11 @@ namespace Eplan.EplAddin.HMX_MCNS
             }
             void ChangeStateByKey(bool ckbState, string strFunc)
             {
-                foreach (var key in CS_StaticUnit.dicCtrlFunc.Keys)
+                foreach (var key in DictionaryUnits.dicCtrlFunc.Keys)
                 {
                     if (key.Contains(strFunc)) // strFunc가 포함된 키 찾기
                     {
-                        foreach (var control in CS_StaticUnit.dicCtrlFunc[key])
+                        foreach (var control in DictionaryUnits.dicCtrlFunc[key])
                         {
                             control.Enabled = ckbState; // 컨트롤 활성화
                         }
@@ -3922,15 +3857,13 @@ namespace Eplan.EplAddin.HMX_MCNS
             }
 
         }
-
-
         private void UpdateComboBoxItemList()
         {
             if (watcher == null) // watcher가 아직 생성되지 않은 경우에만 생성
             {
                 watcher = new FileSystemWatcher();
-                watcher.Path = Path.GetDirectoryName(CS_PathData.ItemListFilePath);
-                watcher.Filter = Path.GetFileName(CS_PathData.ItemListFilePath);
+                watcher.Path = Path.GetDirectoryName(StringUnits.strItemListFilePath);
+                watcher.Filter = Path.GetFileName(StringUnits.strItemListFilePath);
                 watcher.NotifyFilter = NotifyFilters.LastWrite;
 
                 // 변경 이벤트 핸들러 추가

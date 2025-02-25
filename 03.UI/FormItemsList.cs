@@ -6,8 +6,6 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.ClipboardSource.SpreadsheetML;
 using Eplan.MCNS.Lib;
-using Eplan.MCNS.Lib.Share_CS;
-using Eplan.MCNS.Lib.UI_CS;
 using ClosedXML.Excel;
 using System.Collections.Generic;
 using System.Xml.Linq;
@@ -16,8 +14,8 @@ namespace Eplan.EplAddin.HMX_MCNS
 {
     public partial class FormItemsList : Form
     {
-        CS_DataGridView cs_DataGridView = new CS_DataGridView();
-        CS_ListItems cs_ListItems = new CS_ListItems();
+        GridViewManager gvManager = new GridViewManager();
+        FilePathManager pathManager = new FilePathManager();
         
 
         // 컨트롤 DPI 스케일링 조정
@@ -28,8 +26,6 @@ namespace Eplan.EplAddin.HMX_MCNS
         {
             InitializeComponent();
             
-            EventMainForm();
-
             LoadFromXmlData();
 
             btnSaveItems.Click += (o, e) =>
@@ -54,85 +50,85 @@ namespace Eplan.EplAddin.HMX_MCNS
         }
         private void LoadFromXmlData()
         {
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMODName", gridControl1);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMODOption", gridControl2);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMODName", gridControl1);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMODOption", gridControl2);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMSPinputVolt", gridControl3);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMSPinputHz", gridControl4);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMSPcontrollerMaker", gridControl48);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMSPcontrollerSpec", gridControl5);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMSPinverterMaker", gridControl49);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listMSPinverterSpec", gridControl6);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMSPinputVolt", gridControl3);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMSPinputHz", gridControl4);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMSPcontrollerMaker", gridControl48);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMSPcontrollerSpec", gridControl5);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMSPinverterMaker", gridControl49);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listMSPinverterSpec", gridControl6);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listOPmachineControl", gridControl7);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listOPremoteControl", gridControl8);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listOPemergencyPower", gridControl9);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listOPemergencyLocation", gridControl10);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listOPmachineControl", gridControl7);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listOPremoteControl", gridControl8);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listOPemergencyPower", gridControl9);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listOPemergencyLocation", gridControl10);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqUsingVoltage", gridControl56);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqMccbModel", gridControl11);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqSmpsModel", gridControl12);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqCableModel", gridControl13);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqHubModel", gridControl14);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqFanQuantity", gridControl46);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqTerminal", gridControl47);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqPanel", gridControl50);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqHmi", gridControl51);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqOpt", gridControl52);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqTowerLamp", gridControl55);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqSafety", gridControl53);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqSafetyQuantity", gridControl54);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqModem", gridControl15);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqInterLockSensorSide", gridControl16);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqInterLockBit", gridControl17);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqNpnSensorItem", gridControl18);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listEleqPnpSensorItem", gridControl19);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqUsingVoltage", gridControl56);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqMccbModel", gridControl11);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqSmpsModel", gridControl12);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqCableModel", gridControl13);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqHubModel", gridControl14);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqFanQuantity", gridControl46);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqTerminal", gridControl47);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqPanel", gridControl50);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqHmi", gridControl51);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqOpt", gridControl52);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqTowerLamp", gridControl55);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqSafety", gridControl53);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqSafetyQuantity", gridControl54);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqModem", gridControl15);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqInterLockSensorSide", gridControl16);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqInterLockBit", gridControl17);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqNpnSensorItem", gridControl18);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listEleqPnpSensorItem", gridControl19);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftBrakeOption", gridControl23);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftMotorSpec", gridControl20);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftMotorMaker", gridControl26);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftMotorMethod", gridControl60);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftRaserAbsLocation", gridControl21);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftBarcodeAbsLocation", gridControl22);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftNpnRightPosition", gridControl25);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftPnpRightPosition", gridControl37);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listLiftLimitSwitch", gridControl24);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftBrakeOption", gridControl23);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftMotorSpec", gridControl20);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftMotorMaker", gridControl26);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftMotorMethod", gridControl60);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftRaserAbsLocation", gridControl21);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftBarcodeAbsLocation", gridControl22);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftNpnRightPosition", gridControl25);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftPnpRightPosition", gridControl37);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listLiftLimitSwitch", gridControl24);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravBrakeOption", gridControl30);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravMotorSpec", gridControl27);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravMotorMaker", gridControl64);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravMotorMethod", gridControl65);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravRaserAbsLocation", gridControl28);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravBarcodeAbsLocation", gridControl29);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravNpnRightPosition", gridControl31);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravPnpRightPosition", gridControl45);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listTravLimitSwitch", gridControl32);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravBrakeOption", gridControl30);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravMotorSpec", gridControl27);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravMotorMaker", gridControl64);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravMotorMethod", gridControl65);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravRaserAbsLocation", gridControl28);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravBarcodeAbsLocation", gridControl29);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravNpnRightPosition", gridControl31);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravPnpRightPosition", gridControl45);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listTravLimitSwitch", gridControl32);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listForkBrakeOption", gridControl38);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listForkMotorSpec", gridControl33);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listForkMotorMaker", gridControl34);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listForkMotorMethod", gridControl35);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listForkNpnRightPosition", gridControl39);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listForkPnpRightPosition", gridControl40);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listForkBrakeOption", gridControl38);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listForkMotorSpec", gridControl33);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listForkMotorMaker", gridControl34);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listForkMotorMethod", gridControl35);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listForkNpnRightPosition", gridControl39);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listForkPnpRightPosition", gridControl40);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listCarrNpnSensor", gridControl41);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listCarrPnpSensor", gridControl42);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listCarrNpnDoubleInput", gridControl43);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listCarrPnpDoubleInput", gridControl44);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listCarrNpnSensor", gridControl41);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listCarrPnpSensor", gridControl42);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listCarrNpnDoubleInput", gridControl43);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listCarrPnpDoubleInput", gridControl44);
 
             //콜드 타입
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listColdEleqModem", gridControl57);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listColdEleqSensorItem", gridControl58);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listColdEleqModem", gridControl57);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listColdEleqSensorItem", gridControl58);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listRaserColdLiftAbsLocation", gridControl59);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listBarcodeColdLiftAbsLocation", gridControl61);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listRaserColdLiftAbsLocation", gridControl59);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listBarcodeColdLiftAbsLocation", gridControl61);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listRaserColdTravAbsLocation", gridControl62);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listBarcodeColdTravAbsLocation", gridControl63);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listRaserColdTravAbsLocation", gridControl62);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listBarcodeColdTravAbsLocation", gridControl63);
 
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listColdLiftBrakeOption", gridControl36);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listColdTravBrakeOption", gridControl66);
-            cs_ListItems.LoadListFromXmlToDataTable(CS_PathData.ItemListFilePath, "listColdForkBrakeOption", gridControl67);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listColdLiftBrakeOption", gridControl36);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listColdTravBrakeOption", gridControl66);
+            pathManager.LoadListFromXmlToDataTable(StringUnits.strItemListFilePath, "listColdForkBrakeOption", gridControl67);
 
 
 
@@ -141,169 +137,160 @@ namespace Eplan.EplAddin.HMX_MCNS
 
         private void SaveToXmlData()
         {
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMODName", gridControl1);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMODOption", gridControl2);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMODName", gridControl1);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMODOption", gridControl2);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMSPinputVolt", gridControl3);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMSPinputHz", gridControl4);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMSPcontrollerMaker", gridControl48);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMSPcontrollerSpec", gridControl5);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMSPinverterMaker", gridControl49);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listMSPinverterSpec", gridControl6);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMSPinputVolt", gridControl3);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMSPinputHz", gridControl4);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMSPcontrollerMaker", gridControl48);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMSPcontrollerSpec", gridControl5);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMSPinverterMaker", gridControl49);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listMSPinverterSpec", gridControl6);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listOPmachineControl", gridControl7);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listOPremoteControl", gridControl8);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listOPemergencyPower", gridControl9);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listOPemergencyLocation", gridControl10);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listOPmachineControl", gridControl7);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listOPremoteControl", gridControl8);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listOPemergencyPower", gridControl9);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listOPemergencyLocation", gridControl10);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqUsingVoltage", gridControl56);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqMccbModel", gridControl11);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqSmpsModel", gridControl12);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqCableModel", gridControl13);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqHubModel", gridControl14);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqFanQuantity", gridControl46);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqTerminal", gridControl47);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqPanel", gridControl50);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqHmi", gridControl51);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqOpt", gridControl52);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqTowerLamp", gridControl55);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqSafetyEmo", gridControl53);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqEmoQuantity", gridControl54);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqModem", gridControl15);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqInterLockSensorSide", gridControl16);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqInterLockBit", gridControl17);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqNpnSensorItem", gridControl18);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listEleqPnpSensorItem", gridControl19);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqUsingVoltage", gridControl56);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqMccbModel", gridControl11);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqSmpsModel", gridControl12);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqCableModel", gridControl13);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqHubModel", gridControl14);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqFanQuantity", gridControl46);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqTerminal", gridControl47);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqPanel", gridControl50);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqHmi", gridControl51);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqOpt", gridControl52);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqTowerLamp", gridControl55);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqSafetyEmo", gridControl53);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqEmoQuantity", gridControl54);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqModem", gridControl15);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqInterLockSensorSide", gridControl16);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqInterLockBit", gridControl17);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqNpnSensorItem", gridControl18);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listEleqPnpSensorItem", gridControl19);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftBrakeOption", gridControl23);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftMotorSpec", gridControl20);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftMotorMaker", gridControl26);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftMotorMethod", gridControl60);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftRaserAbsLocation", gridControl21);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftBarcodeAbsLocation", gridControl22);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftNpnRightPosition", gridControl25);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftPnpRightPosition", gridControl37);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listLiftLimitSwitch", gridControl24);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftBrakeOption", gridControl23);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftMotorSpec", gridControl20);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftMotorMaker", gridControl26);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftMotorMethod", gridControl60);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftRaserAbsLocation", gridControl21);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftBarcodeAbsLocation", gridControl22);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftNpnRightPosition", gridControl25);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftPnpRightPosition", gridControl37);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listLiftLimitSwitch", gridControl24);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravBrakeOption", gridControl30);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravMotorSpec", gridControl27);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravMotorMaker", gridControl64);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravMotorMethod", gridControl65);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravRaserAbsLocation", gridControl28);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravBarcodeAbsLocation", gridControl29);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravNpnRightPosition", gridControl31);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravPnpRightPosition", gridControl45);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listTravLimitSwitch", gridControl32);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravBrakeOption", gridControl30);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravMotorSpec", gridControl27);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravMotorMaker", gridControl64);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravMotorMethod", gridControl65);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravRaserAbsLocation", gridControl28);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravBarcodeAbsLocation", gridControl29);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravNpnRightPosition", gridControl31);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravPnpRightPosition", gridControl45);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listTravLimitSwitch", gridControl32);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listForkBrakeOption", gridControl38);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listForkMotorSpec", gridControl33);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listForkMotorMaker", gridControl34);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listForkMotorMethod", gridControl35);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listForkNpnRightPosition", gridControl39);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listForkPnpRightPosition", gridControl40);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listForkBrakeOption", gridControl38);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listForkMotorSpec", gridControl33);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listForkMotorMaker", gridControl34);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listForkMotorMethod", gridControl35);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listForkNpnRightPosition", gridControl39);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listForkPnpRightPosition", gridControl40);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listCarrNpnSensor", gridControl41);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listCarrPnpSensor", gridControl42);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listCarrNpnDoubleInput", gridControl43);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listCarrPnpDoubleInput", gridControl44);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listCarrNpnSensor", gridControl41);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listCarrPnpSensor", gridControl42);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listCarrNpnDoubleInput", gridControl43);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listCarrPnpDoubleInput", gridControl44);
 
             //콜드 타입
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listColdEleqModem", gridControl57);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listColdEleqSensorItem", gridControl58);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listColdEleqModem", gridControl57);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listColdEleqSensorItem", gridControl58);
 
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listRaserColdLiftAbsLocation", gridControl59);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listBarcodeColdLiftAbsLocation", gridControl61);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listRaserColdLiftAbsLocation", gridControl59);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listBarcodeColdLiftAbsLocation", gridControl61);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listRaserColdTravAbsLocation", gridControl62);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listBarcodeColdTravAbsLocation", gridControl63);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listRaserColdTravAbsLocation", gridControl62);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listBarcodeColdTravAbsLocation", gridControl63);
 
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listColdLiftBrakeOption", gridControl36);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listColdTravBrakeOption", gridControl66);
-            cs_ListItems.SaveListFromDataTableToXml(CS_PathData.ItemListFilePath, "listColdForkBrakeOption", gridControl67);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listColdLiftBrakeOption", gridControl36);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listColdTravBrakeOption", gridControl66);
+            pathManager.SaveListFromDataTableToXml(StringUnits.strItemListFilePath, "listColdForkBrakeOption", gridControl67);
 
         }
 
         private void SetGridView()
         {
-            cs_DataGridView.SetItemListGridView(gridView1);
-            cs_DataGridView.SetItemListGridView(gridView2);
-            cs_DataGridView.SetItemListGridView(gridView3);
-            cs_DataGridView.SetItemListGridView(gridView4);
-            cs_DataGridView.SetItemListGridView(gridView5);
-            cs_DataGridView.SetItemListGridView(gridView6);
-            cs_DataGridView.SetItemListGridView(gridView7);
-            cs_DataGridView.SetItemListGridView(gridView8);
-            cs_DataGridView.SetItemListGridView(gridView9);
-            cs_DataGridView.SetItemListGridView(gridView10);
-            cs_DataGridView.SetItemListGridView(gridView11);
-            cs_DataGridView.SetItemListGridView(gridView12);
-            cs_DataGridView.SetItemListGridView(gridView13);
-            cs_DataGridView.SetItemListGridView(gridView14);
-            cs_DataGridView.SetItemListGridView(gridView15);
-            cs_DataGridView.SetItemListGridView(gridView16);
-            cs_DataGridView.SetItemListGridView(gridView17);
-            cs_DataGridView.SetItemListGridView(gridView18);
-            cs_DataGridView.SetItemListGridView(gridView19);
-            cs_DataGridView.SetItemListGridView(gridView20);
-            cs_DataGridView.SetItemListGridView(gridView21);
-            cs_DataGridView.SetItemListGridView(gridView22);
-            cs_DataGridView.SetItemListGridView(gridView23);
-            cs_DataGridView.SetItemListGridView(gridView24);
-            cs_DataGridView.SetItemListGridView(gridView27);
-            cs_DataGridView.SetItemListGridView(gridView28);
-            cs_DataGridView.SetItemListGridView(gridView29);
-            cs_DataGridView.SetItemListGridView(gridView30);
-            cs_DataGridView.SetItemListGridView(gridView31);
-            cs_DataGridView.SetItemListGridView(gridView45);
-            cs_DataGridView.SetItemListGridView(gridView32);
-            cs_DataGridView.SetItemListGridView(gridView33);
-            cs_DataGridView.SetItemListGridView(gridView34);
-            cs_DataGridView.SetItemListGridView(gridView35);
-            cs_DataGridView.SetItemListGridView(gridView38);
-            cs_DataGridView.SetItemListGridView(gridView39);
-            cs_DataGridView.SetItemListGridView(gridView40);
-            cs_DataGridView.SetItemListGridView(gridView41);
-            cs_DataGridView.SetItemListGridView(gridView42);
-            cs_DataGridView.SetItemListGridView(gridView43);
-            cs_DataGridView.SetItemListGridView(gridView44);
-            cs_DataGridView.SetItemListGridView(gridView46);
-            cs_DataGridView.SetItemListGridView(gridView47);
-            cs_DataGridView.SetItemListGridView(gridView48);
-            cs_DataGridView.SetItemListGridView(gridView49);
-            cs_DataGridView.SetItemListGridView(gridView50);
-            cs_DataGridView.SetItemListGridView(gridView51);
-            cs_DataGridView.SetItemListGridView(gridView52);
-            cs_DataGridView.SetItemListGridView(gridView53);
-            cs_DataGridView.SetItemListGridView(gridView54);
-            cs_DataGridView.SetItemListGridView(gridView55);
-            cs_DataGridView.SetItemListGridView(gridView56);
+            gvManager.SetItemListGridView(gridView1);
+            gvManager.SetItemListGridView(gridView2);
+            gvManager.SetItemListGridView(gridView3);
+            gvManager.SetItemListGridView(gridView4);
+            gvManager.SetItemListGridView(gridView5);
+            gvManager.SetItemListGridView(gridView6);
+            gvManager.SetItemListGridView(gridView7);
+            gvManager.SetItemListGridView(gridView8);
+            gvManager.SetItemListGridView(gridView9);
+            gvManager.SetItemListGridView(gridView10);
+            gvManager.SetItemListGridView(gridView11);
+            gvManager.SetItemListGridView(gridView12);
+            gvManager.SetItemListGridView(gridView13);
+            gvManager.SetItemListGridView(gridView14);
+            gvManager.SetItemListGridView(gridView15);
+            gvManager.SetItemListGridView(gridView16);
+            gvManager.SetItemListGridView(gridView17);
+            gvManager.SetItemListGridView(gridView18);
+            gvManager.SetItemListGridView(gridView19);
+            gvManager.SetItemListGridView(gridView20);
+            gvManager.SetItemListGridView(gridView21);
+            gvManager.SetItemListGridView(gridView22);
+            gvManager.SetItemListGridView(gridView23);
+            gvManager.SetItemListGridView(gridView24);
+            gvManager.SetItemListGridView(gridView27);
+            gvManager.SetItemListGridView(gridView28);
+            gvManager.SetItemListGridView(gridView29);
+            gvManager.SetItemListGridView(gridView30);
+            gvManager.SetItemListGridView(gridView31);
+            gvManager.SetItemListGridView(gridView45);
+            gvManager.SetItemListGridView(gridView32);
+            gvManager.SetItemListGridView(gridView33);
+            gvManager.SetItemListGridView(gridView34);
+            gvManager.SetItemListGridView(gridView35);
+            gvManager.SetItemListGridView(gridView38);
+            gvManager.SetItemListGridView(gridView39);
+            gvManager.SetItemListGridView(gridView40);
+            gvManager.SetItemListGridView(gridView41);
+            gvManager.SetItemListGridView(gridView42);
+            gvManager.SetItemListGridView(gridView43);
+            gvManager.SetItemListGridView(gridView44);
+            gvManager.SetItemListGridView(gridView46);
+            gvManager.SetItemListGridView(gridView47);
+            gvManager.SetItemListGridView(gridView48);
+            gvManager.SetItemListGridView(gridView49);
+            gvManager.SetItemListGridView(gridView50);
+            gvManager.SetItemListGridView(gridView51);
+            gvManager.SetItemListGridView(gridView52);
+            gvManager.SetItemListGridView(gridView53);
+            gvManager.SetItemListGridView(gridView54);
+            gvManager.SetItemListGridView(gridView55);
+            gvManager.SetItemListGridView(gridView56);
 
-            cs_DataGridView.SetItemListGridView(gridView57);
-            cs_DataGridView.SetItemListGridView(gridView58);
-            cs_DataGridView.SetItemListGridView(gridView59);
-            cs_DataGridView.SetItemListGridView(gridView61);
-            cs_DataGridView.SetItemListGridView(gridView62);
-            cs_DataGridView.SetItemListGridView(gridView63);
-            cs_DataGridView.SetItemListGridView(gridView26);
-            cs_DataGridView.SetItemListGridView(gridView60);
-            cs_DataGridView.SetItemListGridView(gridView25);
-            cs_DataGridView.SetItemListGridView(gridView37);
-            cs_DataGridView.SetItemListGridView(gridView64);
-            cs_DataGridView.SetItemListGridView(gridView65);
+            gvManager.SetItemListGridView(gridView57);
+            gvManager.SetItemListGridView(gridView58);
+            gvManager.SetItemListGridView(gridView59);
+            gvManager.SetItemListGridView(gridView61);
+            gvManager.SetItemListGridView(gridView62);
+            gvManager.SetItemListGridView(gridView63);
+            gvManager.SetItemListGridView(gridView26);
+            gvManager.SetItemListGridView(gridView60);
+            gvManager.SetItemListGridView(gridView25);
+            gvManager.SetItemListGridView(gridView37);
+            gvManager.SetItemListGridView(gridView64);
+            gvManager.SetItemListGridView(gridView65);
 
-            cs_DataGridView.SetItemListGridView(gridView36);
-            cs_DataGridView.SetItemListGridView(gridView66);
-            cs_DataGridView.SetItemListGridView(gridView67);
-        }
-
-        public void EventMainForm()
-        {
-            // 마우스 클릭 폼 이동
-            pnlTap.MouseDown += (o, e) => { if (e.Button == MouseButtons.Left) { CS_StaticEtc.On = true; CS_StaticEtc.Pos = e.Location; } };
-            pnlTap.MouseMove += (o, e) => { if (CS_StaticEtc.On) Location = new Point(Location.X + (e.X - CS_StaticEtc.Pos.X), Location.Y + (e.Y - CS_StaticEtc.Pos.Y)); };
-            pnlTap.MouseUp += (o, e) => { if (e.Button == MouseButtons.Left) { CS_StaticEtc.On = false; CS_StaticEtc.Pos = e.Location; } };
-            
+            gvManager.SetItemListGridView(gridView36);
+            gvManager.SetItemListGridView(gridView66);
+            gvManager.SetItemListGridView(gridView67);
         }
     }
 }

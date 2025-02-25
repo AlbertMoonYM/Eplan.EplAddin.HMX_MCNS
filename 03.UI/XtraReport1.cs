@@ -4,7 +4,6 @@ using DevExpress.XtraPrinting.Preview;
 using DevExpress.XtraReports.UI;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using Eplan.MCNS.Lib;
-using Eplan.MCNS.Lib.UI_CS;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Eplan.EplAddin.HMX_MCNS._03.UI
+namespace Eplan.EplAddin.HMX_MCNS
 {
     public partial class XtraReport1 : DevExpress.XtraReports.UI.XtraReport
     {
@@ -23,12 +22,12 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             InitializeComponent();
 
 
-            string[] keys = CS_StaticUnit.dicCtrlMod.Keys.ToArray();
+            string[] keys = DictionaryUnits.dicCtrlMod.Keys.ToArray();
 
-            Control[] prjCtrls = CS_StaticUnit.dicCtrlMod[keys[0]];
-            Control[] mspCtrls = CS_StaticUnit.dicCtrlMod[keys[2]];
-            Control[] loutCtrls = CS_StaticUnit.dicCtrlMod[keys[3]];
-            Control[] opCtrls = CS_StaticUnit.dicCtrlMod[keys[4]];
+            Control[] prjCtrls = DictionaryUnits.dicCtrlMod[keys[0]];
+            Control[] mspCtrls = DictionaryUnits.dicCtrlMod[keys[2]];
+            Control[] loutCtrls = DictionaryUnits.dicCtrlMod[keys[3]];
+            Control[] opCtrls = DictionaryUnits.dicCtrlMod[keys[4]];
 
             Control[] modelPageCtrls = prjCtrls.Concat(mspCtrls).Concat(loutCtrls).Concat(opCtrls).ToArray();
 
@@ -59,7 +58,7 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                 }
             }
 
-            xrtMod01.Text = CS_StaticUnit.strModFullName;
+            xrtMod01.Text = StringUnits.strModFullName;
 
             XRTableCell[] eleqCells = new XRTableCell[]
             {
@@ -148,7 +147,7 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             }
 
             // 딕셔너리의 모든 Control[] 배열을 리스트에 추가
-            foreach (var controlArray in CS_StaticUnit.dicCtrlFunc.Values)
+            foreach (var controlArray in DictionaryUnits.dicCtrlFunc.Values)
             {
                 combinedControls.AddRange(controlArray);  // 각 Control[] 배열을 리스트에 추가
             }
@@ -173,25 +172,25 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
 
 
 
-            xrtCarr100.Text = CS_StaticUnit.dtLout.Rows[0][1].ToString();
-            xrtCarr110.Text = CS_StaticUnit.dtLout.Rows[0][2].ToString();
-            xrtCarr120.Text = CS_StaticUnit.dtLout.Rows[0][3].ToString();
-            xrtCarr200.Text = CS_StaticUnit.dtLout.Rows[1][1].ToString();
-            xrtCarr210.Text = CS_StaticUnit.dtLout.Rows[1][2].ToString();
-            xrtCarr220.Text = CS_StaticUnit.dtLout.Rows[1][3].ToString();
-            xrtCarr300.Text = CS_StaticUnit.dtLout.Rows[2][1].ToString();
-            xrtCarr310.Text = CS_StaticUnit.dtLout.Rows[2][2].ToString();
-            xrtCarr320.Text = CS_StaticUnit.dtLout.Rows[2][3].ToString();
-            xrtCarr400.Text = CS_StaticUnit.dtLout.Rows[3][1].ToString();
-            xrtCarr410.Text = CS_StaticUnit.dtLout.Rows[3][2].ToString();
-            xrtCarr420.Text = CS_StaticUnit.dtLout.Rows[3][3].ToString();
+            xrtCarr100.Text = DataTableUnits.dtLout.Rows[0][1].ToString();
+            xrtCarr110.Text = DataTableUnits.dtLout.Rows[0][2].ToString();
+            xrtCarr120.Text = DataTableUnits.dtLout.Rows[0][3].ToString();
+            xrtCarr200.Text = DataTableUnits.dtLout.Rows[1][1].ToString();
+            xrtCarr210.Text = DataTableUnits.dtLout.Rows[1][2].ToString();
+            xrtCarr220.Text = DataTableUnits.dtLout.Rows[1][3].ToString();
+            xrtCarr300.Text = DataTableUnits.dtLout.Rows[2][1].ToString();
+            xrtCarr310.Text = DataTableUnits.dtLout.Rows[2][2].ToString();
+            xrtCarr320.Text = DataTableUnits.dtLout.Rows[2][3].ToString();
+            xrtCarr400.Text = DataTableUnits.dtLout.Rows[3][1].ToString();
+            xrtCarr410.Text = DataTableUnits.dtLout.Rows[3][2].ToString();
+            xrtCarr420.Text = DataTableUnits.dtLout.Rows[3][3].ToString();
 
-            xrtLift1000.Text = CS_StaticSensor.listLiftSensor;
-            xrtTrav1000.Text = CS_StaticSensor.listTrav1Sensor;
-            xrtFork1000.Text = CS_StaticSensor.listFork1Sensor;
-            xrt2Trav1000.Text = CS_StaticSensor.listTrav2Sensor;
-            xrt2Fork1000.Text = CS_StaticSensor.listFork2Sensor;
-            xrtCarr1000.Text = CS_StaticSensor.listCarrSensor;
+            xrtLift1000.Text = StringUnits.strLiftSensor;
+            xrtTrav1000.Text = StringUnits.strTrav1Sensor;
+            xrtFork1000.Text = StringUnits.strFork1Sensor;
+            xrt2Trav1000.Text = StringUnits.strTrav2Sensor;
+            xrt2Fork1000.Text = StringUnits.strFork2Sensor;
+            xrtCarr1000.Text = StringUnits.strCarrSensor;
 
             
 

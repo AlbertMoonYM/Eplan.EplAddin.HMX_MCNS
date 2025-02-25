@@ -1,7 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using Eplan.MCNS.Lib.Share_CS;
 using Eplan.MCNS.Lib;
-using Eplan.MCNS.Lib.UI_CS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +12,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace Eplan.EplAddin.HMX_MCNS._03.UI
+namespace Eplan.EplAddin.HMX_MCNS
 {
     public partial class FormConfigPage : DevExpress.XtraEditors.XtraForm
     {
-        CS_Button cs_Button = new CS_Button();
+        ButtonManager btnManager = new ButtonManager();
         
         public FormConfigPage()
         {
@@ -27,28 +25,24 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
             ControlFormFunction();
 
             //초기값
-            cbGenPrjFolderPath.Text = CS_PathData.PrjFolderPath;
-            cbBasicTempletFilePath.Text = CS_PathData.BasicTempletFilePath;
-            cbIoExcelFilesPath.Text = CS_PathData.IoListFilePath;
-            cbMacroFolderPath.Text = CS_PathData.MacroFolderPath;
-            cbMccbFilePath.Text = CS_PathData.MccbFilePath;
+            cbGenPrjFolderPath.Text = StringUnits.strPrjFolderPath;
+            cbBasicTempletFilePath.Text = StringUnits.strBasicTempletFilePath;
+            cbIoExcelFilesPath.Text = StringUnits.strIoListFilePath;
+            cbMacroFolderPath.Text = StringUnits.strMacroFolderPath;
+            cbMccbFilePath.Text = StringUnits.strMccbFilePath;
 
 
             //경로 바꾸기 액션
-            cs_Button.FolderFinder(btnGenPrjFolderPath, cbGenPrjFolderPath);
-            cs_Button.FileFinder(btnBasicTempletFilePath, cbBasicTempletFilePath, CS_PathData.XmlFolderPath, "zw9 File (*.zw9)|*.zw9|All Files (*.*)|*.*");
-            cs_Button.FileFinder(btnIoExcelFilesPath, cbIoExcelFilesPath, CS_PathData.XmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
-            cs_Button.FolderFinder(btnMacroFolderPath, cbMacroFolderPath);
-            cs_Button.FileFinder(btnMccbFilePath, cbMccbFilePath, CS_PathData.XmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
+            btnManager.FolderFinder(btnGenPrjFolderPath, cbGenPrjFolderPath);
+            btnManager.FileFinder(btnBasicTempletFilePath, cbBasicTempletFilePath, StringUnits.strXmlFolderPath, "zw9 File (*.zw9)|*.zw9|All Files (*.*)|*.*");
+            btnManager.FileFinder(btnIoExcelFilesPath, cbIoExcelFilesPath, StringUnits.strXmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
+            btnManager.FolderFinder(btnMacroFolderPath, cbMacroFolderPath);
+            btnManager.FileFinder(btnMccbFilePath, cbMccbFilePath, StringUnits.strXmlFolderPath, "Excel File (*.xlsx)|*.xlsx|All Files (*.*)|*.*");
 
 
         }
         public void ControlFormFunction()
         {
-            //마우스 클릭 폼 이동
-            pnlTap.MouseDown += (o, e) => { if (e.Button == MouseButtons.Left) { CS_StaticEtc.On = true; CS_StaticEtc.Pos = e.Location; } };
-            pnlTap.MouseMove += (o, e) => { if (CS_StaticEtc.On) Location = new Point(Location.X + (e.X - CS_StaticEtc.Pos.X), Location.Y + (e.Y - CS_StaticEtc.Pos.Y)); };
-            pnlTap.MouseUp += (o, e) => { if (e.Button == MouseButtons.Left) { CS_StaticEtc.On = false; CS_StaticEtc.Pos = e.Location; } };
             this.FormClosing += (o, e) =>
             {
                 // 잘못된 경로나 파일 경로를 저장할 변수
@@ -97,9 +91,9 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                 }
 
                 // 리소스 정리
-                if (Ui_StaticForm.formConfigPage != null && !Ui_StaticForm.formConfigPage.IsDisposed)
+                if (FormUnits.formConfigPage != null && !FormUnits.formConfigPage.IsDisposed)
                 {
-                    Ui_StaticForm.formConfigPage.Dispose();
+                    FormUnits.formConfigPage.Dispose();
                 }
             };
 
@@ -111,7 +105,7 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                 try
                 {
                     // config 파일 경로
-                    string configFilePath = CS_PathData.ConfigFilePath;
+                    string configFilePath = StringUnits.strConfigFilePath;
 
                     // XML 파일 로드
                     XDocument xdoc = XDocument.Load(configFilePath);
@@ -124,11 +118,11 @@ namespace Eplan.EplAddin.HMX_MCNS._03.UI
                     string newMccbFilePath = cbMccbFilePath.Text;
 
 
-                    CS_PathData.PrjFolderPath = newPrjFolderPath;
-                    CS_PathData.BasicTempletFilePath = newPrjTempletPath;
-                    CS_PathData.IoListFilePath = newIoExcelFilesPath;
-                    CS_PathData.MacroFolderPath = newMacroFolderPath;
-                    CS_PathData.MccbFilePath = newMccbFilePath;
+                    StringUnits.strPrjFolderPath = newPrjFolderPath;
+                    StringUnits.strBasicTempletFilePath = newPrjTempletPath;
+                    StringUnits.strIoListFilePath = newIoExcelFilesPath;
+                    StringUnits.strMacroFolderPath = newMacroFolderPath;
+                    StringUnits.strMccbFilePath = newMccbFilePath;
 
 
                     // XML 내용 수정

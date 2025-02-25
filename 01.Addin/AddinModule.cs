@@ -1,7 +1,6 @@
-﻿using Eplan.MCNS.Lib.Share_CS;
-using Eplan.MCNS.Lib.UI_CS;
-using Eplan.EplApi.ApplicationFramework;
+﻿using Eplan.EplApi.ApplicationFramework;
 using Eplan.EplApi.Gui;
+using Eplan.MCNS.Lib;
 using System;
 using System.IO;
 using System.Linq;
@@ -77,8 +76,8 @@ namespace Eplan.EplAddin.HMX_MCNS
             string configFilePath = Path.Combine(Path.GetDirectoryName(orginalDllFilePath), "config.xml");
             string itemListFilePath = Path.Combine(Path.GetDirectoryName(orginalDllFilePath), "ItemList.xml");
 
-            CS_PathData.ConfigFilePath = configFilePath;
-            CS_PathData.ItemListFilePath = itemListFilePath;
+            StringUnits.strConfigFilePath = configFilePath;
+            StringUnits.strItemListFilePath = itemListFilePath;
 
             return true;
         }

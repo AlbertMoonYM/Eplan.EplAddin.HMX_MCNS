@@ -3,20 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.epladdin.hmx_mcns\\03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F96F828-E7A2-4466-B483-E4CD384F6FE0}|..\\Eplan.MCNS.Lib\\Eplan.MCNS.Lib.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.mcns.lib\\02.managercs\\labelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F96F828-E7A2-4466-B483-E4CD384F6FE0}|..\\Eplan.MCNS.Lib\\Eplan.MCNS.Lib.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.mcns.lib\\04.interlockcs\\interlocklibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.epladdin.hmx_mcns\\03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:03.ui\\formconceptsheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.epladdin.hmx_mcns\\01.addin\\addinaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:01.addin\\addinaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F96F828-E7A2-4466-B483-E4CD384F6FE0}|..\\Eplan.MCNS.Lib\\Eplan.MCNS.Lib.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.mcns.lib\\02.managercs\\comboboxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.ui\\formiolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D0B259-E325-42AF-820F-9946FC0C8BAF}|Eplan.EplAddin.HMX_MCNS.csproj|solutionrelative:03.ui\\formiolist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F96F828-E7A2-4466-B483-E4CD384F6FE0}|..\\Eplan.MCNS.Lib\\Eplan.MCNS.Lib.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.mcns.lib\\03.utilitycs\\colorutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F96F828-E7A2-4466-B483-E4CD384F6FE0}|..\\Eplan.MCNS.Lib\\Eplan.MCNS.Lib.csproj|c:\\users\\kr70009769\\desktop\\01.task\\02. api \uC18C\uC2A4\\03. c#\\eplan.mcns.lib\\03.utilitycs\\enumutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,43 +33,83 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AddinAction.cs",
-              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinAction.cs",
-              "RelativeDocumentMoniker": "01.Addin\\AddinAction.cs",
-              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\01.Addin\\AddinAction.cs",
-              "RelativeToolTip": "01.Addin\\AddinAction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Title": "InterLockLibrary.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\04.InterLockCS\\InterLockLibrary.cs",
+              "RelativeDocumentMoniker": "..\\Eplan.MCNS.Lib\\04.InterLockCS\\InterLockLibrary.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\04.InterLockCS\\InterLockLibrary.cs",
+              "RelativeToolTip": "..\\Eplan.MCNS.Lib\\04.InterLockCS\\InterLockLibrary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-20T12:34:10.353Z",
+              "WhenOpened": "2025-02-25T10:46:18.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EnumUtility.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\03.UtilityCS\\EnumUtility.cs",
+              "RelativeDocumentMoniker": "..\\Eplan.MCNS.Lib\\03.UtilityCS\\EnumUtility.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\03.UtilityCS\\EnumUtility.cs",
+              "RelativeToolTip": "..\\Eplan.MCNS.Lib\\03.UtilityCS\\EnumUtility.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T09:42:02.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ColorUtility.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\03.UtilityCS\\ColorUtility.cs",
+              "RelativeDocumentMoniker": "..\\Eplan.MCNS.Lib\\03.UtilityCS\\ColorUtility.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\03.UtilityCS\\ColorUtility.cs",
+              "RelativeToolTip": "..\\Eplan.MCNS.Lib\\03.UtilityCS\\ColorUtility.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAACEAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T09:17:30.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ComboBoxManager.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\02.ManagerCS\\ComboBoxManager.cs",
+              "RelativeDocumentMoniker": "..\\Eplan.MCNS.Lib\\02.ManagerCS\\ComboBoxManager.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\02.ManagerCS\\ComboBoxManager.cs",
+              "RelativeToolTip": "..\\Eplan.MCNS.Lib\\02.ManagerCS\\ComboBoxManager.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwB4AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T09:26:23.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LabelManager.cs",
+              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\02.ManagerCS\\LabelManager.cs",
+              "RelativeDocumentMoniker": "..\\Eplan.MCNS.Lib\\02.ManagerCS\\LabelManager.cs",
+              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.MCNS.Lib\\02.ManagerCS\\LabelManager.cs",
+              "RelativeToolTip": "..\\Eplan.MCNS.Lib\\02.ManagerCS\\LabelManager.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAvwBIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T09:20:12.567Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FormIoList.cs",
-              "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormIoList.cs",
-              "RelativeDocumentMoniker": "03.UI\\FormIoList.cs",
-              "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormIoList.cs",
-              "RelativeToolTip": "03.UI\\FormIoList.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAwDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T02:44:03.277Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "FormConceptSheet.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs",
               "RelativeDocumentMoniker": "03.UI\\FormConceptSheet.cs",
               "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs [\uB514\uC790\uC778]*",
               "RelativeToolTip": "03.UI\\FormConceptSheet.cs [\uB514\uC790\uC778]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T08:16:24.938Z",
+              "WhenOpened": "2025-02-25T09:04:34.894Z",
               "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
@@ -73,9 +120,9 @@
               "RelativeDocumentMoniker": "03.UI\\FormConceptSheet.cs",
               "ToolTip": "C:\\Users\\kr70009769\\Desktop\\01.Task\\02. API \uC18C\uC2A4\\03. C#\\Eplan.EplAddin.HMX_MCNS\\03.UI\\FormConceptSheet.cs*",
               "RelativeToolTip": "03.UI\\FormConceptSheet.cs*",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAcwE0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAADwv60BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T09:31:38.594Z",
+              "WhenOpened": "2025-02-25T08:56:09.77Z",
               "EditorCaption": ""
             }
           ]

@@ -190,7 +190,7 @@
     </Reference>
     <Reference Include="McnsSchemGenEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\MCNS\04. APIENGINE\2502181810_bk카운터추가 적용\Debug\McnsSchemGenEngine.dll</HintPath>
+      <HintPath>..\..\..\..\MCNS\04. APIENGINE\2502231645_aux-c brake 옵션 적용\Debug\Debug\McnsSchemGenEngine.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
@@ -276,10 +276,10 @@
     <Compile Include="03.UI\FormItemsList.designer.cs">
       <DependentUpon>FormItemsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="03.UI\FormUnits.cs" />
     <Compile Include="03.UI\TransparentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="03.UI\Ui_StaticForm.cs" />
     <Compile Include="03.UI\WindowsWrapper.cs" />
     <Compile Include="03.UI\XtraReport1.cs">
       <SubType>Component</SubType>
