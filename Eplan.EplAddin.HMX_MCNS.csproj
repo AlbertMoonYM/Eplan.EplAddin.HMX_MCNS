@@ -188,10 +188,6 @@
     <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
       <HintPath>packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
     </Reference>
-    <Reference Include="McnsSchemGenEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\MCNS\04. APIENGINE\2502231645_aux-c brake 옵션 적용\Debug\Debug\McnsSchemGenEngine.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
     </Reference>
@@ -377,6 +373,13 @@
       <Project>{2f96f828-e7a2-4466-b483-e4cd384f6fe0}</Project>
       <Name>Eplan.MCNS.Lib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\McnsSchemGenEngine\McnsSchemGenEngine.csproj">
+      <Project>{30f4380c-cb4c-4c5c-99c0-0abc32a686cb}</Project>
+      <Name>McnsSchemGenEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -81,13 +81,13 @@
   <listMSPinputHz>
     <item>
       <No>1</No>
-      <String>60Hz</String>
+      <String>60</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>2</No>
-      <String>50Hz</String>
+      <String>50</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -177,7 +177,7 @@
     </item>
     <item>
       <No>7</No>
-      <String>SIE_S71500</String>
+      <String>SIE_S7_1500</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -211,7 +211,7 @@
     </item>
     <item>
       <No>3</No>
-      <String>S120</String>
+      <String>S120(ALM)</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -327,7 +327,7 @@
     </item>
     <item>
       <No>3</No>
-      <String>MEANWELL</String>
+      <String>DELTA</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -341,7 +341,7 @@
     </item>
     <item>
       <No>2</No>
-      <String>LABB</String>
+      <String>LAPP</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -689,7 +689,7 @@
   <listLiftLimitSwitch>
     <item>
       <No>1</No>
-      <String>SIC.i10-RA213</String>
+      <String>SICK.I10-RA213</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -731,12 +731,18 @@
   <listLiftNpnRightPosition>
     <item>
       <No>1</No>
-      <String>OMR.E3Z-G61</String>
+      <String>OMR.E3Z-G61-M3J</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>2</No>
+      <String>P+F.GL30-RT_30_40a_98a</String>
+      <Description1></Description1>
+      <Description2></Description2>
+    </item>
+    <item>
+      <No>3</No>
       <String>ODT.OMP-A821</String>
       <Description1></Description1>
       <Description2></Description2>
@@ -745,12 +751,18 @@
   <listLiftPnpRightPosition>
     <item>
       <No>1</No>
-      <String>OMR.E3Z-G81</String>
+      <String>OMR.E3Z-G81-M3J</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>2</No>
+      <String>P+F.GL30-RT_32_40a_98a</String>
+      <Description1></Description1>
+      <Description2></Description2>
+    </item>
+    <item>
+      <No>3</No>
       <String>ODT.OMP-A821P</String>
       <Description1></Description1>
       <Description2></Description2>
@@ -841,7 +853,7 @@
   <listTravLimitSwitch>
     <item>
       <No>1</No>
-      <String>SIC.i10-RA213</String>
+      <String>SICK.I10-RA213</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -883,12 +895,18 @@
   <listTravNpnRightPosition>
     <item>
       <No>1</No>
-      <String>OMR.E3Z-G61</String>
+      <String>OMR.E3Z-G61-M3J</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>2</No>
+      <String>P+F.GL30-RT_30_40a_98a</String>
+      <Description1></Description1>
+      <Description2></Description2>
+    </item>
+    <item>
+      <No>3</No>
       <String>ODT.OMP-A821</String>
       <Description1></Description1>
       <Description2></Description2>
@@ -897,12 +915,18 @@
   <listTravPnpRightPosition>
     <item>
       <No>1</No>
-      <String>OMR.E3Z-G81</String>
+      <String>OMR.E3Z-G81-M3J</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>2</No>
+      <String>P+F.GL30-RT_32_40a_98a</String>
+      <Description1></Description1>
+      <Description2></Description2>
+    </item>
+    <item>
+      <No>3</No>
       <String>ODT.OMP-A821P</String>
       <Description1></Description1>
       <Description2></Description2>
@@ -993,7 +1017,7 @@
   <listForkNpnRightPosition>
     <item>
       <No>1</No>
-      <String>IFM.IFS700-IFB3004BANKG</String>
+      <String>IFM.IFS700</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -1007,7 +1031,7 @@
   <listForkPnpRightPosition>
     <item>
       <No>1</No>
-      <String>IFM.IFS703-IFB3004BBPKG</String>
+      <String>IFM.IFS703</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -1027,13 +1051,13 @@
     </item>
     <item>
       <No>2</No>
-      <String>OMR.E3Z-T61</String>
+      <String>OMR.E3Z-T61-M1J0.3M</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>3</No>
-      <String>P+F.MV100-RT/776b/102</String>
+      <String>P+F.M100_MV100-RT_76b_102_115b</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -1047,13 +1071,13 @@
     </item>
     <item>
       <No>2</No>
-      <String>OMR.E3Z-T81</String>
+      <String>OMR.E3Z-T81-M1J0.3M</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
     <item>
       <No>3</No>
-      <String>P+F.MV100-RT/76a/103/</String>
+      <String>P+F.M100_MV100-RT_76a_103_115b</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>
@@ -1061,7 +1085,7 @@
   <listCarrNpnDoubleInput>
     <item>
       <No>1</No>
-      <String>IFM.O5D-102</String>
+      <String>IFM.O5D102</String>
       <Description1></Description1>
       <Description2></Description2>
     </item>

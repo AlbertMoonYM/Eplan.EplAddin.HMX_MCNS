@@ -6965,37 +6965,6 @@ is licensing is available
 Internal methods
 Following methods are intended to be called ONLY by the Platform Framework or Unit tests
 </member>
-        <member name="M:IEIdentityClientService.signout">
-Signs out user
-</member>
-        <member name="M:IEIdentityClientService.startAuthentication">
-Internal methods
-Following methods are intended to be called ONLY by the Platform Framework or Unit tests
-</member>
-        <member name="M:IEIdentityClientService.getAccessToken(EString,EString*)">
-Gets AccessToken for a ClientId
-</member>
-        <member name="M:IEIdentityClientService.registerClientId(EString)">
-Registers ClientId
-</member>
-        <member name="M:IEIdentityClientService.getUserProfile(EPulseUserProfile*)">
-Gets user profile
-</member>
-        <member name="M:IEIdentityClientService.getSkipSigninFlag">
-Gets skip sign in flag
-</member>
-        <member name="M:IEIdentityClientService.setSkipSigninFlag(System.Boolean)">
-Sets skip sign in flag
-</member>
-        <member name="M:IEIdentityClientService.isUserAuthenticated">
-Checks if user is authenticated
-</member>
-        <member name="M:IEIdentityClientService.getSignedoutFlag">
-Gets Signed out flag
-</member>
-        <member name="M:IEIdentityClientService.setSignedoutFlag(System.Boolean)">
-Sets Signed out flag
-</member>
         <member name="T:boost.mpl.less_impl{boost.mpl.na,boost.mpl.na}">
 for Digital Mars C++/compilers with no CTPS/TTP support
 </member>
