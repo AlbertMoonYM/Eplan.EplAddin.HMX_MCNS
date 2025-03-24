@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConceptSheet));
             this.pnlTap = new DevExpress.XtraEditors.PanelControl();
+            this.btnTest = new DevExpress.XtraEditors.SimpleButton();
             this.picBoxItems = new DevExpress.XtraEditors.PictureEdit();
             this.picBoxLoad = new DevExpress.XtraEditors.PictureEdit();
             this.picBoxSave = new DevExpress.XtraEditors.PictureEdit();
@@ -382,9 +383,6 @@
             this.panelControl267 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl222 = new DevExpress.XtraEditors.LabelControl();
             this.cbLiftMotorMethod = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl268 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl223 = new DevExpress.XtraEditors.LabelControl();
-            this.cbLiftMotorMaker = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl104 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl86 = new DevExpress.XtraEditors.LabelControl();
             this.cbLiftMotorSpec = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -499,9 +497,6 @@
             this.panelControl284 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl229 = new DevExpress.XtraEditors.LabelControl();
             this.cbTrav1MotorMethod = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl285 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl230 = new DevExpress.XtraEditors.LabelControl();
-            this.cbTrav1MotorMaker = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl286 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl231 = new DevExpress.XtraEditors.LabelControl();
             this.cbTrav1MotorSpec = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -616,9 +611,6 @@
             this.panelControl292 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl236 = new DevExpress.XtraEditors.LabelControl();
             this.cbTrav2MotorMethod = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.panelControl293 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl237 = new DevExpress.XtraEditors.LabelControl();
-            this.cbTrav2MotorMaker = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl294 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl238 = new DevExpress.XtraEditors.LabelControl();
             this.cbTrav2MotorSpec = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -922,8 +914,6 @@
             this.xtraTabPageMCAG = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl206 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageOP = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl208 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageLargeGenerating = new DevExpress.XtraTab.XtraTabPage();
             this.documentViewer1 = new DevExpress.XtraPrinting.Preview.DocumentViewer();
@@ -1291,9 +1281,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl267)).BeginInit();
             this.panelControl267.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbLiftMotorMethod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl268)).BeginInit();
-            this.panelControl268.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbLiftMotorMaker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl104)).BeginInit();
             this.panelControl104.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbLiftMotorSpec.Properties)).BeginInit();
@@ -1422,9 +1409,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl284)).BeginInit();
             this.panelControl284.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav1MotorMethod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl285)).BeginInit();
-            this.panelControl285.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbTrav1MotorMaker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl286)).BeginInit();
             this.panelControl286.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav1MotorSpec.Properties)).BeginInit();
@@ -1553,9 +1537,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl292)).BeginInit();
             this.panelControl292.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav2MotorMethod.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl293)).BeginInit();
-            this.panelControl293.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbTrav2MotorMaker.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl294)).BeginInit();
             this.panelControl294.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav2MotorSpec.Properties)).BeginInit();
@@ -1893,8 +1874,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCarr)).BeginInit();
             this.xtraTabPageMCAG.SuspendLayout();
             this.xtraTabPageOP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPageLargeGenerating.SuspendLayout();
             this.panel164.SuspendLayout();
             this.panel199.SuspendLayout();
@@ -1905,6 +1884,7 @@
             // 
             // pnlTap
             // 
+            this.pnlTap.Controls.Add(this.btnTest);
             this.pnlTap.Controls.Add(this.picBoxItems);
             this.pnlTap.Controls.Add(this.picBoxLoad);
             this.pnlTap.Controls.Add(this.picBoxSave);
@@ -1920,6 +1900,18 @@
             this.pnlTap.Size = new System.Drawing.Size(946, 60);
             this.pnlTap.TabIndex = 30;
             // 
+            // btnTest
+            // 
+            this.btnTest.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.btnTest.Appearance.Options.UseBackColor = true;
+            this.btnTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTest.Location = new System.Drawing.Point(639, 18);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(60, 26);
+            this.btnTest.TabIndex = 40;
+            this.btnTest.Text = "TEST";
+            this.btnTest.Visible = false;
+            // 
             // picBoxItems
             // 
             this.picBoxItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1934,6 +1926,7 @@
             this.picBoxItems.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.picBoxItems.Size = new System.Drawing.Size(23, 23);
             this.picBoxItems.TabIndex = 39;
+            this.picBoxItems.Visible = false;
             // 
             // picBoxLoad
             // 
@@ -2071,6 +2064,10 @@
             // 
             // xtraTabPageLargeModel
             // 
+            this.xtraTabPageLargeModel.Appearance.Header.BackColor = System.Drawing.Color.Transparent;
+            this.xtraTabPageLargeModel.Appearance.Header.ForeColor = System.Drawing.Color.Black;
+            this.xtraTabPageLargeModel.Appearance.Header.Options.UseBackColor = true;
+            this.xtraTabPageLargeModel.Appearance.Header.Options.UseForeColor = true;
             this.xtraTabPageLargeModel.Controls.Add(this.pnlData);
             this.xtraTabPageLargeModel.Name = "xtraTabPageLargeModel";
             this.xtraTabPageLargeModel.Size = new System.Drawing.Size(944, 768);
@@ -4081,6 +4078,8 @@
             // 
             // xtraTabPageLargeFunction
             // 
+            this.xtraTabPageLargeFunction.Appearance.Header.ForeColor = System.Drawing.Color.Black;
+            this.xtraTabPageLargeFunction.Appearance.Header.Options.UseForeColor = true;
             this.xtraTabPageLargeFunction.Controls.Add(this.xtraTabControlFunction);
             this.xtraTabPageLargeFunction.Name = "xtraTabPageLargeFunction";
             this.xtraTabPageLargeFunction.Size = new System.Drawing.Size(944, 768);
@@ -6229,7 +6228,6 @@
             this.panelControl265.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl265.Controls.Add(this.panelControl266);
             this.panelControl265.Controls.Add(this.panelControl267);
-            this.panelControl265.Controls.Add(this.panelControl268);
             this.panelControl265.Controls.Add(this.panelControl104);
             this.panelControl265.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl265.Location = new System.Drawing.Point(2, 115);
@@ -6243,7 +6241,7 @@
             this.panelControl266.Controls.Add(this.labelControl221);
             this.panelControl266.Controls.Add(this.cbLiftMotorType);
             this.panelControl266.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl266.Location = new System.Drawing.Point(390, 0);
+            this.panelControl266.Location = new System.Drawing.Point(260, 0);
             this.panelControl266.Name = "panelControl266";
             this.panelControl266.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl266.Size = new System.Drawing.Size(130, 46);
@@ -6280,7 +6278,7 @@
             this.panelControl267.Controls.Add(this.labelControl222);
             this.panelControl267.Controls.Add(this.cbLiftMotorMethod);
             this.panelControl267.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl267.Location = new System.Drawing.Point(260, 0);
+            this.panelControl267.Location = new System.Drawing.Point(130, 0);
             this.panelControl267.Name = "panelControl267";
             this.panelControl267.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl267.Size = new System.Drawing.Size(130, 46);
@@ -6310,43 +6308,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbLiftMotorMethod.Size = new System.Drawing.Size(116, 20);
             this.cbLiftMotorMethod.TabIndex = 60;
-            // 
-            // panelControl268
-            // 
-            this.panelControl268.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl268.Controls.Add(this.labelControl223);
-            this.panelControl268.Controls.Add(this.cbLiftMotorMaker);
-            this.panelControl268.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl268.Location = new System.Drawing.Point(130, 0);
-            this.panelControl268.Name = "panelControl268";
-            this.panelControl268.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl268.Size = new System.Drawing.Size(130, 46);
-            this.panelControl268.TabIndex = 76;
-            // 
-            // labelControl223
-            // 
-            this.labelControl223.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl223.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl223.Appearance.Options.UseFont = true;
-            this.labelControl223.Appearance.Options.UseForeColor = true;
-            this.labelControl223.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl223.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl223.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl223.Location = new System.Drawing.Point(7, 2);
-            this.labelControl223.Name = "labelControl223";
-            this.labelControl223.Size = new System.Drawing.Size(116, 18);
-            this.labelControl223.TabIndex = 63;
-            this.labelControl223.Text = "모터 제조사";
-            // 
-            // cbLiftMotorMaker
-            // 
-            this.cbLiftMotorMaker.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbLiftMotorMaker.Location = new System.Drawing.Point(7, 24);
-            this.cbLiftMotorMaker.Name = "cbLiftMotorMaker";
-            this.cbLiftMotorMaker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbLiftMotorMaker.Size = new System.Drawing.Size(116, 20);
-            this.cbLiftMotorMaker.TabIndex = 60;
             // 
             // panelControl104
             // 
@@ -7667,7 +7628,6 @@
             this.panelControl282.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl282.Controls.Add(this.panelControl283);
             this.panelControl282.Controls.Add(this.panelControl284);
-            this.panelControl282.Controls.Add(this.panelControl285);
             this.panelControl282.Controls.Add(this.panelControl286);
             this.panelControl282.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl282.Location = new System.Drawing.Point(2, 115);
@@ -7681,7 +7641,7 @@
             this.panelControl283.Controls.Add(this.labelControl228);
             this.panelControl283.Controls.Add(this.cbTrav1MotorType);
             this.panelControl283.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl283.Location = new System.Drawing.Point(390, 0);
+            this.panelControl283.Location = new System.Drawing.Point(260, 0);
             this.panelControl283.Name = "panelControl283";
             this.panelControl283.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl283.Size = new System.Drawing.Size(130, 46);
@@ -7718,7 +7678,7 @@
             this.panelControl284.Controls.Add(this.labelControl229);
             this.panelControl284.Controls.Add(this.cbTrav1MotorMethod);
             this.panelControl284.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl284.Location = new System.Drawing.Point(260, 0);
+            this.panelControl284.Location = new System.Drawing.Point(130, 0);
             this.panelControl284.Name = "panelControl284";
             this.panelControl284.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl284.Size = new System.Drawing.Size(130, 46);
@@ -7748,43 +7708,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTrav1MotorMethod.Size = new System.Drawing.Size(116, 20);
             this.cbTrav1MotorMethod.TabIndex = 60;
-            // 
-            // panelControl285
-            // 
-            this.panelControl285.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl285.Controls.Add(this.labelControl230);
-            this.panelControl285.Controls.Add(this.cbTrav1MotorMaker);
-            this.panelControl285.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl285.Location = new System.Drawing.Point(130, 0);
-            this.panelControl285.Name = "panelControl285";
-            this.panelControl285.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl285.Size = new System.Drawing.Size(130, 46);
-            this.panelControl285.TabIndex = 76;
-            // 
-            // labelControl230
-            // 
-            this.labelControl230.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl230.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl230.Appearance.Options.UseFont = true;
-            this.labelControl230.Appearance.Options.UseForeColor = true;
-            this.labelControl230.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl230.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl230.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl230.Location = new System.Drawing.Point(7, 2);
-            this.labelControl230.Name = "labelControl230";
-            this.labelControl230.Size = new System.Drawing.Size(116, 18);
-            this.labelControl230.TabIndex = 63;
-            this.labelControl230.Text = "모터 제조사";
-            // 
-            // cbTrav1MotorMaker
-            // 
-            this.cbTrav1MotorMaker.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbTrav1MotorMaker.Location = new System.Drawing.Point(7, 24);
-            this.cbTrav1MotorMaker.Name = "cbTrav1MotorMaker";
-            this.cbTrav1MotorMaker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTrav1MotorMaker.Size = new System.Drawing.Size(116, 20);
-            this.cbTrav1MotorMaker.TabIndex = 60;
             // 
             // panelControl286
             // 
@@ -8545,6 +8468,7 @@
             // cbTrav2LoadAcceleration
             // 
             this.cbTrav2LoadAcceleration.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2LoadAcceleration.Enabled = false;
             this.cbTrav2LoadAcceleration.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2LoadAcceleration.Name = "cbTrav2LoadAcceleration";
             this.cbTrav2LoadAcceleration.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8582,6 +8506,7 @@
             // cbTrav2LoadRotationNum
             // 
             this.cbTrav2LoadRotationNum.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2LoadRotationNum.Enabled = false;
             this.cbTrav2LoadRotationNum.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2LoadRotationNum.Name = "cbTrav2LoadRotationNum";
             this.cbTrav2LoadRotationNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8619,6 +8544,7 @@
             // cbTrav2LoadHighSpeed
             // 
             this.cbTrav2LoadHighSpeed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2LoadHighSpeed.Enabled = false;
             this.cbTrav2LoadHighSpeed.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2LoadHighSpeed.Name = "cbTrav2LoadHighSpeed";
             this.cbTrav2LoadHighSpeed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8668,6 +8594,7 @@
             // cbTrav2NoneLoadAcceleration
             // 
             this.cbTrav2NoneLoadAcceleration.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2NoneLoadAcceleration.Enabled = false;
             this.cbTrav2NoneLoadAcceleration.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2NoneLoadAcceleration.Name = "cbTrav2NoneLoadAcceleration";
             this.cbTrav2NoneLoadAcceleration.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8705,6 +8632,7 @@
             // cbTrav2NoneLoadRotationNum
             // 
             this.cbTrav2NoneLoadRotationNum.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2NoneLoadRotationNum.Enabled = false;
             this.cbTrav2NoneLoadRotationNum.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2NoneLoadRotationNum.Name = "cbTrav2NoneLoadRotationNum";
             this.cbTrav2NoneLoadRotationNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8742,6 +8670,7 @@
             // cbTrav2NoneLoadHighSpeed
             // 
             this.cbTrav2NoneLoadHighSpeed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2NoneLoadHighSpeed.Enabled = false;
             this.cbTrav2NoneLoadHighSpeed.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2NoneLoadHighSpeed.Name = "cbTrav2NoneLoadHighSpeed";
             this.cbTrav2NoneLoadHighSpeed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8805,6 +8734,7 @@
             // cbTrav2LimitSwitch
             // 
             this.cbTrav2LimitSwitch.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2LimitSwitch.Enabled = false;
             this.cbTrav2LimitSwitch.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2LimitSwitch.Name = "cbTrav2LimitSwitch";
             this.cbTrav2LimitSwitch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8842,6 +8772,7 @@
             // cbTrav2RightPosition
             // 
             this.cbTrav2RightPosition.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2RightPosition.Enabled = false;
             this.cbTrav2RightPosition.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2RightPosition.Name = "cbTrav2RightPosition";
             this.cbTrav2RightPosition.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8879,6 +8810,7 @@
             // cbTrav2AbsLocation
             // 
             this.cbTrav2AbsLocation.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2AbsLocation.Enabled = false;
             this.cbTrav2AbsLocation.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2AbsLocation.Name = "cbTrav2AbsLocation";
             this.cbTrav2AbsLocation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8901,6 +8833,7 @@
             // ckbTrav2Barcode
             // 
             this.ckbTrav2Barcode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbTrav2Barcode.Enabled = false;
             this.ckbTrav2Barcode.Location = new System.Drawing.Point(7, 20);
             this.ckbTrav2Barcode.Name = "ckbTrav2Barcode";
             this.ckbTrav2Barcode.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F);
@@ -8939,6 +8872,7 @@
             // ckbTrav2Raser
             // 
             this.ckbTrav2Raser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbTrav2Raser.Enabled = false;
             this.ckbTrav2Raser.Location = new System.Drawing.Point(7, 20);
             this.ckbTrav2Raser.Name = "ckbTrav2Raser";
             this.ckbTrav2Raser.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F);
@@ -9019,6 +8953,7 @@
             // cbTrav2MotorEncoderSpec
             // 
             this.cbTrav2MotorEncoderSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2MotorEncoderSpec.Enabled = false;
             this.cbTrav2MotorEncoderSpec.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2MotorEncoderSpec.Name = "cbTrav2MotorEncoderSpec";
             this.cbTrav2MotorEncoderSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9056,6 +8991,7 @@
             // cbTrav2MotorHz
             // 
             this.cbTrav2MotorHz.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2MotorHz.Enabled = false;
             this.cbTrav2MotorHz.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2MotorHz.Name = "cbTrav2MotorHz";
             this.cbTrav2MotorHz.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9093,6 +9029,7 @@
             // cbTrav2MotorVoltage
             // 
             this.cbTrav2MotorVoltage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2MotorVoltage.Enabled = false;
             this.cbTrav2MotorVoltage.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2MotorVoltage.Name = "cbTrav2MotorVoltage";
             this.cbTrav2MotorVoltage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9105,7 +9042,6 @@
             this.panelControl290.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl290.Controls.Add(this.panelControl291);
             this.panelControl290.Controls.Add(this.panelControl292);
-            this.panelControl290.Controls.Add(this.panelControl293);
             this.panelControl290.Controls.Add(this.panelControl294);
             this.panelControl290.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl290.Location = new System.Drawing.Point(2, 115);
@@ -9119,7 +9055,7 @@
             this.panelControl291.Controls.Add(this.labelControl235);
             this.panelControl291.Controls.Add(this.cbTrav2MotorType);
             this.panelControl291.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl291.Location = new System.Drawing.Point(390, 0);
+            this.panelControl291.Location = new System.Drawing.Point(260, 0);
             this.panelControl291.Name = "panelControl291";
             this.panelControl291.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl291.Size = new System.Drawing.Size(130, 46);
@@ -9143,6 +9079,7 @@
             // cbTrav2MotorType
             // 
             this.cbTrav2MotorType.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2MotorType.Enabled = false;
             this.cbTrav2MotorType.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2MotorType.Name = "cbTrav2MotorType";
             this.cbTrav2MotorType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9156,7 +9093,7 @@
             this.panelControl292.Controls.Add(this.labelControl236);
             this.panelControl292.Controls.Add(this.cbTrav2MotorMethod);
             this.panelControl292.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl292.Location = new System.Drawing.Point(260, 0);
+            this.panelControl292.Location = new System.Drawing.Point(130, 0);
             this.panelControl292.Name = "panelControl292";
             this.panelControl292.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panelControl292.Size = new System.Drawing.Size(130, 46);
@@ -9180,49 +9117,13 @@
             // cbTrav2MotorMethod
             // 
             this.cbTrav2MotorMethod.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2MotorMethod.Enabled = false;
             this.cbTrav2MotorMethod.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2MotorMethod.Name = "cbTrav2MotorMethod";
             this.cbTrav2MotorMethod.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTrav2MotorMethod.Size = new System.Drawing.Size(116, 20);
             this.cbTrav2MotorMethod.TabIndex = 60;
-            // 
-            // panelControl293
-            // 
-            this.panelControl293.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl293.Controls.Add(this.labelControl237);
-            this.panelControl293.Controls.Add(this.cbTrav2MotorMaker);
-            this.panelControl293.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl293.Location = new System.Drawing.Point(130, 0);
-            this.panelControl293.Name = "panelControl293";
-            this.panelControl293.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelControl293.Size = new System.Drawing.Size(130, 46);
-            this.panelControl293.TabIndex = 72;
-            // 
-            // labelControl237
-            // 
-            this.labelControl237.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9.75F);
-            this.labelControl237.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.labelControl237.Appearance.Options.UseFont = true;
-            this.labelControl237.Appearance.Options.UseForeColor = true;
-            this.labelControl237.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl237.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelControl237.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl237.Location = new System.Drawing.Point(7, 2);
-            this.labelControl237.Name = "labelControl237";
-            this.labelControl237.Size = new System.Drawing.Size(116, 18);
-            this.labelControl237.TabIndex = 63;
-            this.labelControl237.Text = "모터 제조사";
-            // 
-            // cbTrav2MotorMaker
-            // 
-            this.cbTrav2MotorMaker.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cbTrav2MotorMaker.Location = new System.Drawing.Point(7, 24);
-            this.cbTrav2MotorMaker.Name = "cbTrav2MotorMaker";
-            this.cbTrav2MotorMaker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTrav2MotorMaker.Size = new System.Drawing.Size(116, 20);
-            this.cbTrav2MotorMaker.TabIndex = 60;
             // 
             // panelControl294
             // 
@@ -9254,6 +9155,7 @@
             // cbTrav2MotorSpec
             // 
             this.cbTrav2MotorSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2MotorSpec.Enabled = false;
             this.cbTrav2MotorSpec.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2MotorSpec.Name = "cbTrav2MotorSpec";
             this.cbTrav2MotorSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9287,6 +9189,7 @@
             // ckbTrav2CoolerFan
             // 
             this.ckbTrav2CoolerFan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbTrav2CoolerFan.Enabled = false;
             this.ckbTrav2CoolerFan.Location = new System.Drawing.Point(69, 2);
             this.ckbTrav2CoolerFan.Name = "ckbTrav2CoolerFan";
             this.ckbTrav2CoolerFan.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F);
@@ -9339,6 +9242,7 @@
             // cbTrav2BrakeOption
             // 
             this.cbTrav2BrakeOption.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2BrakeOption.Enabled = false;
             this.cbTrav2BrakeOption.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2BrakeOption.Name = "cbTrav2BrakeOption";
             this.cbTrav2BrakeOption.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9376,6 +9280,7 @@
             // cbTrav2BkVoltage
             // 
             this.cbTrav2BkVoltage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2BkVoltage.Enabled = false;
             this.cbTrav2BkVoltage.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2BkVoltage.Name = "cbTrav2BkVoltage";
             this.cbTrav2BkVoltage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9426,6 +9331,7 @@
             // cbTrav2RatedCurrent
             // 
             this.cbTrav2RatedCurrent.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2RatedCurrent.Enabled = false;
             this.cbTrav2RatedCurrent.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2RatedCurrent.Name = "cbTrav2RatedCurrent";
             this.cbTrav2RatedCurrent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9463,6 +9369,7 @@
             // cbTrav2GearRatio
             // 
             this.cbTrav2GearRatio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2GearRatio.Enabled = false;
             this.cbTrav2GearRatio.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2GearRatio.Name = "cbTrav2GearRatio";
             this.cbTrav2GearRatio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9500,6 +9407,7 @@
             // cbTrav2Speed
             // 
             this.cbTrav2Speed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2Speed.Enabled = false;
             this.cbTrav2Speed.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2Speed.Name = "cbTrav2Speed";
             this.cbTrav2Speed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9537,6 +9445,7 @@
             // cbTrav2OutPut
             // 
             this.cbTrav2OutPut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2OutPut.Enabled = false;
             this.cbTrav2OutPut.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2OutPut.Name = "cbTrav2OutPut";
             this.cbTrav2OutPut.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9583,6 +9492,7 @@
             // ckbTrav2Ddi
             // 
             this.ckbTrav2Ddi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbTrav2Ddi.Enabled = false;
             this.ckbTrav2Ddi.Location = new System.Drawing.Point(69, 2);
             this.ckbTrav2Ddi.Name = "ckbTrav2Ddi";
             this.ckbTrav2Ddi.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F);
@@ -9635,6 +9545,7 @@
             // cbTrav2MccbSpec
             // 
             this.cbTrav2MccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2MccbSpec.Enabled = false;
             this.cbTrav2MccbSpec.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2MccbSpec.Name = "cbTrav2MccbSpec";
             this.cbTrav2MccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9672,6 +9583,7 @@
             // cbTrav2PowerCable
             // 
             this.cbTrav2PowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2PowerCable.Enabled = false;
             this.cbTrav2PowerCable.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2PowerCable.Name = "cbTrav2PowerCable";
             this.cbTrav2PowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9722,6 +9634,7 @@
             // cbTrav2BrakeResistorOhm
             // 
             this.cbTrav2BrakeResistorOhm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2BrakeResistorOhm.Enabled = false;
             this.cbTrav2BrakeResistorOhm.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2BrakeResistorOhm.Name = "cbTrav2BrakeResistorOhm";
             this.cbTrav2BrakeResistorOhm.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9759,6 +9672,7 @@
             // cbTrav2BrakeResistorKw
             // 
             this.cbTrav2BrakeResistorKw.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2BrakeResistorKw.Enabled = false;
             this.cbTrav2BrakeResistorKw.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2BrakeResistorKw.Name = "cbTrav2BrakeResistorKw";
             this.cbTrav2BrakeResistorKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9796,6 +9710,7 @@
             // cbTrav2InverterA
             // 
             this.cbTrav2InverterA.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2InverterA.Enabled = false;
             this.cbTrav2InverterA.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2InverterA.Name = "cbTrav2InverterA";
             this.cbTrav2InverterA.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -9833,6 +9748,7 @@
             // cbTrav2InverterKw
             // 
             this.cbTrav2InverterKw.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbTrav2InverterKw.Enabled = false;
             this.cbTrav2InverterKw.Location = new System.Drawing.Point(7, 24);
             this.cbTrav2InverterKw.Name = "cbTrav2InverterKw";
             this.cbTrav2InverterKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11304,6 +11220,7 @@
             // cbFork2LoadAcceleration
             // 
             this.cbFork2LoadAcceleration.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2LoadAcceleration.Enabled = false;
             this.cbFork2LoadAcceleration.Location = new System.Drawing.Point(7, 24);
             this.cbFork2LoadAcceleration.Name = "cbFork2LoadAcceleration";
             this.cbFork2LoadAcceleration.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11341,6 +11258,7 @@
             // cbFork2LoadRotationNum
             // 
             this.cbFork2LoadRotationNum.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2LoadRotationNum.Enabled = false;
             this.cbFork2LoadRotationNum.Location = new System.Drawing.Point(7, 24);
             this.cbFork2LoadRotationNum.Name = "cbFork2LoadRotationNum";
             this.cbFork2LoadRotationNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11378,6 +11296,7 @@
             // cbFork2LoadHighSpeed
             // 
             this.cbFork2LoadHighSpeed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2LoadHighSpeed.Enabled = false;
             this.cbFork2LoadHighSpeed.Location = new System.Drawing.Point(7, 24);
             this.cbFork2LoadHighSpeed.Name = "cbFork2LoadHighSpeed";
             this.cbFork2LoadHighSpeed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11427,6 +11346,7 @@
             // cbFork2NoneLoadAcceleration
             // 
             this.cbFork2NoneLoadAcceleration.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2NoneLoadAcceleration.Enabled = false;
             this.cbFork2NoneLoadAcceleration.Location = new System.Drawing.Point(7, 24);
             this.cbFork2NoneLoadAcceleration.Name = "cbFork2NoneLoadAcceleration";
             this.cbFork2NoneLoadAcceleration.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11464,6 +11384,7 @@
             // cbFork2NoneLoadRotationNum
             // 
             this.cbFork2NoneLoadRotationNum.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2NoneLoadRotationNum.Enabled = false;
             this.cbFork2NoneLoadRotationNum.Location = new System.Drawing.Point(7, 24);
             this.cbFork2NoneLoadRotationNum.Name = "cbFork2NoneLoadRotationNum";
             this.cbFork2NoneLoadRotationNum.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11501,6 +11422,7 @@
             // cbFork2NoneLoadHighSpeed
             // 
             this.cbFork2NoneLoadHighSpeed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2NoneLoadHighSpeed.Enabled = false;
             this.cbFork2NoneLoadHighSpeed.Location = new System.Drawing.Point(7, 24);
             this.cbFork2NoneLoadHighSpeed.Name = "cbFork2NoneLoadHighSpeed";
             this.cbFork2NoneLoadHighSpeed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11545,6 +11467,7 @@
             // ckbFork2PosTrue
             // 
             this.ckbFork2PosTrue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbFork2PosTrue.Enabled = false;
             this.ckbFork2PosTrue.Location = new System.Drawing.Point(69, 2);
             this.ckbFork2PosTrue.Name = "ckbFork2PosTrue";
             this.ckbFork2PosTrue.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F);
@@ -11597,6 +11520,7 @@
             // cbFork2RightPosition
             // 
             this.cbFork2RightPosition.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2RightPosition.Enabled = false;
             this.cbFork2RightPosition.Location = new System.Drawing.Point(7, 24);
             this.cbFork2RightPosition.Name = "cbFork2RightPosition";
             this.cbFork2RightPosition.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11661,6 +11585,7 @@
             // cbFork2MotorEncoderSpec
             // 
             this.cbFork2MotorEncoderSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MotorEncoderSpec.Enabled = false;
             this.cbFork2MotorEncoderSpec.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MotorEncoderSpec.Name = "cbFork2MotorEncoderSpec";
             this.cbFork2MotorEncoderSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11698,6 +11623,7 @@
             // cbFork2MotorHz
             // 
             this.cbFork2MotorHz.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MotorHz.Enabled = false;
             this.cbFork2MotorHz.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MotorHz.Name = "cbFork2MotorHz";
             this.cbFork2MotorHz.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11735,6 +11661,7 @@
             // cbFork2MotorVoltage
             // 
             this.cbFork2MotorVoltage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MotorVoltage.Enabled = false;
             this.cbFork2MotorVoltage.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MotorVoltage.Name = "cbFork2MotorVoltage";
             this.cbFork2MotorVoltage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11785,6 +11712,7 @@
             // cbFork2MotorType
             // 
             this.cbFork2MotorType.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MotorType.Enabled = false;
             this.cbFork2MotorType.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MotorType.Name = "cbFork2MotorType";
             this.cbFork2MotorType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11822,6 +11750,7 @@
             // cbFork2MotorMethod
             // 
             this.cbFork2MotorMethod.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MotorMethod.Enabled = false;
             this.cbFork2MotorMethod.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MotorMethod.Name = "cbFork2MotorMethod";
             this.cbFork2MotorMethod.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11859,6 +11788,7 @@
             // cbFork2MotorMaker
             // 
             this.cbFork2MotorMaker.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MotorMaker.Enabled = false;
             this.cbFork2MotorMaker.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MotorMaker.Name = "cbFork2MotorMaker";
             this.cbFork2MotorMaker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11896,6 +11826,7 @@
             // cbFork2MotorSpec
             // 
             this.cbFork2MotorSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MotorSpec.Enabled = false;
             this.cbFork2MotorSpec.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MotorSpec.Name = "cbFork2MotorSpec";
             this.cbFork2MotorSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11929,6 +11860,7 @@
             // ckbFork2CoolerFan
             // 
             this.ckbFork2CoolerFan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbFork2CoolerFan.Enabled = false;
             this.ckbFork2CoolerFan.Location = new System.Drawing.Point(69, 2);
             this.ckbFork2CoolerFan.Name = "ckbFork2CoolerFan";
             this.ckbFork2CoolerFan.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F);
@@ -11981,6 +11913,7 @@
             // cbFork2BrakeOption
             // 
             this.cbFork2BrakeOption.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2BrakeOption.Enabled = false;
             this.cbFork2BrakeOption.Location = new System.Drawing.Point(7, 24);
             this.cbFork2BrakeOption.Name = "cbFork2BrakeOption";
             this.cbFork2BrakeOption.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12018,6 +11951,7 @@
             // cbFork2BkVoltage
             // 
             this.cbFork2BkVoltage.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2BkVoltage.Enabled = false;
             this.cbFork2BkVoltage.Location = new System.Drawing.Point(7, 24);
             this.cbFork2BkVoltage.Name = "cbFork2BkVoltage";
             this.cbFork2BkVoltage.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12068,6 +12002,7 @@
             // cbFork2RatedCurrent
             // 
             this.cbFork2RatedCurrent.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2RatedCurrent.Enabled = false;
             this.cbFork2RatedCurrent.Location = new System.Drawing.Point(7, 24);
             this.cbFork2RatedCurrent.Name = "cbFork2RatedCurrent";
             this.cbFork2RatedCurrent.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12105,6 +12040,7 @@
             // cbFork2GearRatio
             // 
             this.cbFork2GearRatio.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2GearRatio.Enabled = false;
             this.cbFork2GearRatio.Location = new System.Drawing.Point(7, 24);
             this.cbFork2GearRatio.Name = "cbFork2GearRatio";
             this.cbFork2GearRatio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12142,6 +12078,7 @@
             // cbFork2Speed
             // 
             this.cbFork2Speed.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2Speed.Enabled = false;
             this.cbFork2Speed.Location = new System.Drawing.Point(7, 24);
             this.cbFork2Speed.Name = "cbFork2Speed";
             this.cbFork2Speed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12179,6 +12116,7 @@
             // cbFork2OutPut
             // 
             this.cbFork2OutPut.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2OutPut.Enabled = false;
             this.cbFork2OutPut.Location = new System.Drawing.Point(7, 24);
             this.cbFork2OutPut.Name = "cbFork2OutPut";
             this.cbFork2OutPut.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12225,6 +12163,7 @@
             // ckbFork2Ddi
             // 
             this.ckbFork2Ddi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbFork2Ddi.Enabled = false;
             this.ckbFork2Ddi.Location = new System.Drawing.Point(69, 2);
             this.ckbFork2Ddi.Name = "ckbFork2Ddi";
             this.ckbFork2Ddi.Properties.Appearance.Font = new System.Drawing.Font("맑은 고딕", 9F);
@@ -12277,6 +12216,7 @@
             // cbFork2MccbSpec
             // 
             this.cbFork2MccbSpec.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2MccbSpec.Enabled = false;
             this.cbFork2MccbSpec.Location = new System.Drawing.Point(7, 24);
             this.cbFork2MccbSpec.Name = "cbFork2MccbSpec";
             this.cbFork2MccbSpec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12314,6 +12254,7 @@
             // cbFork2PowerCable
             // 
             this.cbFork2PowerCable.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2PowerCable.Enabled = false;
             this.cbFork2PowerCable.Location = new System.Drawing.Point(7, 24);
             this.cbFork2PowerCable.Name = "cbFork2PowerCable";
             this.cbFork2PowerCable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12364,6 +12305,7 @@
             // cbFork2BrakeResistorOhm
             // 
             this.cbFork2BrakeResistorOhm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2BrakeResistorOhm.Enabled = false;
             this.cbFork2BrakeResistorOhm.Location = new System.Drawing.Point(7, 24);
             this.cbFork2BrakeResistorOhm.Name = "cbFork2BrakeResistorOhm";
             this.cbFork2BrakeResistorOhm.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12401,6 +12343,7 @@
             // cbFork2BrakeResistorKw
             // 
             this.cbFork2BrakeResistorKw.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2BrakeResistorKw.Enabled = false;
             this.cbFork2BrakeResistorKw.Location = new System.Drawing.Point(7, 24);
             this.cbFork2BrakeResistorKw.Name = "cbFork2BrakeResistorKw";
             this.cbFork2BrakeResistorKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12438,6 +12381,7 @@
             // cbFork2InverterA
             // 
             this.cbFork2InverterA.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2InverterA.Enabled = false;
             this.cbFork2InverterA.Location = new System.Drawing.Point(7, 24);
             this.cbFork2InverterA.Name = "cbFork2InverterA";
             this.cbFork2InverterA.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12475,6 +12419,7 @@
             // cbFork2InverterKw
             // 
             this.cbFork2InverterKw.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cbFork2InverterKw.Enabled = false;
             this.cbFork2InverterKw.Location = new System.Drawing.Point(7, 24);
             this.cbFork2InverterKw.Name = "cbFork2InverterKw";
             this.cbFork2InverterKw.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -12890,28 +12835,11 @@
             // 
             // xtraTabPageOP
             // 
-            this.xtraTabPageOP.Controls.Add(this.gridControl2);
             this.xtraTabPageOP.Controls.Add(this.labelControl208);
             this.xtraTabPageOP.ImageOptions.ImageIndex = 1;
             this.xtraTabPageOP.Name = "xtraTabPageOP";
             this.xtraTabPageOP.Size = new System.Drawing.Size(869, 766);
             this.xtraTabPageOP.Text = "OP";
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(869, 766);
-            this.gridControl2.TabIndex = 10;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
             // 
             // labelControl208
             // 
@@ -12926,6 +12854,8 @@
             // 
             // xtraTabPageLargeGenerating
             // 
+            this.xtraTabPageLargeGenerating.Appearance.Header.ForeColor = System.Drawing.Color.Black;
+            this.xtraTabPageLargeGenerating.Appearance.Header.Options.UseForeColor = true;
             this.xtraTabPageLargeGenerating.Controls.Add(this.documentViewer1);
             this.xtraTabPageLargeGenerating.Controls.Add(this.panel164);
             this.xtraTabPageLargeGenerating.Name = "xtraTabPageLargeGenerating";
@@ -13395,9 +13325,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl267)).EndInit();
             this.panelControl267.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbLiftMotorMethod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl268)).EndInit();
-            this.panelControl268.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbLiftMotorMaker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl104)).EndInit();
             this.panelControl104.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbLiftMotorSpec.Properties)).EndInit();
@@ -13526,9 +13453,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl284)).EndInit();
             this.panelControl284.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav1MotorMethod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl285)).EndInit();
-            this.panelControl285.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbTrav1MotorMaker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl286)).EndInit();
             this.panelControl286.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav1MotorSpec.Properties)).EndInit();
@@ -13657,9 +13581,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl292)).EndInit();
             this.panelControl292.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav2MotorMethod.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl293)).EndInit();
-            this.panelControl293.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbTrav2MotorMaker.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl294)).EndInit();
             this.panelControl294.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbTrav2MotorSpec.Properties)).EndInit();
@@ -13999,8 +13920,6 @@
             this.xtraTabPageMCAG.PerformLayout();
             this.xtraTabPageOP.ResumeLayout(false);
             this.xtraTabPageOP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPageLargeGenerating.ResumeLayout(false);
             this.panel164.ResumeLayout(false);
             this.panel199.ResumeLayout(false);
@@ -14728,9 +14647,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl267;
         private DevExpress.XtraEditors.LabelControl labelControl222;
         private DevExpress.XtraEditors.ComboBoxEdit cbLiftMotorMethod;
-        private DevExpress.XtraEditors.PanelControl panelControl268;
-        private DevExpress.XtraEditors.LabelControl labelControl223;
-        private DevExpress.XtraEditors.ComboBoxEdit cbLiftMotorMaker;
         private DevExpress.XtraEditors.PanelControl panelControl104;
         private DevExpress.XtraEditors.LabelControl labelControl86;
         private DevExpress.XtraEditors.ComboBoxEdit cbLiftMotorSpec;
@@ -14766,9 +14682,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl284;
         private DevExpress.XtraEditors.LabelControl labelControl229;
         private DevExpress.XtraEditors.ComboBoxEdit cbTrav1MotorMethod;
-        private DevExpress.XtraEditors.PanelControl panelControl285;
-        private DevExpress.XtraEditors.LabelControl labelControl230;
-        private DevExpress.XtraEditors.ComboBoxEdit cbTrav1MotorMaker;
         private DevExpress.XtraEditors.PanelControl panelControl286;
         private DevExpress.XtraEditors.LabelControl labelControl231;
         private DevExpress.XtraEditors.ComboBoxEdit cbTrav1MotorSpec;
@@ -14811,9 +14724,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl292;
         private DevExpress.XtraEditors.LabelControl labelControl236;
         private DevExpress.XtraEditors.ComboBoxEdit cbTrav2MotorMethod;
-        private DevExpress.XtraEditors.PanelControl panelControl293;
-        private DevExpress.XtraEditors.LabelControl labelControl237;
-        private DevExpress.XtraEditors.ComboBoxEdit cbTrav2MotorMaker;
         private DevExpress.XtraEditors.PanelControl panelControl294;
         private DevExpress.XtraEditors.LabelControl labelControl238;
         private DevExpress.XtraEditors.ComboBoxEdit cbTrav2MotorSpec;
@@ -14882,8 +14792,6 @@
         private TransparentPanel transparentPanel7;
         private TransparentPanel transparentPanel8;
         private TransparentPanel transparentPanel9;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.PanelControl panelControl48;
         private DevExpress.XtraEditors.LabelControl labelControl64;
         private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerCable;
@@ -14916,5 +14824,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl63;
         private DevExpress.XtraEditors.LabelControl labelControl54;
         private DevExpress.XtraEditors.ComboBoxEdit cbEleqPowerKw;
+        private DevExpress.XtraEditors.SimpleButton btnTest;
     }
 }

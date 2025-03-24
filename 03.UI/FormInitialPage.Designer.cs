@@ -1,4 +1,4 @@
-﻿namespace Eplan.EplAddin.HMX_MCNS._03.UI
+﻿namespace Eplan.EplAddin.HMX_MCNS
 {
     partial class FormInitialPage
     {

@@ -1,4 +1,4 @@
-﻿namespace Eplan.EplAddin.HMX_MCNS._03.UI
+﻿namespace Eplan.EplAddin.HMX_MCNS
 {
     partial class XtraReport1
     {
@@ -244,8 +244,6 @@
             this.xrtLift510 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell313 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrtLift520 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell317 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrtLift530 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow86 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell319 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell322 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -350,7 +348,6 @@
             this.xrtTrav510 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell358 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrtTrav520 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell360 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrtTrav530 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow89 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell348 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -456,7 +453,6 @@
             this.xrt2Trav510 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell167 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrt2Trav520 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell174 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrt2Trav530 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow61 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell185 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -761,6 +757,7 @@
             this.xrTableCell373 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell374 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrtCarr1000 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrtLift530 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable37)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
@@ -4129,7 +4126,6 @@
             this.xrtLift510,
             this.xrTableCell313,
             this.xrtLift520,
-            this.xrTableCell317,
             this.xrtLift530});
             this.xrTableRow85.Name = "xrTableRow85";
             this.xrTableRow85.Weight = 1D;
@@ -4192,7 +4188,7 @@
             this.xrTableCell304.StylePriority.UseBackColor = false;
             this.xrTableCell304.StylePriority.UseBorders = false;
             this.xrTableCell304.StylePriority.UseFont = false;
-            this.xrTableCell304.Text = "모터 제조사";
+            this.xrTableCell304.Text = "모터 결선";
             this.xrTableCell304.Weight = 1.1967145389092175D;
             // 
             // xrtLift510
@@ -4222,7 +4218,7 @@
             this.xrTableCell313.StylePriority.UseBackColor = false;
             this.xrTableCell313.StylePriority.UseBorders = false;
             this.xrTableCell313.StylePriority.UseFont = false;
-            this.xrTableCell313.Text = "모터 결선";
+            this.xrTableCell313.Text = "모터 타입";
             this.xrTableCell313.Weight = 1.1967145389092175D;
             // 
             // xrtLift520
@@ -4238,37 +4234,7 @@
             this.xrtLift520.StylePriority.UseBorders = false;
             this.xrtLift520.StylePriority.UseFont = false;
             this.xrtLift520.Text = "xrtLift520";
-            this.xrtLift520.Weight = 1.1967145389092175D;
-            // 
-            // xrTableCell317
-            // 
-            this.xrTableCell317.BackColor = System.Drawing.Color.LightGray;
-            this.xrTableCell317.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell317.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
-            this.xrTableCell317.Multiline = true;
-            this.xrTableCell317.Name = "xrTableCell317";
-            this.xrTableCell317.StylePriority.UseBackColor = false;
-            this.xrTableCell317.StylePriority.UseBorders = false;
-            this.xrTableCell317.StylePriority.UseFont = false;
-            this.xrTableCell317.Text = "모터 타입";
-            this.xrTableCell317.Weight = 1.1967145389092175D;
-            // 
-            // xrtLift530
-            // 
-            this.xrtLift530.BackColor = System.Drawing.Color.Transparent;
-            this.xrtLift530.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrtLift530.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
-            this.xrtLift530.Multiline = true;
-            this.xrtLift530.Name = "xrtLift530";
-            this.xrtLift530.StylePriority.UseBackColor = false;
-            this.xrtLift530.StylePriority.UseBorders = false;
-            this.xrtLift530.StylePriority.UseFont = false;
-            this.xrtLift530.Text = "xrtLift530";
-            this.xrtLift530.Weight = 1.1967145389092175D;
+            this.xrtLift520.Weight = 1.1967194115430084D;
             // 
             // xrTableRow86
             // 
@@ -5794,7 +5760,6 @@
             this.xrtTrav510,
             this.xrTableCell358,
             this.xrtTrav520,
-            this.xrTableCell360,
             this.xrtTrav530});
             this.xrTableRow87.Name = "xrTableRow87";
             this.xrTableRow87.Weight = 1D;
@@ -5857,7 +5822,7 @@
             this.xrTableCell354.StylePriority.UseBackColor = false;
             this.xrTableCell354.StylePriority.UseBorders = false;
             this.xrTableCell354.StylePriority.UseFont = false;
-            this.xrTableCell354.Text = "모터 제조사";
+            this.xrTableCell354.Text = "모터 결선";
             this.xrTableCell354.Weight = 1.1967145389092175D;
             // 
             // xrtTrav510
@@ -5887,7 +5852,7 @@
             this.xrTableCell358.StylePriority.UseBackColor = false;
             this.xrTableCell358.StylePriority.UseBorders = false;
             this.xrTableCell358.StylePriority.UseFont = false;
-            this.xrTableCell358.Text = "모터 결선";
+            this.xrTableCell358.Text = "모터 타입";
             this.xrTableCell358.Weight = 1.1967145389092175D;
             // 
             // xrtTrav520
@@ -5903,22 +5868,7 @@
             this.xrtTrav520.StylePriority.UseBorders = false;
             this.xrtTrav520.StylePriority.UseFont = false;
             this.xrtTrav520.Text = "xrtTrav520";
-            this.xrtTrav520.Weight = 1.1967145389092175D;
-            // 
-            // xrTableCell360
-            // 
-            this.xrTableCell360.BackColor = System.Drawing.Color.LightGray;
-            this.xrTableCell360.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell360.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
-            this.xrTableCell360.Multiline = true;
-            this.xrTableCell360.Name = "xrTableCell360";
-            this.xrTableCell360.StylePriority.UseBackColor = false;
-            this.xrTableCell360.StylePriority.UseBorders = false;
-            this.xrTableCell360.StylePriority.UseFont = false;
-            this.xrTableCell360.Text = "모터 타입";
-            this.xrTableCell360.Weight = 1.1967145389092175D;
+            this.xrtTrav520.Weight = 1.1967194115430084D;
             // 
             // xrtTrav530
             // 
@@ -5932,8 +5882,7 @@
             this.xrtTrav530.StylePriority.UseBackColor = false;
             this.xrtTrav530.StylePriority.UseBorders = false;
             this.xrtTrav530.StylePriority.UseFont = false;
-            this.xrtTrav530.Text = "xrtTrav530";
-            this.xrtTrav530.Weight = 1.1967145389092175D;
+            this.xrtTrav530.Weight = 2.3934242051846439D;
             // 
             // xrTableRow89
             // 
@@ -7459,7 +7408,6 @@
             this.xrt2Trav510,
             this.xrTableCell167,
             this.xrt2Trav520,
-            this.xrTableCell174,
             this.xrt2Trav530});
             this.xrTableRow58.Name = "xrTableRow58";
             this.xrTableRow58.Weight = 1D;
@@ -7522,7 +7470,7 @@
             this.xrTableCell164.StylePriority.UseBackColor = false;
             this.xrTableCell164.StylePriority.UseBorders = false;
             this.xrTableCell164.StylePriority.UseFont = false;
-            this.xrTableCell164.Text = "모터 제조사";
+            this.xrTableCell164.Text = "모터 결선";
             this.xrTableCell164.Weight = 1.1967145389092175D;
             // 
             // xrt2Trav510
@@ -7552,7 +7500,7 @@
             this.xrTableCell167.StylePriority.UseBackColor = false;
             this.xrTableCell167.StylePriority.UseBorders = false;
             this.xrTableCell167.StylePriority.UseFont = false;
-            this.xrTableCell167.Text = "모터 결선";
+            this.xrTableCell167.Text = "모터 타입";
             this.xrTableCell167.Weight = 1.1967145389092175D;
             // 
             // xrt2Trav520
@@ -7568,22 +7516,7 @@
             this.xrt2Trav520.StylePriority.UseBorders = false;
             this.xrt2Trav520.StylePriority.UseFont = false;
             this.xrt2Trav520.Text = "xrt2Trav520";
-            this.xrt2Trav520.Weight = 1.1967145389092175D;
-            // 
-            // xrTableCell174
-            // 
-            this.xrTableCell174.BackColor = System.Drawing.Color.LightGray;
-            this.xrTableCell174.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
-            | DevExpress.XtraPrinting.BorderSide.Right) 
-            | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTableCell174.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
-            this.xrTableCell174.Multiline = true;
-            this.xrTableCell174.Name = "xrTableCell174";
-            this.xrTableCell174.StylePriority.UseBackColor = false;
-            this.xrTableCell174.StylePriority.UseBorders = false;
-            this.xrTableCell174.StylePriority.UseFont = false;
-            this.xrTableCell174.Text = "모터 타입";
-            this.xrTableCell174.Weight = 1.1967145389092175D;
+            this.xrt2Trav520.Weight = 1.1967194115430084D;
             // 
             // xrt2Trav530
             // 
@@ -7597,8 +7530,7 @@
             this.xrt2Trav530.StylePriority.UseBackColor = false;
             this.xrt2Trav530.StylePriority.UseBorders = false;
             this.xrt2Trav530.StylePriority.UseFont = false;
-            this.xrt2Trav530.Text = "xrt2Trav530";
-            this.xrt2Trav530.Weight = 1.1967145389092175D;
+            this.xrt2Trav530.Weight = 2.3934242051846439D;
             // 
             // xrTableRow61
             // 
@@ -12305,6 +12237,20 @@
             this.xrtCarr1000.TextFitMode = DevExpress.XtraReports.UI.TextFitMode.ShrinkOnly;
             this.xrtCarr1000.Weight = 8.7759068494781847D;
             // 
+            // xrtLift530
+            // 
+            this.xrtLift530.BackColor = System.Drawing.Color.Transparent;
+            this.xrtLift530.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.xrtLift530.Font = new DevExpress.Drawing.DXFont("맑은 고딕", 7F);
+            this.xrtLift530.Multiline = true;
+            this.xrtLift530.Name = "xrtLift530";
+            this.xrtLift530.StylePriority.UseBackColor = false;
+            this.xrtLift530.StylePriority.UseBorders = false;
+            this.xrtLift530.StylePriority.UseFont = false;
+            this.xrtLift530.Weight = 2.3934242051846439D;
+            // 
             // XtraReport1
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -12719,8 +12665,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrtLift510;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell313;
         private DevExpress.XtraReports.UI.XRTableCell xrtLift520;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell317;
-        private DevExpress.XtraReports.UI.XRTableCell xrtLift530;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow86;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell319;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell322;
@@ -12867,7 +12811,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell168;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell231;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell347;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell360;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell368;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell48;
         private DevExpress.XtraReports.UI.XRTableCell xrtTrav740;
@@ -12924,7 +12867,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrt2Trav510;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell167;
         private DevExpress.XtraReports.UI.XRTableCell xrt2Trav520;
-        private DevExpress.XtraReports.UI.XRTableCell xrTableCell174;
         private DevExpress.XtraReports.UI.XRTableCell xrt2Trav530;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow61;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell185;
@@ -13077,5 +13019,6 @@
         private DevExpress.XtraReports.UI.XRTableCell xrtEleq520;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell33;
         private DevExpress.XtraReports.UI.XRTableCell xrtEleq530;
+        private DevExpress.XtraReports.UI.XRTableCell xrtLift530;
     }
 }

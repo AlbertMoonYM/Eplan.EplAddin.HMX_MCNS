@@ -99,37 +99,11 @@ If in output directory exists file with the same name as generated file then the
         </member>
         <member name="M:Eplan.EplApi.HEServices.Masterdata.prepareMacros(System.Boolean,System.Boolean,System.Boolean)">
             <summary>
-Prepares and groups all elements belonging to a macro box or page macro.
+Prepares and groups all elements belonging to a macro box
 </summary>
-            <param name="bGroupMacroBoxes">Group macro boxes with their contents.</param>
-            <param name="bGroupPageMacros">Group contents of a page macro.</param>
-            <param name="bSetHandleOnMacroBoxes">Activates handle for macro box. By this unwanted shifting of macro is prevented.</param>
-        </member>
-        <member name="M:Eplan.EplApi.HEServices.Masterdata.PrepareMacros(System.Collections.Generic.ICollection{Eplan.EplApi.DataModel.Page},System.Boolean,System.Boolean,System.Boolean)">
-            <summary>
-Prepares and groups all elements belonging to a macro box or page macro.
-</summary>
-            <param name="colPages">Collection of pages for which macro preparation should be done. All pages have to belong to the same project and the project must be a macro project.</param>
-            <param name="bGroupMacroBoxes">Group macro boxes with their contents.</param>
-            <param name="bGroupPageMacros">Group contents of a page macro.</param>
-            <param name="bSetHandleOnMacroBoxes">Activates handle for macro box. By this unwanted shifting of macro is prevented.</param>
-            <exception cref="T:System.ArgumentNullException">Pages collection was set to a null reference.</exception>
-            <exception cref="T:System.ArgumentException">Collection is empty or pages are not from the same project.</exception>
-            <exception cref="T:System.ApplicationException">Internal interface for master data could not be created.</exception>
-            <exception cref="T:Eplan.EplApi.Base.BaseException">Macros cannot be prepared.</exception>
-        </member>
-        <member name="M:Eplan.EplApi.HEServices.Masterdata.PrepareMacros(Eplan.EplApi.DataModel.Project,System.Boolean,System.Boolean,System.Boolean)">
-            <summary>
-Prepares and groups all elements belonging to a macro box or page macro.
-</summary>
-            <param name="oProject">Project for which preparation should be performed. It has to be a macro project.</param>
-            <param name="bGroupMacroBoxes">Group macro boxes with their contents.</param>
-            <param name="bGroupPageMacros">Group contents of a page macro.</param>
-            <param name="bSetHandleOnMacroBoxes">Activates handle for macro box. By this unwanted shifting of macro is prevented.</param>
-            <exception cref="T:System.ArgumentNullException">Project was set to a null reference.</exception>
-            <exception cref="T:System.ArgumentException">Project is invalid.</exception>
-            <exception cref="T:System.ApplicationException">Internal interface for master data could not be created.</exception>
-            <exception cref="T:Eplan.EplApi.Base.BaseException">Macros cannot be prepared.</exception>
+            <param name="bGroupMacroBoxes">Group macro boxes with its contents: valid parameter values: "0" == do nothing, "1" == create groups. If not given, default is "1"</param>
+            <param name="bGroupPageMacros">Group contents of a page macro: valid parameter values: "0" == do nothing, "1" == create groups. If not given, default is "0"</param>
+            <param name="bSetHandleOnMacroBoxes">Set handle-checkbox active: valid parameter values: "0" == do nothing, "1" == activate handle-checkbox. If not given, default is "0"</param>
         </member>
         <member name="M:Eplan.EplApi.HEServices.Masterdata.GenerateMacrosFromMacroProject(System.Collections.Generic.ICollection{Eplan.EplApi.DataModel.StorableObject},System.String,System.String,System.Boolean)">
             <summary>
@@ -12984,15 +12958,10 @@ Exports one project as PDF file.
                                    blank, the output file
                                    name will be determined
                                    by the settings in the
-                                   schema. If filled, path will 
-								   be used as main path and
-                                   will override output directory
-                                   set in schema. File 
-                                   name will be used only when 
-                                   schema does not specify file name 
-                                   format. Additionally if schema
-                                   has subdirectory format set,
-                                   it will be incorporated into path.
+                                   schema.  If a path name
+                                   is given, it will
+                                   override the directory
+                                   setting in the schema.
                                    If the directory does not
                                    exist, it will be
                                    created. If the user does
@@ -13001,7 +12970,7 @@ Exports one project as PDF file.
                                    system, an exception will
                                    be thrown. If you set a
                                    \file name without the
-                                   extension ".pdf", the
+                                   extension ".pfd", the
                                    extension will be added. </param>
             <param name="color">Determines the color setting of the
                     PDF file.  "BlackAndWhite" will make
@@ -13041,15 +13010,10 @@ Exports one project as PDF file.
                                    blank, the output file
                                    name will be determined
                                    by the settings in the
-                                   schema. If filled, path will 
-								   be used as main path and
-                                   will override output directory
-                                   set in schema. File 
-                                   name will be used only when 
-                                   schema does not specify file name 
-                                   format. Additionally if schema
-                                   has subdirectory format set,
-                                   it will be incorporated into path.
+                                   schema.  If a path name
+                                   is given, it will
+                                   override the directory
+                                   setting in the schema.
                                    If the directory does not
                                    exist, it will be
                                    created. If the user does
@@ -13058,7 +13022,7 @@ Exports one project as PDF file.
                                    system, an exception will
                                    be thrown. If you set a
                                    \file name without the
-                                   extension ".pdf", the
+                                   extension ".pfd", the
                                    extension will be added. </param>
             <param name="color">Determines the color setting of the
                     PDF file.  "BlackAndWhite" will make
@@ -17550,37 +17514,6 @@ is licensing is available
         <member name="M:AfApplication.signout">
 Internal methods
 Following methods are intended to be called ONLY by the Platform Framework or Unit tests
-</member>
-        <member name="M:IEIdentityClientService.signout">
-Signs out user
-</member>
-        <member name="M:IEIdentityClientService.startAuthentication">
-Internal methods
-Following methods are intended to be called ONLY by the Platform Framework or Unit tests
-</member>
-        <member name="M:IEIdentityClientService.getAccessToken(EString,EString*)">
-Gets AccessToken for a ClientId
-</member>
-        <member name="M:IEIdentityClientService.registerClientId(EString)">
-Registers ClientId
-</member>
-        <member name="M:IEIdentityClientService.getUserProfile(EPulseUserProfile*)">
-Gets user profile
-</member>
-        <member name="M:IEIdentityClientService.getSkipSigninFlag">
-Gets skip sign in flag
-</member>
-        <member name="M:IEIdentityClientService.setSkipSigninFlag(System.Boolean)">
-Sets skip sign in flag
-</member>
-        <member name="M:IEIdentityClientService.isUserAuthenticated">
-Checks if user is authenticated
-</member>
-        <member name="M:IEIdentityClientService.getSignedoutFlag">
-Gets Signed out flag
-</member>
-        <member name="M:IEIdentityClientService.setSignedoutFlag(System.Boolean)">
-Sets Signed out flag
 </member>
         <member name="T:boost.mpl.less_impl{boost.mpl.na,boost.mpl.na}">
 for Digital Mars C++/compilers with no CTPS/TTP support

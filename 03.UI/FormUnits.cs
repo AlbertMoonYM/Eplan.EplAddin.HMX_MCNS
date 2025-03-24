@@ -1,14 +1,13 @@
 ﻿using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
-using Eplan.EplAddin.HMX_MCNS._03.UI;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Eplan.EplAddin.HMX_MCNS
 {
-    public static class Ui_StaticForm
+    public static class FormUnits
     {
         public static FormInitialPage formInitialPage {  get; set; } = new FormInitialPage();
         public static FormConceptSheet formConceptSheet { get; set; }

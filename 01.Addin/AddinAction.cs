@@ -10,9 +10,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Application = System.Windows.Forms.Application;
 using Eplan.MCNS.Lib;
-using Eplan.MCNS.Lib.Share_CS;
 using System.Diagnostics;
-using Eplan.EplAddin.HMX_MCNS._03.UI;
 
 namespace Eplan.EplAddin.HMX_MCNS
 {
@@ -50,8 +48,9 @@ namespace Eplan.EplAddin.HMX_MCNS
             formInitialPage?.Close();
 
             // FormInitialPage 새로 생성 후 열기
-            Ui_StaticForm.formInitialPage = new FormInitialPage();
-            Ui_StaticForm.formInitialPage.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
+            
+            FormUnits.formInitialPage = new FormInitialPage();
+            FormUnits.formInitialPage.Show(new WindowWrapper(Process.GetCurrentProcess().MainWindowHandle));
 
             return true;
         }
