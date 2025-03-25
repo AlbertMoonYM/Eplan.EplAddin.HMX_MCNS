@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eplan.EplAddin.HMX_MCNS", "Eplan.EplAddin.HMX_MCNS.csproj", "{34D0B259-E325-42AF-820F-9946FC0C8BAF}"
-	ProjectSection(ProjectDependencies) = postProject
-		{30F4380C-CB4C-4C5C-99C0-0ABC32A686CB} = {30F4380C-CB4C-4C5C-99C0-0ABC32A686CB}
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eplan.MCNS.Lib", "..\Eplan.MCNS.Lib\Eplan.MCNS.Lib.csproj", "{2F96F828-E7A2-4466-B483-E4CD384F6FE0}"
 EndProject

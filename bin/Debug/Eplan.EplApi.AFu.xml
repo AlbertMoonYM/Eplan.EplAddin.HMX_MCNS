@@ -1514,8 +1514,1508 @@ License options provided by the EPLAN licensing system.
         <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EClassImport">
             <summary>1229, EPLAN ECLASS Import</summary>
         </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication1000">
+            <summary>5500, EADN: Application 1000</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0999">
+            <summary>5499, EADN: Application 0999</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0998">
+            <summary>5498, EADN: Application 0998</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0997">
+            <summary>5497, EADN: Application 0997</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0996">
+            <summary>5496, EADN: Application 0996</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0995">
+            <summary>5495, EADN: Application 0995</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0994">
+            <summary>5494, EADN: Application 0994</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0993">
+            <summary>5493, EADN: Application 0993</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0992">
+            <summary>5492, EADN: Application 0992</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0991">
+            <summary>5491, EADN: Application 0991</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0990">
+            <summary>5490, EADN: Application 0990</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0989">
+            <summary>5489, EADN: Application 0989</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0988">
+            <summary>5488, EADN: Application 0988</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0987">
+            <summary>5487, EADN: Application 0987</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0986">
+            <summary>5486, EADN: Application 0986</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0985">
+            <summary>5485, EADN: Application 0985</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0984">
+            <summary>5484, EADN: Application 0984</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0983">
+            <summary>5483, EADN: Application 0983</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0982">
+            <summary>5482, EADN: Application 0982</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0981">
+            <summary>5481, EADN: Application 0981</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0980">
+            <summary>5480, EADN: Application 0980</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0979">
+            <summary>5479, EADN: Application 0979</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0978">
+            <summary>5478, EADN: Application 0978</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0977">
+            <summary>5477, EADN: Application 0977</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0976">
+            <summary>5476, EADN: Application 0976</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0975">
+            <summary>5475, EADN: Application 0975</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0974">
+            <summary>5474, EADN: Application 0974</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0973">
+            <summary>5473, EADN: Application 0973</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0972">
+            <summary>5472, EADN: Application 0972</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0971">
+            <summary>5471, EADN: Application 0971</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0970">
+            <summary>5470, EADN: Application 0970</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0969">
+            <summary>5469, EADN: Application 0969</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0968">
+            <summary>5468, EADN: Application 0968</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0967">
+            <summary>5467, EADN: Application 0967</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0966">
+            <summary>5466, EADN: Application 0966</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0965">
+            <summary>5465, EADN: Application 0965</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0964">
+            <summary>5464, EADN: Application 0964</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0963">
+            <summary>5463, EADN: Application 0963</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0962">
+            <summary>5462, EADN: Application 0962</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0961">
+            <summary>5461, EADN: Application 0961</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0960">
+            <summary>5460, EADN: Application 0960</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0959">
+            <summary>5459, EADN: Application 0959</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0958">
+            <summary>5458, EADN: Application 0958</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0957">
+            <summary>5457, EADN: Application 0957</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0956">
+            <summary>5456, EADN: Application 0956</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0955">
+            <summary>5455, EADN: Application 0955</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0954">
+            <summary>5454, EADN: Application 0954</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0953">
+            <summary>5453, EADN: Application 0953</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0952">
+            <summary>5452, EADN: Application 0952</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0951">
+            <summary>5451, EADN: Application 0951</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0950">
+            <summary>5450, EADN: Application 0950</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0949">
+            <summary>5449, EADN: Application 0949</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0948">
+            <summary>5448, EADN: Application 0948</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0947">
+            <summary>5447, EADN: Application 0947</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0946">
+            <summary>5446, EADN: Application 0946</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0945">
+            <summary>5445, EADN: Application 0945</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0944">
+            <summary>5444, EADN: Application 0944</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0943">
+            <summary>5443, EADN: Application 0943</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0942">
+            <summary>5442, EADN: Application 0942</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0941">
+            <summary>5441, EADN: Application 0941</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0940">
+            <summary>5440, EADN: Application 0940</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0939">
+            <summary>5439, EADN: Application 0939</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0938">
+            <summary>5438, EADN: Application 0938</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0937">
+            <summary>5437, EADN: Application 0937</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0936">
+            <summary>5436, EADN: Application 0936</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0935">
+            <summary>5435, EADN: Application 0935</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0934">
+            <summary>5434, EADN: Application 0934</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0933">
+            <summary>5433, EADN: Application 0933</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0932">
+            <summary>5432, EADN: Application 0932</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0931">
+            <summary>5431, EADN: Application 0931</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0930">
+            <summary>5430, EADN: Application 0930</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0929">
+            <summary>5429, EADN: Application 0929</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0928">
+            <summary>5428, EADN: Application 0928</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0927">
+            <summary>5427, EADN: Application 0927</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0926">
+            <summary>5426, EADN: Application 0926</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0925">
+            <summary>5425, EADN: Application 0925</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0924">
+            <summary>5424, EADN: Application 0924</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0923">
+            <summary>5423, EADN: Application 0923</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0922">
+            <summary>5422, EADN: Application 0922</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0921">
+            <summary>5421, EADN: Application 0921</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0920">
+            <summary>5420, EADN: Application 0920</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0919">
+            <summary>5419, EADN: Application 0919</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0918">
+            <summary>5418, EADN: Application 0918</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0917">
+            <summary>5417, EADN: Application 0917</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0916">
+            <summary>5416, EADN: Application 0916</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0915">
+            <summary>5415, EADN: Application 0915</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0914">
+            <summary>5414, EADN: Application 0914</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0913">
+            <summary>5413, EADN: Application 0913</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0912">
+            <summary>5412, EADN: Application 0912</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0911">
+            <summary>5411, EADN: Application 0911</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0910">
+            <summary>5410, EADN: Application 0910</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0909">
+            <summary>5409, EADN: Application 0909</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0908">
+            <summary>5408, EADN: Application 0908</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0907">
+            <summary>5407, EADN: Application 0907</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0906">
+            <summary>5406, EADN: Application 0906</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0905">
+            <summary>5405, EADN: Application 0905</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0904">
+            <summary>5404, EADN: Application 0904</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0903">
+            <summary>5403, EADN: Application 0903</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0902">
+            <summary>5402, EADN: Application 0902</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0901">
+            <summary>5401, EADN: Application 0901</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0900">
+            <summary>5400, EADN: Application 0900</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0899">
+            <summary>5399, EADN: Application 0899</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0898">
+            <summary>5398, EADN: Application 0898</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0897">
+            <summary>5397, EADN: Application 0897</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0896">
+            <summary>5396, EADN: Application 0896</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0895">
+            <summary>5395, EADN: Application 0895</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0894">
+            <summary>5394, EADN: Application 0894</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0893">
+            <summary>5393, EADN: Application 0893</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0892">
+            <summary>5392, EADN: Application 0892</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0891">
+            <summary>5391, EADN: Application 0891</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0890">
+            <summary>5390, EADN: Application 0890</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0889">
+            <summary>5389, EADN: Application 0889</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0888">
+            <summary>5388, EADN: Application 0888</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0887">
+            <summary>5387, EADN: Application 0887</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0886">
+            <summary>5386, EADN: Application 0886</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0885">
+            <summary>5385, EADN: Application 0885</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0884">
+            <summary>5384, EADN: Application 0884</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0883">
+            <summary>5383, EADN: Application 0883</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0882">
+            <summary>5382, EADN: Application 0882</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0881">
+            <summary>5381, EADN: Application 0881</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0880">
+            <summary>5380, EADN: Application 0880</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0879">
+            <summary>5379, EADN: Application 0879</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0878">
+            <summary>5378, EADN: Application 0878</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0877">
+            <summary>5377, EADN: Application 0877</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0876">
+            <summary>5376, EADN: Application 0876</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0875">
+            <summary>5375, EADN: Application 0875</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0874">
+            <summary>5374, EADN: Application 0874</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0873">
+            <summary>5373, EADN: Application 0873</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0872">
+            <summary>5372, EADN: Application 0872</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0871">
+            <summary>5371, EADN: Application 0871</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0870">
+            <summary>5370, EADN: Application 0870</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0869">
+            <summary>5369, EADN: Application 0869</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0868">
+            <summary>5368, EADN: Application 0868</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0867">
+            <summary>5367, EADN: Application 0867</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0866">
+            <summary>5366, EADN: Application 0866</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0865">
+            <summary>5365, EADN: Application 0865</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0864">
+            <summary>5364, EADN: Application 0864</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0863">
+            <summary>5363, EADN: Application 0863</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0862">
+            <summary>5362, EADN: Application 0862</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0861">
+            <summary>5361, EADN: Application 0861</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0860">
+            <summary>5360, EADN: Application 0860</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0859">
+            <summary>5359, EADN: Application 0859</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0858">
+            <summary>5358, EADN: Application 0858</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0857">
+            <summary>5357, EADN: Application 0857</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0856">
+            <summary>5356, EADN: Application 0856</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0855">
+            <summary>5355, EADN: Application 0855</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0854">
+            <summary>5354, EADN: Application 0854</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0853">
+            <summary>5353, EADN: Application 0853</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0852">
+            <summary>5352, EADN: Application 0852</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0851">
+            <summary>5351, EADN: Application 0851</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0850">
+            <summary>5350, EADN: Application 0850</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0849">
+            <summary>5349, EADN: Application 0849</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0848">
+            <summary>5348, EADN: Application 0848</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0847">
+            <summary>5347, EADN: Application 0847</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0846">
+            <summary>5346, EADN: Application 0846</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0845">
+            <summary>5345, EADN: Application 0845</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0844">
+            <summary>5344, EADN: Application 0844</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0843">
+            <summary>5343, EADN: Application 0843</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0842">
+            <summary>5342, EADN: Application 0842</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0841">
+            <summary>5341, EADN: Application 0841</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0840">
+            <summary>5340, EADN: Application 0840</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0839">
+            <summary>5339, EADN: Application 0839</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0838">
+            <summary>5338, EADN: Application 0838</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0837">
+            <summary>5337, EADN: Application 0837</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0836">
+            <summary>5336, EADN: Application 0836</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0835">
+            <summary>5335, EADN: Application 0835</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0834">
+            <summary>5334, EADN: Application 0834</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0833">
+            <summary>5333, EADN: Application 0833</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0832">
+            <summary>5332, EADN: Application 0832</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0831">
+            <summary>5331, EADN: Application 0831</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0830">
+            <summary>5330, EADN: Application 0830</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0829">
+            <summary>5329, EADN: Application 0829</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0828">
+            <summary>5328, EADN: Application 0828</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0827">
+            <summary>5327, EADN: Application 0827</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0826">
+            <summary>5326, EADN: Application 0826</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0825">
+            <summary>5325, EADN: Application 0825</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0824">
+            <summary>5324, EADN: Application 0824</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0823">
+            <summary>5323, EADN: Application 0823</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0822">
+            <summary>5322, EADN: Application 0822</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0821">
+            <summary>5321, EADN: Application 0821</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0820">
+            <summary>5320, EADN: Application 0820</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0819">
+            <summary>5319, EADN: Application 0819</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0818">
+            <summary>5318, EADN: Application 0818</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0817">
+            <summary>5317, EADN: Application 0817</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0816">
+            <summary>5316, EADN: Application 0816</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0815">
+            <summary>5315, EADN: Application 0815</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0814">
+            <summary>5314, EADN: Application 0814</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0813">
+            <summary>5313, EADN: Application 0813</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0812">
+            <summary>5312, EADN: Application 0812</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0811">
+            <summary>5311, EADN: Application 0811</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0810">
+            <summary>5310, EADN: Application 0810</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0809">
+            <summary>5309, EADN: Application 0809</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0808">
+            <summary>5308, EADN: Application 0808</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0807">
+            <summary>5307, EADN: Application 0807</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0806">
+            <summary>5306, EADN: Application 0806</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0805">
+            <summary>5305, EADN: Application 0805</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0804">
+            <summary>5304, EADN: Application 0804</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0803">
+            <summary>5303, EADN: Application 0803</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0802">
+            <summary>5302, EADN: Application 0802</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0801">
+            <summary>5301, EADN: Application 0801</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0800">
+            <summary>5300, EADN: Application 0800</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0799">
+            <summary>5299, EADN: Application 0799</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0798">
+            <summary>5298, EADN: Application 0798</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0797">
+            <summary>5297, EADN: Application 0797</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0796">
+            <summary>5296, EADN: Application 0796</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0795">
+            <summary>5295, EADN: Application 0795</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0794">
+            <summary>5294, EADN: Application 0794</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0793">
+            <summary>5293, EADN: Application 0793</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0792">
+            <summary>5292, EADN: Application 0792</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0791">
+            <summary>5291, EADN: Application 0791</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0790">
+            <summary>5290, EADN: Application 0790</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0789">
+            <summary>5289, EADN: Application 0789</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0788">
+            <summary>5288, EADN: Application 0788</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0787">
+            <summary>5287, EADN: Application 0787</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0786">
+            <summary>5286, EADN: Application 0786</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0785">
+            <summary>5285, EADN: Application 0785</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0784">
+            <summary>5284, EADN: Application 0784</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0783">
+            <summary>5283, EADN: Application 0783</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0782">
+            <summary>5282, EADN: Application 0782</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0781">
+            <summary>5281, EADN: Application 0781</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0780">
+            <summary>5280, EADN: Application 0780</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0779">
+            <summary>5279, EADN: Application 0779</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0778">
+            <summary>5278, EADN: Application 0778</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0777">
+            <summary>5277, EADN: Application 0777</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0776">
+            <summary>5276, EADN: Application 0776</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0775">
+            <summary>5275, EADN: Application 0775</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0774">
+            <summary>5274, EADN: Application 0774</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0773">
+            <summary>5273, EADN: Application 0773</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0772">
+            <summary>5272, EADN: Application 0772</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0771">
+            <summary>5271, EADN: Application 0771</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0770">
+            <summary>5270, EADN: Application 0770</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0769">
+            <summary>5269, EADN: Application 0769</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0768">
+            <summary>5268, EADN: Application 0768</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0767">
+            <summary>5267, EADN: Application 0767</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0766">
+            <summary>5266, EADN: Application 0766</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0765">
+            <summary>5265, EADN: Application 0765</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0764">
+            <summary>5264, EADN: Application 0764</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0763">
+            <summary>5263, EADN: Application 0763</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0762">
+            <summary>5262, EADN: Application 0762</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0761">
+            <summary>5261, EADN: Application 0761</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0760">
+            <summary>5260, EADN: Application 0760</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0759">
+            <summary>5259, EADN: Application 0759</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0758">
+            <summary>5258, EADN: Application 0758</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0757">
+            <summary>5257, EADN: Application 0757</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0756">
+            <summary>5256, EADN: Application 0756</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0755">
+            <summary>5255, EADN: Application 0755</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0754">
+            <summary>5254, EADN: Application 0754</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0753">
+            <summary>5253, EADN: Application 0753</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0752">
+            <summary>5252, EADN: Application 0752</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0751">
+            <summary>5251, EADN: Application 0751</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0750">
+            <summary>5250, EADN: Application 0750</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0749">
+            <summary>5249, EADN: Application 0749</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0748">
+            <summary>5248, EADN: Application 0748</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0747">
+            <summary>5247, EADN: Application 0747</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0746">
+            <summary>5246, EADN: Application 0746</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0745">
+            <summary>5245, EADN: Application 0745</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0744">
+            <summary>5244, EADN: Application 0744</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0743">
+            <summary>5243, EADN: Application 0743</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0742">
+            <summary>5242, EADN: Application 0742</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0741">
+            <summary>5241, EADN: Application 0741</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0740">
+            <summary>5240, EADN: Application 0740</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0739">
+            <summary>5239, EADN: Application 0739</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0738">
+            <summary>5238, EADN: Application 0738</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0737">
+            <summary>5237, EADN: Application 0737</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0736">
+            <summary>5236, EADN: Application 0736</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0735">
+            <summary>5235, EADN: Application 0735</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0734">
+            <summary>5234, EADN: Application 0734</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0733">
+            <summary>5233, EADN: Application 0733</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0732">
+            <summary>5232, EADN: Application 0732</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0731">
+            <summary>5231, EADN: Application 0731</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0730">
+            <summary>5230, EADN: Application 0730</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0729">
+            <summary>5229, EADN: Application 0729</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0728">
+            <summary>5228, EADN: Application 0728</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0727">
+            <summary>5227, EADN: Application 0727</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0726">
+            <summary>5226, EADN: Application 0726</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0725">
+            <summary>5225, EADN: Application 0725</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0724">
+            <summary>5224, EADN: Application 0724</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0723">
+            <summary>5223, EADN: Application 0723</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0722">
+            <summary>5222, EADN: Application 0722</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0721">
+            <summary>5221, EADN: Application 0721</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0720">
+            <summary>5220, EADN: Application 0720</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0719">
+            <summary>5219, EADN: Application 0719</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0718">
+            <summary>5218, EADN: Application 0718</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0717">
+            <summary>5217, EADN: Application 0717</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0716">
+            <summary>5216, EADN: Application 0716</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0715">
+            <summary>5215, EADN: Application 0715</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0714">
+            <summary>5214, EADN: Application 0714</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0713">
+            <summary>5213, EADN: Application 0713</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0712">
+            <summary>5212, EADN: Application 0712</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0711">
+            <summary>5211, EADN: Application 0711</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0710">
+            <summary>5210, EADN: Application 0710</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0709">
+            <summary>5209, EADN: Application 0709</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0708">
+            <summary>5208, EADN: Application 0708</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0707">
+            <summary>5207, EADN: Application 0707</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0706">
+            <summary>5206, EADN: Application 0706</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0705">
+            <summary>5205, EADN: Application 0705</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0704">
+            <summary>5204, EADN: Application 0704</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0703">
+            <summary>5203, EADN: Application 0703</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0702">
+            <summary>5202, EADN: Application 0702</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0701">
+            <summary>5201, EADN: Application 0701</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0700">
+            <summary>5200, EADN: Application 0700</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0699">
+            <summary>5199, EADN: Application 0699</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0698">
+            <summary>5198, EADN: Application 0698</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0697">
+            <summary>5197, EADN: Application 0697</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0696">
+            <summary>5196, EADN: Application 0696</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0695">
+            <summary>5195, EADN: Application 0695</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0694">
+            <summary>5194, EADN: Application 0694</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0693">
+            <summary>5193, EADN: Application 0693</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0692">
+            <summary>5192, EADN: Application 0692</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0691">
+            <summary>5191, EADN: Application 0691</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0690">
+            <summary>5190, EADN: Application 0690</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0689">
+            <summary>5189, EADN: Application 0689</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0688">
+            <summary>5188, EADN: Application 0688</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0687">
+            <summary>5187, EADN: Application 0687</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0686">
+            <summary>5186, EADN: Application 0686</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0685">
+            <summary>5185, EADN: Application 0685</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0684">
+            <summary>5184, EADN: Application 0684</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0683">
+            <summary>5183, EADN: Application 0683</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0682">
+            <summary>5182, EADN: Application 0682</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0681">
+            <summary>5181, EADN: Application 0681</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0680">
+            <summary>5180, EADN: Application 0680</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0679">
+            <summary>5179, EADN: Application 0679</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0678">
+            <summary>5178, EADN: Application 0678</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0677">
+            <summary>5177, EADN: Application 0677</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0676">
+            <summary>5176, EADN: Application 0676</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0675">
+            <summary>5175, EADN: Application 0675</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0674">
+            <summary>5174, EADN: Application 0674</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0673">
+            <summary>5173, EADN: Application 0673</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0672">
+            <summary>5172, EADN: Application 0672</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0671">
+            <summary>5171, EADN: Application 0671</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0670">
+            <summary>5170, EADN: Application 0670</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0669">
+            <summary>5169, EADN: Application 0669</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0668">
+            <summary>5168, EADN: Application 0668</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0667">
+            <summary>5167, EADN: Application 0667</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0666">
+            <summary>5166, EADN: Application 0666</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0665">
+            <summary>5165, EADN: Application 0665</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0664">
+            <summary>5164, EADN: Application 0664</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0663">
+            <summary>5163, EADN: Application 0663</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0662">
+            <summary>5162, EADN: Application 0662</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0661">
+            <summary>5161, EADN: Application 0661</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0660">
+            <summary>5160, EADN: Application 0660</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0659">
+            <summary>5159, EADN: Application 0659</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0658">
+            <summary>5158, EADN: Application 0658</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0657">
+            <summary>5157, EADN: Application 0657</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0656">
+            <summary>5156, EADN: Application 0656</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0655">
+            <summary>5155, EADN: Application 0655</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0654">
+            <summary>5154, EADN: Application 0654</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0653">
+            <summary>5153, EADN: Application 0653</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0652">
+            <summary>5152, EADN: Application 0652</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0651">
+            <summary>5151, EADN: Application 0651</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0650">
+            <summary>5150, EADN: Application 0650</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0649">
+            <summary>5149, EADN: Application 0649</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0648">
+            <summary>5148, EADN: Application 0648</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0647">
+            <summary>5147, EADN: Application 0647</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0646">
+            <summary>5146, EADN: Application 0646</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0645">
+            <summary>5145, EADN: Application 0645</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0644">
+            <summary>5144, EADN: Application 0644</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0643">
+            <summary>5143, EADN: Application 0643</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0642">
+            <summary>5142, EADN: Application 0642</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0641">
+            <summary>5141, EADN: Application 0641</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0640">
+            <summary>5140, EADN: Application 0640</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0639">
+            <summary>5139, EADN: Application 0639</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0638">
+            <summary>5138, EADN: Application 0638</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0637">
+            <summary>5137, EADN: Application 0637</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0636">
+            <summary>5136, EADN: Application 0636</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0635">
+            <summary>5135, EADN: Application 0635</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0634">
+            <summary>5134, EADN: Application 0634</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0633">
+            <summary>5133, EADN: Application 0633</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0632">
+            <summary>5132, EADN: Application 0632</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0631">
+            <summary>5131, EADN: Application 0631</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0630">
+            <summary>5130, EADN: Application 0630</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0629">
+            <summary>5129, EADN: Application 0629</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0628">
+            <summary>5128, EADN: Application 0628</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0627">
+            <summary>5127, EADN: Application 0627</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0626">
+            <summary>5126, EADN: Application 0626</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0625">
+            <summary>5125, EADN: Application 0625</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0624">
+            <summary>5124, EADN: Application 0624</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0623">
+            <summary>5123, EADN: Application 0623</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0622">
+            <summary>5122, EADN: Application 0622</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0621">
+            <summary>5121, EADN: Application 0621</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0620">
+            <summary>5120, EADN: Application 0620</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0619">
+            <summary>5119, EADN: Application 0619</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0618">
+            <summary>5118, EADN: Application 0618</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0617">
+            <summary>5117, EADN: Application 0617</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0616">
+            <summary>5116, EADN: Application 0616</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0615">
+            <summary>5115, EADN: Application 0615</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0614">
+            <summary>5114, EADN: Application 0614</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0613">
+            <summary>5113, EADN: Application 0613</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0612">
+            <summary>5112, EADN: Application 0612</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0611">
+            <summary>5111, EADN: Application 0611</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0610">
+            <summary>5110, EADN: Application 0610</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0609">
+            <summary>5109, EADN: Application 0609</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0608">
+            <summary>5108, EADN: Application 0608</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0607">
+            <summary>5107, EADN: Application 0607</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0606">
+            <summary>5106, EADN: Application 0606</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0605">
+            <summary>5105, EADN: Application 0605</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0604">
+            <summary>5104, EADN: Application 0604</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0603">
+            <summary>5103, EADN: Application 0603</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0602">
+            <summary>5102, EADN: Application 0602</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0601">
+            <summary>5101, EADN: Application 0601</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0600">
+            <summary>5100, EADN: Application 0600</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0599">
+            <summary>5099, EADN: Application 0599</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0598">
+            <summary>5098, EADN: Application 0598</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0597">
+            <summary>5097, EADN: Application 0597</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0596">
+            <summary>5096, EADN: Application 0596</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0595">
+            <summary>5095, EADN: Application 0595</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0594">
+            <summary>5094, EADN: Application 0594</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0593">
+            <summary>5093, EADN: Application 0593</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0592">
+            <summary>5092, EADN: Application 0592</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0591">
+            <summary>5091, EADN: Application 0591</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0590">
+            <summary>5090, EADN: Application 0590</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0589">
+            <summary>5089, EADN: Application 0589</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0588">
+            <summary>5088, EADN: Application 0588</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0587">
+            <summary>5087, EADN: Application 0587</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0586">
+            <summary>5086, EADN: Application 0586</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0585">
+            <summary>5085, EADN: Application 0585</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0584">
+            <summary>5084, EADN: Application 0584</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0583">
+            <summary>5083, EADN: Application 0583</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0582">
+            <summary>5082, EADN: Application 0582</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0581">
+            <summary>5081, EADN: Application 0581</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0580">
+            <summary>5080, EADN: Application 0580</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0579">
+            <summary>5079, EADN: Application 0579</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0578">
+            <summary>5078, EADN: Application 0578</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0577">
+            <summary>5077, EADN: Application 0577</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0576">
+            <summary>5076, EADN: Application 0576</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0575">
+            <summary>5075, EADN: Application 0575</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0574">
+            <summary>5074, EADN: Application 0574</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0573">
+            <summary>5073, EADN: Application 0573</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0572">
+            <summary>5072, EADN: Application 0572</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0571">
+            <summary>5071, EADN: Application 0571</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0570">
+            <summary>5070, EADN: Application 0570</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0569">
+            <summary>5069, EADN: Application 0569</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0568">
+            <summary>5068, EADN: Application 0568</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0567">
+            <summary>5067, EADN: Application 0567</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0566">
+            <summary>5066, EADN: Application 0566</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0565">
+            <summary>5065, EADN: Application 0565</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0564">
+            <summary>5064, EADN: Application 0564</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0563">
+            <summary>5063, EADN: Application 0563</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0562">
+            <summary>5062, EADN: Application 0562</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0561">
+            <summary>5061, EADN: Application 0561</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0560">
+            <summary>5060, EADN: Application 0560</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0559">
+            <summary>5059, EADN: Application 0559</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0558">
+            <summary>5058, EADN: Application 0558</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0557">
+            <summary>5057, EADN: Application 0557</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0556">
+            <summary>5056, EADN: Application 0556</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0555">
+            <summary>5055, EADN: Application 0555</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0554">
+            <summary>5054, EADN: Application 0554</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0553">
+            <summary>5053, EADN: Application 0553</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0552">
+            <summary>5052, EADN: Application 0552</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0551">
+            <summary>5051, EADN: Application 0551</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0550">
+            <summary>5050, EADN: Application 0550</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0549">
+            <summary>5049, EADN: Application 0549</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0548">
+            <summary>5048, EADN: Application 0548</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0547">
+            <summary>5047, EADN: Application 0547</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0546">
+            <summary>5046, EADN: Application 0546</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0545">
+            <summary>5045, EADN: Application 0545</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0544">
+            <summary>5044, EADN: Application 0544</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0543">
+            <summary>5043, EADN: Application 0543</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0542">
+            <summary>5042, EADN: Application 0542</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0541">
+            <summary>5041, EADN: Application 0541</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0540">
+            <summary>5040, EADN: Application 0540</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0539">
+            <summary>5039, EADN: Application 0539</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0538">
+            <summary>5038, EADN: Application 0538</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0537">
+            <summary>5037, EADN: Application 0537</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0536">
+            <summary>5036, EADN: Application 0536</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0535">
+            <summary>5035, EADN: Application 0535</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0534">
+            <summary>5034, EADN: Application 0534</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0533">
+            <summary>5033, EADN: Application 0533</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0532">
+            <summary>5032, EADN: Application 0532</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0531">
+            <summary>5031, EADN: Application 0531</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0530">
+            <summary>5030, EADN: Application 0530</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0529">
+            <summary>5029, EADN: Application 0529</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0528">
+            <summary>5028, EADN: Application 0528</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0527">
+            <summary>5027, EADN: Application 0527</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0526">
+            <summary>5026, EADN: Application 0526</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0525">
+            <summary>5025, EADN: Application 0525</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0524">
+            <summary>5024, EADN: Application 0524</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0523">
+            <summary>5023, EADN: Application 0523</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0522">
+            <summary>5022, EADN: Application 0522</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0521">
+            <summary>5021, EADN: Application 0521</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0520">
+            <summary>5020, EADN: Application 0520</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0519">
+            <summary>5019, EADN: Application 0519</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0518">
+            <summary>5018, EADN: Application 0518</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0517">
+            <summary>5017, EADN: Application 0517</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0516">
+            <summary>5016, EADN: Application 0516</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0515">
+            <summary>5015, EADN: Application 0515</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0514">
+            <summary>5014, EADN: Application 0514</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0513">
+            <summary>5013, EADN: Application 0513</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0512">
+            <summary>5012, EADN: Application 0512</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0511">
+            <summary>5011, EADN: Application 0511</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0510">
+            <summary>5010, EADN: Application 0510</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0509">
+            <summary>5009, EADN: Application 0509</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0508">
+            <summary>5008, EADN: Application 0508</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0507">
+            <summary>5007, EADN: Application 0507</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0506">
+            <summary>5006, EADN: Application 0506</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0505">
+            <summary>5005, EADN: Application 0505</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0504">
+            <summary>5004, EADN: Application 0504</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0503">
+            <summary>5003, EADN: Application 0503</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0502">
+            <summary>5002, EADN: Application 0502</summary>
+        </member>
+        <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0501">
+            <summary>5001, EADN: Application 0501</summary>
+        </member>
         <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0500">
-            <summary>2499, EADN: Application 0500</summary>
+            <summary>2499, EADN: Application 0500 or eLAB</summary>
         </member>
         <member name="F:Eplan.EplApi.ApplicationFramework.LicenseOptions.EADNApplication0499">
             <summary>2498, EADN: Application 0499</summary>
@@ -9690,6 +11190,37 @@ is licensing is available
         <member name="M:AfApplication.signout">
 Internal methods
 Following methods are intended to be called ONLY by the Platform Framework or Unit tests
+</member>
+        <member name="M:IEIdentityClientService.signout">
+Signs out user
+</member>
+        <member name="M:IEIdentityClientService.startAuthentication">
+Internal methods
+Following methods are intended to be called ONLY by the Platform Framework or Unit tests
+</member>
+        <member name="M:IEIdentityClientService.getAccessToken(EString,EString*)">
+Gets AccessToken for a ClientId
+</member>
+        <member name="M:IEIdentityClientService.registerClientId(EString)">
+Registers ClientId
+</member>
+        <member name="M:IEIdentityClientService.getUserProfile(EPulseUserProfile*)">
+Gets user profile
+</member>
+        <member name="M:IEIdentityClientService.getSkipSigninFlag">
+Gets skip sign in flag
+</member>
+        <member name="M:IEIdentityClientService.setSkipSigninFlag(System.Boolean)">
+Sets skip sign in flag
+</member>
+        <member name="M:IEIdentityClientService.isUserAuthenticated">
+Checks if user is authenticated
+</member>
+        <member name="M:IEIdentityClientService.getSignedoutFlag">
+Gets Signed out flag
+</member>
+        <member name="M:IEIdentityClientService.setSignedoutFlag(System.Boolean)">
+Sets Signed out flag
 </member>
         <member name="T:boost.mpl.less_impl{boost.mpl.na,boost.mpl.na}">
 for Digital Mars C++/compilers with no CTPS/TTP support

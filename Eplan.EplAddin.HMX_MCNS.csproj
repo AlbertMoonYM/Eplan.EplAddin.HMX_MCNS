@@ -142,39 +142,35 @@
     </Reference>
     <Reference Include="Eplan.EplApi.AFu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.AFu.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.AFu.dll</HintPath>
     </Reference>
     <Reference Include="Eplan.EplApi.Baseu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Baseu.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Baseu.dll</HintPath>
     </Reference>
     <Reference Include="Eplan.EplApi.DataModelu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.DataModelu.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.DataModelu.dll</HintPath>
     </Reference>
     <Reference Include="Eplan.EplApi.EServicesu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.EServicesu.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.EServicesu.dll</HintPath>
     </Reference>
     <Reference Include="Eplan.EplApi.Guiu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Guiu.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Guiu.dll</HintPath>
     </Reference>
     <Reference Include="Eplan.EplApi.HEServicesu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.HEServicesu.dll</HintPath>
-    </Reference>
-    <Reference Include="Eplan.EplApi.MasterDatau, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.MasterDatau.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.HEServicesu.dll</HintPath>
     </Reference>
     <Reference Include="Eplan.EplApi.Starteru, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Starteru.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Starteru.dll</HintPath>
     </Reference>
     <Reference Include="Eplan.EplApi.Systemu, Version=1.0.0.0, Culture=neutral, PublicKeyToken=57aaa27e22f7b107, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Systemu.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\EPLAN_2023\Platform\2023.0.3\Bin\Eplan.EplApi.Systemu.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=7.6.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.7.6.0\lib\net462\EPPlus.dll</HintPath>
@@ -369,6 +365,9 @@
     <None Include="Resources\Square.png" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Eplan.MCNS.Lib\Eplan.MCNS.Lib.csproj">
       <Project>{2f96f828-e7a2-4466-b483-e4cd384f6fe0}</Project>
       <Name>Eplan.MCNS.Lib</Name>
@@ -377,9 +376,6 @@
       <Project>{30f4380c-cb4c-4c5c-99c0-0abc32a686cb}</Project>
       <Name>McnsSchemGenEngine</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
